@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9C078EB-D4EF-4B4E-8F08-07B1582BEC63}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MangCook</RootNamespace>
+    <AssemblyName>MangCook</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>F:\INFORMATIKA\SEMESTER V\PEMROGRAMAN PLATFORM KHUSUS\PROJECT AKHIR\Metro DLLS\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>F:\INFORMATIKA\SEMESTER V\PEMROGRAMAN PLATFORM KHUSUS\PROJECT AKHIR\Metro DLLS\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>F:\INFORMATIKA\SEMESTER V\PEMROGRAMAN PLATFORM KHUSUS\PROJECT AKHIR\Metro DLLS\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Daftar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daftar.Designer.cs">
+      <DependentUpon>Daftar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Beranda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Beranda.Designer.cs">
+      <DependentUpon>Beranda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masuk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masuk.Designer.cs">
+      <DependentUpon>Masuk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Beranda.resx">
+      <DependentUpon>Beranda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daftar.resx">
+      <DependentUpon>Daftar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masuk.resx">
+      <DependentUpon>Masuk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uploading-archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mang cook.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mang cook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uploadButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnBeranda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnFavorit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnProfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnUnggah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drinkWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drinkRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foodWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foodRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMakanan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMakananWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMinuman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMinumanWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnBeranda2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnFavorit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnProfil2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnUnggah2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLoginWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMasukWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMasuk.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

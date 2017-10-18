@@ -30,6 +30,7 @@
         {
             this.copyRight = new System.Windows.Forms.Label();
             this.panelMasuk = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -44,7 +45,6 @@
             this.txtKataSandi = new System.Windows.Forms.TextBox();
             this.txtNamaPengguna = new System.Windows.Forms.TextBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.panelMasuk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,20 @@
             this.panelMasuk.Name = "panelMasuk";
             this.panelMasuk.Size = new System.Drawing.Size(481, 430);
             this.panelMasuk.TabIndex = 4;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.ItemHeight = 17;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Laki-laki",
+            "Perempuan"});
+            this.comboBox4.Location = new System.Drawing.Point(342, 336);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(61, 25);
+            this.comboBox4.TabIndex = 13;
+            this.comboBox4.Text = "Tahun";
             // 
             // comboBox3
             // 
@@ -218,7 +232,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(261, 27);
             this.textBox3.TabIndex = 4;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox1
             // 
@@ -227,7 +240,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(261, 27);
             this.textBox1.TabIndex = 3;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
@@ -236,7 +248,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(261, 27);
             this.textBox2.TabIndex = 2;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtKataSandi
             // 
@@ -245,7 +256,6 @@
             this.txtKataSandi.Name = "txtKataSandi";
             this.txtKataSandi.Size = new System.Drawing.Size(261, 27);
             this.txtKataSandi.TabIndex = 1;
-            this.txtKataSandi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNamaPengguna
             // 
@@ -254,7 +264,6 @@
             this.txtNamaPengguna.Name = "txtNamaPengguna";
             this.txtNamaPengguna.Size = new System.Drawing.Size(261, 27);
             this.txtNamaPengguna.TabIndex = 0;
-            this.txtNamaPengguna.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pctLogo
             // 
@@ -265,20 +274,6 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctLogo.TabIndex = 3;
             this.pctLogo.TabStop = false;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.ItemHeight = 17;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Laki-laki",
-            "Perempuan"});
-            this.comboBox4.Location = new System.Drawing.Point(342, 336);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(61, 25);
-            this.comboBox4.TabIndex = 13;
-            this.comboBox4.Text = "Tahun";
             // 
             // Daftar
             // 

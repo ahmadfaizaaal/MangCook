@@ -30,6 +30,8 @@
         {
             this.copyRight = new System.Windows.Forms.Label();
             this.panelMasuk = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -45,8 +47,6 @@
             this.txtKataSandi = new System.Windows.Forms.TextBox();
             this.txtNamaPengguna = new System.Windows.Forms.TextBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panelMasuk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +88,28 @@
             this.panelMasuk.Name = "panelMasuk";
             this.panelMasuk.Size = new System.Drawing.Size(481, 430);
             this.panelMasuk.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(77, 339);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 16);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Tanggal Lahir";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(78, 296);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 16);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Jenis Kelamin";
             // 
             // comboBox4
             // 
@@ -176,8 +198,18 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.ItemHeight = 17;
             this.comboBox3.Items.AddRange(new object[] {
-            "Laki-laki",
-            "Perempuan"});
+            "Januari",
+            "Februari",
+            "Maret",
+            "April ",
+            "Mei",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "November",
+            "Desember"});
             this.comboBox3.Location = new System.Drawing.Point(275, 336);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(61, 25);
@@ -345,28 +377,6 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctLogo.TabIndex = 3;
             this.pctLogo.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(78, 296);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 16);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Jenis Kelamin";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(77, 339);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 16);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Tanggal Lahir";
             // 
             // Daftar
             // 

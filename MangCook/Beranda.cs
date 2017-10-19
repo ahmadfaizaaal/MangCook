@@ -30,7 +30,6 @@ namespace MangCook
             btnProfil.Image = profil;
             btnFavorit.Image = favorit;
             btnUnggah.Image = unggah;
-            //panel5.VerticalScroll.Visible = true;
         }
 
         public void kategoriMouseEnter(object sender, EventArgs e)

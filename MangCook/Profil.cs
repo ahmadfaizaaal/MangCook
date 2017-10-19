@@ -15,6 +15,7 @@ namespace MangCook
         public Profil()
         {
             InitializeComponent();
+            panelContent.VerticalScroll.Visible = true;
         }
 
         private void label4_Click(object sender, EventArgs e)

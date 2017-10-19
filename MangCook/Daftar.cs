@@ -15,6 +15,7 @@ namespace MangCook
     {
         Masuk formMasuk;
         Image cancel = Resources.cancel;
+        Image daftar = Resources.btnDaftar;
         bool clicked = false;
         public Daftar(Masuk parent)
         {
@@ -22,20 +23,13 @@ namespace MangCook
             formMasuk = parent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             btnCancel.Image = cancel;
+            btnDaftar.Image = daftar;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             formMasuk.Show();
-            clicked = true;
-        }
-
-        private void Daftar_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (clicked)
-            {
-                e.Cancel = true;
-            }
+            this.Hide();
         }
     }
 }

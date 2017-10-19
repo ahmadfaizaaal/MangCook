@@ -83,6 +83,26 @@ namespace MangCook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnDaftar {
+            get {
+                object obj = ResourceManager.GetObject("btnDaftar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnDaftarWhite {
+            get {
+                object obj = ResourceManager.GetObject("btnDaftarWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnFavorit {
             get {
                 object obj = ResourceManager.GetObject("btnFavorit", resourceCulture);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daftar));
             this.copyRight = new System.Windows.Forms.Label();
             this.panelMasuk = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -47,9 +48,11 @@
             this.txtNamaDepan = new System.Windows.Forms.TextBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.PictureBox();
+            this.btnDaftar = new System.Windows.Forms.PictureBox();
             this.panelMasuk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDaftar)).BeginInit();
             this.SuspendLayout();
             // 
             // copyRight
@@ -69,6 +72,7 @@
             // 
             this.panelMasuk.BackColor = System.Drawing.Color.Transparent;
             this.panelMasuk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelMasuk.Controls.Add(this.btnDaftar);
             this.panelMasuk.Controls.Add(this.dateTimePicker1);
             this.panelMasuk.Controls.Add(this.label8);
             this.panelMasuk.Controls.Add(this.label7);
@@ -84,9 +88,9 @@
             this.panelMasuk.Controls.Add(this.txtEmail);
             this.panelMasuk.Controls.Add(this.txtNamaBelakang);
             this.panelMasuk.Controls.Add(this.txtNamaDepan);
-            this.panelMasuk.Location = new System.Drawing.Point(235, 66);
+            this.panelMasuk.Location = new System.Drawing.Point(235, 61);
             this.panelMasuk.Name = "panelMasuk";
-            this.panelMasuk.Size = new System.Drawing.Size(481, 430);
+            this.panelMasuk.Size = new System.Drawing.Size(481, 443);
             this.panelMasuk.TabIndex = 4;
             // 
             // dateTimePicker1
@@ -257,6 +261,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Image = global::MangCook.Properties.Resources.cancel;
             this.btnCancel.Location = new System.Drawing.Point(748, 12);
             this.btnCancel.Name = "btnCancel";
@@ -265,6 +270,17 @@
             this.btnCancel.TabIndex = 6;
             this.btnCancel.TabStop = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnDaftar
+            // 
+            this.btnDaftar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDaftar.Image = global::MangCook.Properties.Resources.btnDaftar;
+            this.btnDaftar.Location = new System.Drawing.Point(190, 382);
+            this.btnDaftar.Name = "btnDaftar";
+            this.btnDaftar.Size = new System.Drawing.Size(114, 35);
+            this.btnDaftar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDaftar.TabIndex = 18;
+            this.btnDaftar.TabStop = false;
             // 
             // Daftar
             // 
@@ -277,15 +293,16 @@
             this.Controls.Add(this.copyRight);
             this.Controls.Add(this.panelMasuk);
             this.Controls.Add(this.pctLogo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Daftar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook ~ DAFTAR";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Daftar_FormClosing);
             this.panelMasuk.ResumeLayout(false);
             this.panelMasuk.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDaftar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,5 +329,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox btnCancel;
+        private System.Windows.Forms.PictureBox btnDaftar;
     }
 }

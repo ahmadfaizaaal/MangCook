@@ -13,12 +13,12 @@ namespace MangCook
 {
     public partial class Masuk : Form
     {
-        Daftar formDaftar;
+        public static Daftar formDaftar;
         Image masuk = Resources.btnMasuk;
         public Masuk()
         {
             InitializeComponent();
-            formDaftar = new Daftar();
+            formDaftar = new Daftar(this);
             txtNamaPengguna.Text = "Nama Pengguna";
             txtKataSandi.Text = "Kata Sandi";
             btnLogin.Image = masuk;

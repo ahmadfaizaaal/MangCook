@@ -16,10 +16,10 @@ namespace MangCook
         Masuk formMasuk;
         Image cancel = Resources.cancel;
         bool clicked = false;
-        public Daftar()
+        public Daftar(Masuk parent)
         {
             InitializeComponent();
-            formMasuk = new Masuk();
+            formMasuk = parent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             btnCancel.Image = cancel;
         }

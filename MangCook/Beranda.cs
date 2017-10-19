@@ -13,7 +13,7 @@ namespace MangCook
 {
     public partial class Beranda : Form
     {
-        Image search = Resources.search3;
+        Image search = Resources.searchFix;
         Image makanan = Resources.btnMakanan;
         Image minuman = Resources.btnMinuman;
         Image beranda = Resources.btnBeranda2;

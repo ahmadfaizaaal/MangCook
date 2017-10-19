@@ -353,6 +353,16 @@ namespace MangCook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap searchFix {
+            get {
+                object obj = ResourceManager.GetObject("searchFix", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap star__1_ {
             get {
                 object obj = ResourceManager.GetObject("star__1_", resourceCulture);

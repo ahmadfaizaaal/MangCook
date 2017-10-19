@@ -187,9 +187,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.MistyRose;
+            this.textBox1.BackColor = System.Drawing.Color.Moccasin;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.LightCoral;
+            this.textBox1.ForeColor = System.Drawing.Color.Firebrick;
             this.textBox1.Location = new System.Drawing.Point(303, 15);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -259,7 +259,7 @@
             // panel4
             // 
             this.panel4.AutoScroll = true;
-            this.panel4.BackColor = System.Drawing.Color.IndianRed;
+            this.panel4.BackColor = System.Drawing.Color.Cornsilk;
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.btnSearch);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -268,7 +268,7 @@
             this.panel4.Size = new System.Drawing.Size(614, 439);
             this.panel4.TabIndex = 5;
             // 
-            // Form2
+            // Beranda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -280,7 +280,7 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form2";
+            this.Name = "Beranda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook";
             this.panel2.ResumeLayout(false);

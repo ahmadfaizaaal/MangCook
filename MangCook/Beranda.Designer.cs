@@ -177,6 +177,7 @@
             // btnSearch
             // 
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Image = global::MangCook.Properties.Resources.searchFix;
             this.btnSearch.Location = new System.Drawing.Point(544, 15);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(24, 24);

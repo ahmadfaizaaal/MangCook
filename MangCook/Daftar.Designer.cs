@@ -34,9 +34,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbTahun = new System.Windows.Forms.ComboBox();
-            this.cbBulan = new System.Windows.Forms.ComboBox();
-            this.cbTanggal = new System.Windows.Forms.ComboBox();
             this.cbJK = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,8 +46,10 @@
             this.txtNamaBelakang = new System.Windows.Forms.TextBox();
             this.txtNamaDepan = new System.Windows.Forms.TextBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
             this.panelMasuk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             this.SuspendLayout();
             // 
             // copyRight
@@ -74,9 +73,6 @@
             this.panelMasuk.Controls.Add(this.label8);
             this.panelMasuk.Controls.Add(this.label7);
             this.panelMasuk.Controls.Add(this.label6);
-            this.panelMasuk.Controls.Add(this.cbTahun);
-            this.panelMasuk.Controls.Add(this.cbBulan);
-            this.panelMasuk.Controls.Add(this.cbTanggal);
             this.panelMasuk.Controls.Add(this.cbJK);
             this.panelMasuk.Controls.Add(this.label5);
             this.panelMasuk.Controls.Add(this.label4);
@@ -99,7 +95,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(190, 336);
+            this.dateTimePicker1.Location = new System.Drawing.Point(190, 338);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(169, 24);
@@ -121,7 +117,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(77, 339);
+            this.label7.Location = new System.Drawing.Point(77, 344);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 16);
             this.label7.TabIndex = 15;
@@ -138,158 +134,6 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Jenis Kelamin";
             // 
-            // cbTahun
-            // 
-            this.cbTahun.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTahun.FormattingEnabled = true;
-            this.cbTahun.ItemHeight = 17;
-            this.cbTahun.Items.AddRange(new object[] {
-            "1967",
-            "1968",
-            "1969",
-            "1970",
-            "1971",
-            "1972",
-            "1973",
-            "1974",
-            "1975",
-            "1976",
-            "1977",
-            "1978",
-            "1979",
-            "1980",
-            "1981",
-            "1982",
-            "1983",
-            "1984",
-            "1985",
-            "1986",
-            "1987",
-            "1988",
-            "1989",
-            "1990",
-            "1991",
-            "1992",
-            "1993",
-            "1994",
-            "1995",
-            "1996",
-            "1997",
-            "1998",
-            "1999",
-            "2000",
-            "2001",
-            "2002",
-            "2003",
-            "2004",
-            "2005",
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030",
-            "2031",
-            "2032",
-            "2033",
-            "2034",
-            "2035"});
-            this.cbTahun.Location = new System.Drawing.Point(344, 336);
-            this.cbTahun.Name = "cbTahun";
-            this.cbTahun.Size = new System.Drawing.Size(61, 25);
-            this.cbTahun.TabIndex = 13;
-            this.cbTahun.Text = "Tahun";
-            this.cbTahun.Visible = false;
-            // 
-            // cbBulan
-            // 
-            this.cbBulan.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBulan.FormattingEnabled = true;
-            this.cbBulan.ItemHeight = 17;
-            this.cbBulan.Items.AddRange(new object[] {
-            "Januari",
-            "Februari",
-            "Maret",
-            "April",
-            "Mei",
-            "Juni",
-            "Juli",
-            "Agustus",
-            "September",
-            "Oktober",
-            "November",
-            "Desember"});
-            this.cbBulan.Location = new System.Drawing.Point(242, 336);
-            this.cbBulan.Name = "cbBulan";
-            this.cbBulan.Size = new System.Drawing.Size(96, 25);
-            this.cbBulan.TabIndex = 12;
-            this.cbBulan.Text = "Bulan";
-            this.cbBulan.Visible = false;
-            // 
-            // cbTanggal
-            // 
-            this.cbTanggal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTanggal.FormattingEnabled = true;
-            this.cbTanggal.ItemHeight = 17;
-            this.cbTanggal.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31"});
-            this.cbTanggal.Location = new System.Drawing.Point(190, 336);
-            this.cbTanggal.Name = "cbTanggal";
-            this.cbTanggal.Size = new System.Drawing.Size(46, 25);
-            this.cbTanggal.TabIndex = 11;
-            this.cbTanggal.Text = "Tgl";
-            this.cbTanggal.Visible = false;
-
-            // 
             // cbJK
             // 
             this.cbJK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -303,7 +147,6 @@
             this.cbJK.Name = "cbJK";
             this.cbJK.Size = new System.Drawing.Size(169, 25);
             this.cbJK.TabIndex = 10;
-            
             // 
             // label5
             // 
@@ -412,6 +255,17 @@
             this.pctLogo.TabIndex = 3;
             this.pctLogo.TabStop = false;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Image = global::MangCook.Properties.Resources.cancel;
+            this.btnCancel.Location = new System.Drawing.Point(748, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(24, 24);
+            this.btnCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // Daftar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +273,7 @@
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.copyRight);
             this.Controls.Add(this.panelMasuk);
             this.Controls.Add(this.pctLogo);
@@ -426,9 +281,11 @@
             this.Name = "Daftar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook ~ DAFTAR";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Daftar_FormClosing);
             this.panelMasuk.ResumeLayout(false);
             this.panelMasuk.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,12 +307,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtKonfirmKataSandi;
-        private System.Windows.Forms.ComboBox cbBulan;
-        private System.Windows.Forms.ComboBox cbTanggal;
-        private System.Windows.Forms.ComboBox cbTahun;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.PictureBox btnCancel;
     }
 }

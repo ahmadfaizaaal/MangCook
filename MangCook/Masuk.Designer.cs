@@ -76,6 +76,7 @@
             this.lblSignUp.Size = new System.Drawing.Size(52, 16);
             this.lblSignUp.TabIndex = 4;
             this.lblSignUp.Text = "Daftar!";
+            this.lblSignUp.Click += new System.EventHandler(this.lblSignUp_Click);
             this.lblSignUp.MouseEnter += new System.EventHandler(this.lblSignUp_MouseEnter);
             this.lblSignUp.MouseLeave += new System.EventHandler(this.lblSignUp_MouseLeave);
             // 

@@ -13,10 +13,12 @@ namespace MangCook
 {
     public partial class Masuk : Form
     {
+        Daftar formDaftar;
         Image masuk = Resources.btnMasuk;
         public Masuk()
         {
             InitializeComponent();
+            formDaftar = new Daftar();
             txtNamaPengguna.Text = "Nama Pengguna";
             txtKataSandi.Text = "Kata Sandi";
             btnLogin.Image = masuk;
@@ -62,6 +64,12 @@ namespace MangCook
         private void lblSignUp_MouseLeave(object sender, EventArgs e)
         {
             lblSignUp.ForeColor = Color.IndianRed;
+        }
+
+        private void lblSignUp_Click(object sender, EventArgs e)
+        {
+            formDaftar.Show();
+            this.Hide();
         }
     }
 }

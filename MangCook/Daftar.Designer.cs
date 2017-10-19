@@ -30,6 +30,8 @@
         {
             this.copyRight = new System.Windows.Forms.Label();
             this.panelMasuk = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbTahun = new System.Windows.Forms.ComboBox();
@@ -47,7 +49,6 @@
             this.txtNamaBelakang = new System.Windows.Forms.TextBox();
             this.txtNamaDepan = new System.Windows.Forms.TextBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panelMasuk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +70,7 @@
             // 
             this.panelMasuk.BackColor = System.Drawing.Color.Transparent;
             this.panelMasuk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelMasuk.Controls.Add(this.dateTimePicker1);
             this.panelMasuk.Controls.Add(this.label8);
             this.panelMasuk.Controls.Add(this.label7);
             this.panelMasuk.Controls.Add(this.label6);
@@ -90,6 +92,29 @@
             this.panelMasuk.Name = "panelMasuk";
             this.panelMasuk.Size = new System.Drawing.Size(481, 430);
             this.panelMasuk.TabIndex = 4;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd MMMM yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePicker1.Location = new System.Drawing.Point(190, 336);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(169, 24);
+            this.dateTimePicker1.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(22, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 32);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "DAFTAR";
             // 
             // label7
             // 
@@ -193,6 +218,7 @@
             this.cbTahun.Size = new System.Drawing.Size(61, 25);
             this.cbTahun.TabIndex = 13;
             this.cbTahun.Text = "Tahun";
+            this.cbTahun.Visible = false;
             // 
             // cbBulan
             // 
@@ -217,6 +243,7 @@
             this.cbBulan.Size = new System.Drawing.Size(96, 25);
             this.cbBulan.TabIndex = 12;
             this.cbBulan.Text = "Bulan";
+            this.cbBulan.Visible = false;
             // 
             // cbTanggal
             // 
@@ -260,20 +287,23 @@
             this.cbTanggal.Size = new System.Drawing.Size(46, 25);
             this.cbTanggal.TabIndex = 11;
             this.cbTanggal.Text = "Tgl";
+            this.cbTanggal.Visible = false;
+
             // 
             // cbJK
             // 
+            this.cbJK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbJK.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbJK.FormattingEnabled = true;
             this.cbJK.ItemHeight = 17;
             this.cbJK.Items.AddRange(new object[] {
-            "Laki-laki",
+            "Laki - laki",
             "Perempuan"});
             this.cbJK.Location = new System.Drawing.Point(190, 293);
             this.cbJK.Name = "cbJK";
-            this.cbJK.Size = new System.Drawing.Size(113, 25);
+            this.cbJK.Size = new System.Drawing.Size(169, 25);
             this.cbJK.TabIndex = 10;
-            this.cbJK.Text = "Laki-laki";
+            
             // 
             // label5
             // 
@@ -382,17 +412,6 @@
             this.pctLogo.TabIndex = 3;
             this.pctLogo.TabStop = false;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(68, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 32);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "DAFTAR";
-            // 
             // Daftar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,5 +456,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

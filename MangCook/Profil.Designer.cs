@@ -166,7 +166,6 @@
             this.label4.Size = new System.Drawing.Size(134, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "gusna.ikhsan7@gmail.com";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel4
             // 

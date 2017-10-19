@@ -333,6 +333,16 @@ namespace MangCook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap komentar {
+            get {
+                object obj = ResourceManager.GetObject("komentar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap man_user__1_ {
             get {
                 object obj = ResourceManager.GetObject("man_user__1_", resourceCulture);
@@ -406,6 +416,26 @@ namespace MangCook.Properties {
         internal static System.Drawing.Bitmap star__1_ {
             get {
                 object obj = ResourceManager.GetObject("star__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stargold {
+            get {
+                object obj = ResourceManager.GetObject("stargold", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap starkopong {
+            get {
+                object obj = ResourceManager.GetObject("starkopong", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

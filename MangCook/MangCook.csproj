@@ -72,12 +72,6 @@
     <Compile Include="Masuk.Designer.cs">
       <DependentUpon>Masuk.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Profil.Designer.cs">
-      <DependentUpon>Profil.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Beranda.resx">
@@ -88,9 +82,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Masuk.resx">
       <DependentUpon>Masuk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Profil.resx">
-      <DependentUpon>Profil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -230,13 +221,25 @@
     <None Include="Resources\btnMasuk.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stargold.png" />
+    <None Include="Resources\searchFix.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\starkopong.png" />
+    <None Include="Resources\btnMakananFix.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\komentar.png" />
+    <None Include="Resources\btnMinumanFix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMakanan_FixRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMakanan_FixWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMinuman_FixRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMinuman_FixWhite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

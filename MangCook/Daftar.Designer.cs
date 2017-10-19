@@ -32,21 +32,22 @@
             this.panelMasuk = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTahun = new System.Windows.Forms.ComboBox();
+            this.cbBulan = new System.Windows.Forms.ComboBox();
+            this.cbTanggal = new System.Windows.Forms.ComboBox();
+            this.cbJK = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtKonfirmKataSandi = new System.Windows.Forms.TextBox();
             this.txtKataSandi = new System.Windows.Forms.TextBox();
-            this.txtNamaPengguna = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtNamaBelakang = new System.Windows.Forms.TextBox();
+            this.txtNamaDepan = new System.Windows.Forms.TextBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelMasuk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
@@ -68,22 +69,23 @@
             // 
             this.panelMasuk.BackColor = System.Drawing.Color.Transparent;
             this.panelMasuk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelMasuk.Controls.Add(this.label8);
             this.panelMasuk.Controls.Add(this.label7);
             this.panelMasuk.Controls.Add(this.label6);
-            this.panelMasuk.Controls.Add(this.comboBox4);
-            this.panelMasuk.Controls.Add(this.comboBox3);
-            this.panelMasuk.Controls.Add(this.comboBox2);
-            this.panelMasuk.Controls.Add(this.comboBox1);
+            this.panelMasuk.Controls.Add(this.cbTahun);
+            this.panelMasuk.Controls.Add(this.cbBulan);
+            this.panelMasuk.Controls.Add(this.cbTanggal);
+            this.panelMasuk.Controls.Add(this.cbJK);
             this.panelMasuk.Controls.Add(this.label5);
             this.panelMasuk.Controls.Add(this.label4);
             this.panelMasuk.Controls.Add(this.label3);
             this.panelMasuk.Controls.Add(this.label2);
             this.panelMasuk.Controls.Add(this.label1);
-            this.panelMasuk.Controls.Add(this.textBox3);
-            this.panelMasuk.Controls.Add(this.textBox1);
-            this.panelMasuk.Controls.Add(this.textBox2);
+            this.panelMasuk.Controls.Add(this.txtKonfirmKataSandi);
             this.panelMasuk.Controls.Add(this.txtKataSandi);
-            this.panelMasuk.Controls.Add(this.txtNamaPengguna);
+            this.panelMasuk.Controls.Add(this.txtEmail);
+            this.panelMasuk.Controls.Add(this.txtNamaBelakang);
+            this.panelMasuk.Controls.Add(this.txtNamaDepan);
             this.panelMasuk.Location = new System.Drawing.Point(235, 66);
             this.panelMasuk.Name = "panelMasuk";
             this.panelMasuk.Size = new System.Drawing.Size(481, 430);
@@ -111,12 +113,12 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Jenis Kelamin";
             // 
-            // comboBox4
+            // cbTahun
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.ItemHeight = 17;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cbTahun.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTahun.FormattingEnabled = true;
+            this.cbTahun.ItemHeight = 17;
+            this.cbTahun.Items.AddRange(new object[] {
             "1967",
             "1968",
             "1969",
@@ -186,22 +188,22 @@
             "2033",
             "2034",
             "2035"});
-            this.comboBox4.Location = new System.Drawing.Point(342, 336);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(61, 25);
-            this.comboBox4.TabIndex = 13;
-            this.comboBox4.Text = "Tahun";
+            this.cbTahun.Location = new System.Drawing.Point(344, 336);
+            this.cbTahun.Name = "cbTahun";
+            this.cbTahun.Size = new System.Drawing.Size(61, 25);
+            this.cbTahun.TabIndex = 13;
+            this.cbTahun.Text = "Tahun";
             // 
-            // comboBox3
+            // cbBulan
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 17;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cbBulan.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBulan.FormattingEnabled = true;
+            this.cbBulan.ItemHeight = 17;
+            this.cbBulan.Items.AddRange(new object[] {
             "Januari",
             "Februari",
             "Maret",
-            "April ",
+            "April",
             "Mei",
             "Juni",
             "Juli",
@@ -210,18 +212,18 @@
             "Oktober",
             "November",
             "Desember"});
-            this.comboBox3.Location = new System.Drawing.Point(275, 336);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(61, 25);
-            this.comboBox3.TabIndex = 12;
-            this.comboBox3.Text = "Bulan";
+            this.cbBulan.Location = new System.Drawing.Point(242, 336);
+            this.cbBulan.Name = "cbBulan";
+            this.cbBulan.Size = new System.Drawing.Size(96, 25);
+            this.cbBulan.TabIndex = 12;
+            this.cbBulan.Text = "Bulan";
             // 
-            // comboBox2
+            // cbTanggal
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 17;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbTanggal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTanggal.FormattingEnabled = true;
+            this.cbTanggal.ItemHeight = 17;
+            this.cbTanggal.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -253,25 +255,25 @@
             "29",
             "30",
             "31"});
-            this.comboBox2.Location = new System.Drawing.Point(190, 336);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(79, 25);
-            this.comboBox2.TabIndex = 11;
-            this.comboBox2.Text = "Tanggal";
+            this.cbTanggal.Location = new System.Drawing.Point(190, 336);
+            this.cbTanggal.Name = "cbTanggal";
+            this.cbTanggal.Size = new System.Drawing.Size(46, 25);
+            this.cbTanggal.TabIndex = 11;
+            this.cbTanggal.Text = "Tgl";
             // 
-            // comboBox1
+            // cbJK
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 17;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbJK.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbJK.FormattingEnabled = true;
+            this.cbJK.ItemHeight = 17;
+            this.cbJK.Items.AddRange(new object[] {
             "Laki-laki",
             "Perempuan"});
-            this.comboBox1.Location = new System.Drawing.Point(190, 293);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(113, 25);
-            this.comboBox1.TabIndex = 10;
-            this.comboBox1.Text = "Laki-laki";
+            this.cbJK.Location = new System.Drawing.Point(190, 293);
+            this.cbJK.Name = "cbJK";
+            this.cbJK.Size = new System.Drawing.Size(113, 25);
+            this.cbJK.TabIndex = 10;
+            this.cbJK.Text = "Laki-laki";
             // 
             // label5
             // 
@@ -328,45 +330,47 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nama Depan";
             // 
-            // textBox3
+            // txtKonfirmKataSandi
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(190, 247);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(261, 27);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(190, 201);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 27);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(190, 154);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 27);
-            this.textBox2.TabIndex = 2;
+            this.txtKonfirmKataSandi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKonfirmKataSandi.Location = new System.Drawing.Point(190, 247);
+            this.txtKonfirmKataSandi.Name = "txtKonfirmKataSandi";
+            this.txtKonfirmKataSandi.Size = new System.Drawing.Size(261, 27);
+            this.txtKonfirmKataSandi.TabIndex = 4;
+            this.txtKonfirmKataSandi.UseSystemPasswordChar = true;
             // 
             // txtKataSandi
             // 
             this.txtKataSandi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKataSandi.Location = new System.Drawing.Point(190, 107);
+            this.txtKataSandi.Location = new System.Drawing.Point(190, 201);
             this.txtKataSandi.Name = "txtKataSandi";
             this.txtKataSandi.Size = new System.Drawing.Size(261, 27);
-            this.txtKataSandi.TabIndex = 1;
+            this.txtKataSandi.TabIndex = 3;
+            this.txtKataSandi.UseSystemPasswordChar = true;
             // 
-            // txtNamaPengguna
+            // txtEmail
             // 
-            this.txtNamaPengguna.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamaPengguna.Location = new System.Drawing.Point(190, 60);
-            this.txtNamaPengguna.Name = "txtNamaPengguna";
-            this.txtNamaPengguna.Size = new System.Drawing.Size(261, 27);
-            this.txtNamaPengguna.TabIndex = 0;
+            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(190, 154);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(261, 27);
+            this.txtEmail.TabIndex = 2;
+            // 
+            // txtNamaBelakang
+            // 
+            this.txtNamaBelakang.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNamaBelakang.Location = new System.Drawing.Point(190, 107);
+            this.txtNamaBelakang.Name = "txtNamaBelakang";
+            this.txtNamaBelakang.Size = new System.Drawing.Size(261, 27);
+            this.txtNamaBelakang.TabIndex = 1;
+            // 
+            // txtNamaDepan
+            // 
+            this.txtNamaDepan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNamaDepan.Location = new System.Drawing.Point(190, 60);
+            this.txtNamaDepan.Name = "txtNamaDepan";
+            this.txtNamaDepan.Size = new System.Drawing.Size(261, 27);
+            this.txtNamaDepan.TabIndex = 0;
             // 
             // pctLogo
             // 
@@ -377,6 +381,17 @@
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctLogo.TabIndex = 3;
             this.pctLogo.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(68, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 32);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "DAFTAR";
             // 
             // Daftar
             // 
@@ -404,22 +419,23 @@
 
         private System.Windows.Forms.Label copyRight;
         private System.Windows.Forms.Panel panelMasuk;
-        private System.Windows.Forms.TextBox txtKataSandi;
-        private System.Windows.Forms.TextBox txtNamaPengguna;
+        private System.Windows.Forms.TextBox txtNamaBelakang;
+        private System.Windows.Forms.TextBox txtNamaDepan;
         private System.Windows.Forms.PictureBox pctLogo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtKataSandi;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.ComboBox cbJK;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox txtKonfirmKataSandi;
+        private System.Windows.Forms.ComboBox cbBulan;
+        private System.Windows.Forms.ComboBox cbTanggal;
+        private System.Windows.Forms.ComboBox cbTahun;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
     }
 }

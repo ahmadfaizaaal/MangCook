@@ -13,9 +13,9 @@ namespace MangCook
 {
     public partial class Beranda : Form
     {
-        Image search = Resources.search3;
-        Image makanan = Resources.btnMakanan;
-        Image minuman = Resources.btnMinuman;
+        Image search = Resources.searchFix;
+        Image makanan = Resources.btnMakanan_FixRed;
+        Image minuman = Resources.btnMinuman_FixRed;
         Image beranda = Resources.btnBeranda2;
         Image profil = Resources.btnProfil2;
         Image favorit = Resources.btnFavorit2;
@@ -36,9 +36,9 @@ namespace MangCook
         {
             PictureBox button = (PictureBox)sender;
             if (button.Name == "btnMakanan") {
-                btnMakanan.Image = Resources.btnMakananWhite;
+                btnMakanan.Image = Resources.btnMakanan_FixWhite;
             } else if (button.Name == "btnMinuman") {
-                btnMinuman.Image = Resources.btnMinumanWhite;
+                btnMinuman.Image = Resources.btnMinuman_FixWhite;
             }
         }
 

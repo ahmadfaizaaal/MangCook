@@ -187,9 +187,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.MistyRose;
+            this.textBox1.BackColor = System.Drawing.Color.Moccasin;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.LightCoral;
+            this.textBox1.ForeColor = System.Drawing.Color.Firebrick;
             this.textBox1.Location = new System.Drawing.Point(303, 15);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -233,8 +233,8 @@
             // btnMinuman
             // 
             this.btnMinuman.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinuman.Image = global::MangCook.Properties.Resources.btnMinuman;
-            this.btnMinuman.Location = new System.Drawing.Point(13, 77);
+            this.btnMinuman.Image = global::MangCook.Properties.Resources.btnMinuman_FixRed;
+            this.btnMinuman.Location = new System.Drawing.Point(14, 135);
             this.btnMinuman.Name = "btnMinuman";
             this.btnMinuman.Size = new System.Drawing.Size(156, 79);
             this.btnMinuman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,8 +246,8 @@
             // btnMakanan
             // 
             this.btnMakanan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMakanan.Image = global::MangCook.Properties.Resources.btnMakanan;
-            this.btnMakanan.Location = new System.Drawing.Point(13, 11);
+            this.btnMakanan.Image = global::MangCook.Properties.Resources.btnMakanan_FixRed;
+            this.btnMakanan.Location = new System.Drawing.Point(14, 44);
             this.btnMakanan.Name = "btnMakanan";
             this.btnMakanan.Size = new System.Drawing.Size(156, 79);
             this.btnMakanan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -259,7 +259,7 @@
             // panel4
             // 
             this.panel4.AutoScroll = true;
-            this.panel4.BackColor = System.Drawing.Color.IndianRed;
+            this.panel4.BackColor = System.Drawing.Color.Cornsilk;
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.btnSearch);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -268,7 +268,7 @@
             this.panel4.Size = new System.Drawing.Size(614, 439);
             this.panel4.TabIndex = 5;
             // 
-            // Form2
+            // Beranda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -280,7 +280,7 @@
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form2";
+            this.Name = "Beranda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook";
             this.panel2.ResumeLayout(false);

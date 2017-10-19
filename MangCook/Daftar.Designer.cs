@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daftar));
             this.copyRight = new System.Windows.Forms.Label();
             this.panelMasuk = new System.Windows.Forms.Panel();
+            this.btnDaftar = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,11 +49,12 @@
             this.txtNamaDepan = new System.Windows.Forms.TextBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.PictureBox();
-            this.btnDaftar = new System.Windows.Forms.PictureBox();
+            this.ImgLine = new System.Windows.Forms.PictureBox();
             this.panelMasuk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDaftar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDaftar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgLine)).BeginInit();
             this.SuspendLayout();
             // 
             // copyRight
@@ -72,6 +74,7 @@
             // 
             this.panelMasuk.BackColor = System.Drawing.Color.Transparent;
             this.panelMasuk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelMasuk.Controls.Add(this.ImgLine);
             this.panelMasuk.Controls.Add(this.btnDaftar);
             this.panelMasuk.Controls.Add(this.dateTimePicker1);
             this.panelMasuk.Controls.Add(this.label8);
@@ -88,10 +91,23 @@
             this.panelMasuk.Controls.Add(this.txtEmail);
             this.panelMasuk.Controls.Add(this.txtNamaBelakang);
             this.panelMasuk.Controls.Add(this.txtNamaDepan);
-            this.panelMasuk.Location = new System.Drawing.Point(235, 61);
+            this.panelMasuk.Location = new System.Drawing.Point(235, 57);
             this.panelMasuk.Name = "panelMasuk";
-            this.panelMasuk.Size = new System.Drawing.Size(481, 443);
+            this.panelMasuk.Size = new System.Drawing.Size(481, 448);
             this.panelMasuk.TabIndex = 4;
+            // 
+            // btnDaftar
+            // 
+            this.btnDaftar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDaftar.Image = global::MangCook.Properties.Resources.btnDaftar;
+            this.btnDaftar.Location = new System.Drawing.Point(190, 388);
+            this.btnDaftar.Name = "btnDaftar";
+            this.btnDaftar.Size = new System.Drawing.Size(114, 35);
+            this.btnDaftar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDaftar.TabIndex = 18;
+            this.btnDaftar.TabStop = false;
+            this.btnDaftar.MouseEnter += new System.EventHandler(this.btnDaftar_MouseEnter);
+            this.btnDaftar.MouseLeave += new System.EventHandler(this.btnDaftar_MouseLeave);
             // 
             // dateTimePicker1
             // 
@@ -99,7 +115,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(190, 338);
+            this.dateTimePicker1.Location = new System.Drawing.Point(190, 344);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(169, 24);
@@ -110,7 +126,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(22, 12);
+            this.label8.Location = new System.Drawing.Point(22, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(114, 32);
             this.label8.TabIndex = 16;
@@ -121,7 +137,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(77, 344);
+            this.label7.Location = new System.Drawing.Point(77, 350);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 16);
             this.label7.TabIndex = 15;
@@ -132,7 +148,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(78, 296);
+            this.label6.Location = new System.Drawing.Point(78, 302);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 16);
             this.label6.TabIndex = 14;
@@ -157,7 +173,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(25, 254);
+            this.label5.Location = new System.Drawing.Point(25, 260);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(150, 16);
             this.label5.TabIndex = 9;
@@ -168,7 +184,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(96, 208);
+            this.label4.Location = new System.Drawing.Point(96, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 16);
             this.label4.TabIndex = 8;
@@ -179,7 +195,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(131, 161);
+            this.label3.Location = new System.Drawing.Point(131, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 7;
@@ -190,7 +206,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(60, 114);
+            this.label2.Location = new System.Drawing.Point(60, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 16);
             this.label2.TabIndex = 6;
@@ -201,7 +217,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(80, 67);
+            this.label1.Location = new System.Drawing.Point(80, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 16);
             this.label1.TabIndex = 5;
@@ -210,7 +226,7 @@
             // txtKonfirmKataSandi
             // 
             this.txtKonfirmKataSandi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKonfirmKataSandi.Location = new System.Drawing.Point(190, 247);
+            this.txtKonfirmKataSandi.Location = new System.Drawing.Point(190, 253);
             this.txtKonfirmKataSandi.Name = "txtKonfirmKataSandi";
             this.txtKonfirmKataSandi.Size = new System.Drawing.Size(261, 27);
             this.txtKonfirmKataSandi.TabIndex = 4;
@@ -219,7 +235,7 @@
             // txtKataSandi
             // 
             this.txtKataSandi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKataSandi.Location = new System.Drawing.Point(190, 201);
+            this.txtKataSandi.Location = new System.Drawing.Point(190, 207);
             this.txtKataSandi.Name = "txtKataSandi";
             this.txtKataSandi.Size = new System.Drawing.Size(261, 27);
             this.txtKataSandi.TabIndex = 3;
@@ -228,7 +244,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(190, 154);
+            this.txtEmail.Location = new System.Drawing.Point(190, 160);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(261, 27);
             this.txtEmail.TabIndex = 2;
@@ -236,7 +252,7 @@
             // txtNamaBelakang
             // 
             this.txtNamaBelakang.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamaBelakang.Location = new System.Drawing.Point(190, 107);
+            this.txtNamaBelakang.Location = new System.Drawing.Point(190, 113);
             this.txtNamaBelakang.Name = "txtNamaBelakang";
             this.txtNamaBelakang.Size = new System.Drawing.Size(261, 27);
             this.txtNamaBelakang.TabIndex = 1;
@@ -244,7 +260,7 @@
             // txtNamaDepan
             // 
             this.txtNamaDepan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamaDepan.Location = new System.Drawing.Point(190, 60);
+            this.txtNamaDepan.Location = new System.Drawing.Point(190, 66);
             this.txtNamaDepan.Name = "txtNamaDepan";
             this.txtNamaDepan.Size = new System.Drawing.Size(261, 27);
             this.txtNamaDepan.TabIndex = 0;
@@ -271,16 +287,15 @@
             this.btnCancel.TabStop = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnDaftar
+            // ImgLine
             // 
-            this.btnDaftar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDaftar.Image = global::MangCook.Properties.Resources.btnDaftar;
-            this.btnDaftar.Location = new System.Drawing.Point(190, 382);
-            this.btnDaftar.Name = "btnDaftar";
-            this.btnDaftar.Size = new System.Drawing.Size(114, 35);
-            this.btnDaftar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnDaftar.TabIndex = 18;
-            this.btnDaftar.TabStop = false;
+            this.ImgLine.Image = global::MangCook.Properties.Resources.HorizontalLine;
+            this.ImgLine.Location = new System.Drawing.Point(28, 44);
+            this.ImgLine.Name = "ImgLine";
+            this.ImgLine.Size = new System.Drawing.Size(226, 10);
+            this.ImgLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ImgLine.TabIndex = 19;
+            this.ImgLine.TabStop = false;
             // 
             // Daftar
             // 
@@ -300,9 +315,10 @@
             this.Text = "Mang-Cook ~ DAFTAR";
             this.panelMasuk.ResumeLayout(false);
             this.panelMasuk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDaftar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDaftar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgLine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,5 +346,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox btnCancel;
         private System.Windows.Forms.PictureBox btnDaftar;
+        private System.Windows.Forms.PictureBox ImgLine;
     }
 }

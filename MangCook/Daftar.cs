@@ -31,6 +31,16 @@ namespace MangCook
             formMasuk.Show();
             this.Hide();
         }
+
+        private void btnDaftar_MouseEnter(object sender, EventArgs e)
+        {
+            btnDaftar.Image = Resources.btnDaftarWhite;
+        }
+
+        private void btnDaftar_MouseLeave(object sender, EventArgs e)
+        {
+            btnDaftar.Image = daftar;
+        }
     }
 }
 

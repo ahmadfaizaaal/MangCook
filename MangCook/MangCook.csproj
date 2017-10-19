@@ -262,5 +262,8 @@
   <ItemGroup>
     <None Include="Resources\btnDaftarWhite.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HorizontalLine.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

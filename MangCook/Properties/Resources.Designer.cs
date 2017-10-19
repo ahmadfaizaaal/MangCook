@@ -363,6 +363,16 @@ namespace MangCook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HorizontalLine {
+            get {
+                object obj = ResourceManager.GetObject("HorizontalLine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap komentar {
             get {
                 object obj = ResourceManager.GetObject("komentar", resourceCulture);

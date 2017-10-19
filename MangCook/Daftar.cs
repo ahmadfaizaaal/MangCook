@@ -24,6 +24,7 @@ namespace MangCook
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             btnCancel.Image = cancel;
             btnDaftar.Image = daftar;
+            cbJK.SelectedIndex = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

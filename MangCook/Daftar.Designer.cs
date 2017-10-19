@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daftar));
             this.copyRight = new System.Windows.Forms.Label();
             this.panelMasuk = new System.Windows.Forms.Panel();
+            this.ImgLine = new System.Windows.Forms.PictureBox();
             this.btnDaftar = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,12 +50,11 @@
             this.txtNamaDepan = new System.Windows.Forms.TextBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.PictureBox();
-            this.ImgLine = new System.Windows.Forms.PictureBox();
             this.panelMasuk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDaftar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImgLine)).BeginInit();
             this.SuspendLayout();
             // 
             // copyRight
@@ -96,11 +96,21 @@
             this.panelMasuk.Size = new System.Drawing.Size(481, 448);
             this.panelMasuk.TabIndex = 4;
             // 
+            // ImgLine
+            // 
+            this.ImgLine.Image = global::MangCook.Properties.Resources.HorizontalLine;
+            this.ImgLine.Location = new System.Drawing.Point(28, 44);
+            this.ImgLine.Name = "ImgLine";
+            this.ImgLine.Size = new System.Drawing.Size(226, 10);
+            this.ImgLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ImgLine.TabIndex = 19;
+            this.ImgLine.TabStop = false;
+            // 
             // btnDaftar
             // 
             this.btnDaftar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDaftar.Image = global::MangCook.Properties.Resources.btnDaftar;
-            this.btnDaftar.Location = new System.Drawing.Point(190, 388);
+            this.btnDaftar.Location = new System.Drawing.Point(190, 386);
             this.btnDaftar.Name = "btnDaftar";
             this.btnDaftar.Size = new System.Drawing.Size(114, 35);
             this.btnDaftar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,7 +125,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(190, 344);
+            this.dateTimePicker1.Location = new System.Drawing.Point(190, 343);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(169, 24);
@@ -137,7 +147,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(77, 350);
+            this.label7.Location = new System.Drawing.Point(77, 349);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 16);
             this.label7.TabIndex = 15;
@@ -163,7 +173,7 @@
             this.cbJK.Items.AddRange(new object[] {
             "Laki - laki",
             "Perempuan"});
-            this.cbJK.Location = new System.Drawing.Point(190, 293);
+            this.cbJK.Location = new System.Drawing.Point(190, 299);
             this.cbJK.Name = "cbJK";
             this.cbJK.Size = new System.Drawing.Size(169, 25);
             this.cbJK.TabIndex = 10;
@@ -287,16 +297,6 @@
             this.btnCancel.TabStop = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // ImgLine
-            // 
-            this.ImgLine.Image = global::MangCook.Properties.Resources.HorizontalLine;
-            this.ImgLine.Location = new System.Drawing.Point(28, 44);
-            this.ImgLine.Name = "ImgLine";
-            this.ImgLine.Size = new System.Drawing.Size(226, 10);
-            this.ImgLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ImgLine.TabIndex = 19;
-            this.ImgLine.TabStop = false;
-            // 
             // Daftar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,10 +315,10 @@
             this.Text = "Mang-Cook ~ DAFTAR";
             this.panelMasuk.ResumeLayout(false);
             this.panelMasuk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDaftar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ImgLine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

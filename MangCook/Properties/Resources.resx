@@ -217,6 +217,24 @@
   <data name="btnMasuk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnMasuk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnMakananFix" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMakananFix.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMakanan_FixRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMakanan_FixRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMakanan_FixWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMakanan_FixWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMinumanFix" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMinumanFix.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMinuman_FixRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMinuman_FixRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMinuman_FixWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMinuman_FixWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="searchFix" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchFix.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -223,5 +223,23 @@
   <ItemGroup>
     <None Include="Resources\searchFix.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMakananFix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMinumanFix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMakanan_FixRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMakanan_FixWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMinuman_FixRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnMinuman_FixWhite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,7 +16,7 @@ namespace MangCook
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Daftar());
+            Application.Run(new Beranda());
         }
     }
 }

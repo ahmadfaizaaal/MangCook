@@ -233,8 +233,8 @@
             // btnMinuman
             // 
             this.btnMinuman.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinuman.Image = global::MangCook.Properties.Resources.btnMinuman;
-            this.btnMinuman.Location = new System.Drawing.Point(13, 77);
+            this.btnMinuman.Image = global::MangCook.Properties.Resources.btnMinuman_FixRed;
+            this.btnMinuman.Location = new System.Drawing.Point(14, 135);
             this.btnMinuman.Name = "btnMinuman";
             this.btnMinuman.Size = new System.Drawing.Size(156, 79);
             this.btnMinuman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,8 +246,8 @@
             // btnMakanan
             // 
             this.btnMakanan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMakanan.Image = global::MangCook.Properties.Resources.btnMakanan;
-            this.btnMakanan.Location = new System.Drawing.Point(13, 11);
+            this.btnMakanan.Image = global::MangCook.Properties.Resources.btnMakanan_FixRed;
+            this.btnMakanan.Location = new System.Drawing.Point(14, 44);
             this.btnMakanan.Name = "btnMakanan";
             this.btnMakanan.Size = new System.Drawing.Size(156, 79);
             this.btnMakanan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

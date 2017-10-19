@@ -250,5 +250,14 @@
   <ItemGroup>
     <None Include="Resources\btnMinuman_FixWhite.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\komentar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stargold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starkopong.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -153,16 +153,6 @@ namespace MangCook.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnMakananFix {
-            get {
-                object obj = ResourceManager.GetObject("btnMakananFix", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap btnMakananWhite {
             get {
                 object obj = ResourceManager.GetObject("btnMakananWhite", resourceCulture);
@@ -216,16 +206,6 @@ namespace MangCook.Properties {
         internal static System.Drawing.Bitmap btnMinuman_FixWhite {
             get {
                 object obj = ResourceManager.GetObject("btnMinuman_FixWhite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap btnMinumanFix {
-            get {
-                object obj = ResourceManager.GetObject("btnMinumanFix", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

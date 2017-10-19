@@ -224,12 +224,6 @@
     <None Include="Resources\searchFix.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\btnMakananFix.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnMinumanFix.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\btnMakanan_FixRed.png" />
   </ItemGroup>
   <ItemGroup>

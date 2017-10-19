@@ -45,6 +45,8 @@
             this.txtKataSandi = new System.Windows.Forms.TextBox();
             this.txtNamaPengguna = new System.Windows.Forms.TextBox();
             this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelMasuk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +68,8 @@
             // 
             this.panelMasuk.BackColor = System.Drawing.Color.Transparent;
             this.panelMasuk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelMasuk.Controls.Add(this.label7);
+            this.panelMasuk.Controls.Add(this.label6);
             this.panelMasuk.Controls.Add(this.comboBox4);
             this.panelMasuk.Controls.Add(this.comboBox3);
             this.panelMasuk.Controls.Add(this.comboBox2);
@@ -91,8 +95,75 @@
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.ItemHeight = 17;
             this.comboBox4.Items.AddRange(new object[] {
-            "Laki-laki",
-            "Perempuan"});
+            "1967",
+            "1968",
+            "1969",
+            "1970",
+            "1971",
+            "1972",
+            "1973",
+            "1974",
+            "1975",
+            "1976",
+            "1977",
+            "1978",
+            "1979",
+            "1980",
+            "1981",
+            "1982",
+            "1983",
+            "1984",
+            "1985",
+            "1986",
+            "1987",
+            "1988",
+            "1989",
+            "1990",
+            "1991",
+            "1992",
+            "1993",
+            "1994",
+            "1995",
+            "1996",
+            "1997",
+            "1998",
+            "1999",
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035"});
             this.comboBox4.Location = new System.Drawing.Point(342, 336);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(61, 25);
@@ -168,7 +239,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(113, 25);
             this.comboBox1.TabIndex = 10;
-            this.comboBox1.Text = "Jenis Kelamin";
+            this.comboBox1.Text = "Laki-laki";
             // 
             // label5
             // 
@@ -275,6 +346,28 @@
             this.pctLogo.TabIndex = 3;
             this.pctLogo.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(78, 296);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 16);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Jenis Kelamin";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(77, 339);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 16);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Tanggal Lahir";
+            // 
             // Daftar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,5 +409,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }

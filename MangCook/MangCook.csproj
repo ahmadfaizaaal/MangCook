@@ -66,6 +66,12 @@
     <Compile Include="Beranda.Designer.cs">
       <DependentUpon>Beranda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Favorit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Favorit.Designer.cs">
+      <DependentUpon>Favorit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Masuk.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,11 +86,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unggah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unggah.Designer.cs">
+      <DependentUpon>Unggah.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Beranda.resx">
       <DependentUpon>Beranda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Daftar.resx">
       <DependentUpon>Daftar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Favorit.resx">
+      <DependentUpon>Favorit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masuk.resx">
       <DependentUpon>Masuk.cs</DependentUpon>
@@ -102,6 +117,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Unggah.resx">
+      <DependentUpon>Unggah.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

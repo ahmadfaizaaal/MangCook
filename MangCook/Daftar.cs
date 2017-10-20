@@ -55,16 +55,16 @@ namespace MangCook
                     formMasuk.kataSandi = txtKataSandi.Text;
                     jenisKelamin = cbJK.SelectedItem.ToString();
                     tglLahir = date.ToString("dd-MM-yyyy");
-                    if (MessageBox.Show("Pendaftaran akun telah berhasil!", "MangCook", MessageBoxButtons.OK) == DialogResult.OK) {
+                    if (MessageBox.Show("Pendaftaran akun telah berhasil!", "MangCook", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK) {
                         btnCancel_Click(sender, e);
                     }
                 } else {
                     txtKonfirmKataSandi.SelectAll();
                     txtKonfirmKataSandi.Focus();
-                    MessageBox.Show("Kata sandi tidak sesuai!", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Kata sandi tidak sesuai!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } else {
-                MessageBox.Show("Data tidak boleh kosong!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Data tidak boleh kosong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

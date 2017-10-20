@@ -21,6 +21,7 @@ namespace MangCook
         Image profil = Resources.btnProfil2;
         Image favorit = Resources.btnFavorit2;
         Image unggah = Resources.btnUnggah2;
+        public bool MakananClicked, MinumanClicked;
         public Beranda(Masuk parent)
         {
             InitializeComponent();
@@ -46,11 +47,25 @@ namespace MangCook
 
         public void kategoriMouseLeave(object sender, EventArgs e)
         {
+            if (!MakananClicked) {
+                btnMakanan.Image = makanan;
+            }
+            if (!MinumanClicked) {
+                btnMinuman.Image = minuman;
+            }
+        }
+
+        private void kategoriClick(object sender, EventArgs e)
+        {
             PictureBox button = (PictureBox)sender;
             if (button.Name == "btnMakanan") {
-                btnMakanan.Image = makanan;
+                MakananClicked = true; MinumanClicked = false;
+                btnMakanan.Image = Resources.btnMakanan_FixWhite;
+                kategoriMouseEnter(sender, e);
             } else if (button.Name == "btnMinuman") {
-                btnMinuman.Image = minuman;
+                MinumanClicked = true; MakananClicked = false;
+                btnMinuman.Image = Resources.btnMinuman_FixWhite;
+                kategoriMouseEnter(sender, e);
             }
         }
 
@@ -95,11 +110,13 @@ namespace MangCook
 
         private void Beranda_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Apakah anda yakin ingin keluar?", "Keluar", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+            if (MessageBox.Show("Apakah anda yakin ingin keluar?", "MangCook", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK) {
                 formMasuk.Close();
             } else {
                 e.Cancel = true;
             }
         }
+
+        
     }
 }

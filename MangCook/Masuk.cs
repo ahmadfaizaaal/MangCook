@@ -88,10 +88,10 @@ namespace MangCook
                     formBeranda.Show();
                     this.Hide();
                 } else {
-                    MessageBox.Show("Email pengguna atau kata sandi salah!", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Email pengguna atau kata sandi salah!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } else {
-                MessageBox.Show("Isi email pengguna dan kata sandi!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Isi email pengguna dan kata sandi!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

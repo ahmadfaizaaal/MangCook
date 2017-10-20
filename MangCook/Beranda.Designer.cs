@@ -241,6 +241,7 @@
             this.btnMinuman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinuman.TabIndex = 3;
             this.btnMinuman.TabStop = false;
+            this.btnMinuman.Click += new System.EventHandler(this.kategoriClick);
             this.btnMinuman.MouseEnter += new System.EventHandler(this.kategoriMouseEnter);
             this.btnMinuman.MouseLeave += new System.EventHandler(this.kategoriMouseLeave);
             // 
@@ -254,6 +255,7 @@
             this.btnMakanan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMakanan.TabIndex = 2;
             this.btnMakanan.TabStop = false;
+            this.btnMakanan.Click += new System.EventHandler(this.kategoriClick);
             this.btnMakanan.MouseEnter += new System.EventHandler(this.kategoriMouseEnter);
             this.btnMakanan.MouseLeave += new System.EventHandler(this.kategoriMouseLeave);
             // 

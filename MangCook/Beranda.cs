@@ -22,6 +22,10 @@ namespace MangCook
         Image favorit = Resources.btnFavorit2;
         Image unggah = Resources.btnUnggah2;
         public bool MakananClicked, MinumanClicked;
+        //integrasi menu
+        public static Profil formProfil;
+        public static Favorit formFfavorit;
+        public static Unggah formUnggah;
         public Beranda(Masuk parent)
         {
             InitializeComponent();

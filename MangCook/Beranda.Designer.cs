@@ -284,6 +284,7 @@
             this.Name = "Beranda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Beranda_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).EndInit();

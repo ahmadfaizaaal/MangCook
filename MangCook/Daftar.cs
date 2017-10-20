@@ -16,7 +16,7 @@ namespace MangCook
         Masuk formMasuk;
         Image cancel = Resources.cancel;
         Image daftar = Resources.btnDaftar;
-        bool clicked = false;
+        public string namaLengkap, jenisKelamin, tglLahir;
         public Daftar(Masuk parent)
         {
             InitializeComponent();
@@ -41,6 +41,31 @@ namespace MangCook
         private void btnDaftar_MouseLeave(object sender, EventArgs e)
         {
             btnDaftar.Image = daftar;
+        }
+
+        private void btnDaftar_Click(object sender, EventArgs e)
+        {
+            DateTime date = dataTglLahir.Value;
+            if (!String.IsNullOrEmpty(txtNamaDepan.Text) && !String.IsNullOrEmpty(txtNamaBelakang.Text) &&
+                !String.IsNullOrEmpty(txtEmail.Text) && !String.IsNullOrEmpty(txtKataSandi.Text) &&
+                !String.IsNullOrEmpty(txtKonfirmKataSandi.Text)) {
+                if (txtKataSandi.Text == txtKonfirmKataSandi.Text) {
+                    namaLengkap = txtNamaDepan.Text + " " + txtNamaBelakang.Text;
+                    formMasuk.emailPengguna = txtEmail.Text;
+                    formMasuk.kataSandi = txtKataSandi.Text;
+                    jenisKelamin = cbJK.SelectedItem.ToString();
+                    tglLahir = date.ToString("dd-MM-yyyy");
+                    if (MessageBox.Show("Pendaftaran akun telah berhasil!", "MangCook", MessageBoxButtons.OK) == DialogResult.OK) {
+                        btnCancel_Click(sender, e);
+                    }
+                } else {
+                    txtKonfirmKataSandi.SelectAll();
+                    txtKonfirmKataSandi.Focus();
+                    MessageBox.Show("Kata sandi tidak sesuai!", "Error", MessageBoxButtons.OK);
+                }
+            } else {
+                MessageBox.Show("Data tidak boleh kosong!", "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }

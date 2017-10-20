@@ -13,6 +13,7 @@ namespace MangCook
 {
     public partial class Beranda : Form
     {
+        Masuk formMasuk;
         Image search = Resources.searchFix;
         Image makanan = Resources.btnMakanan_FixRed;
         Image minuman = Resources.btnMinuman_FixRed;
@@ -20,9 +21,10 @@ namespace MangCook
         Image profil = Resources.btnProfil2;
         Image favorit = Resources.btnFavorit2;
         Image unggah = Resources.btnUnggah2;
-        public Beranda()
+        public Beranda(Masuk parent)
         {
             InitializeComponent();
+            formMasuk = parent;
             btnSearch.Image = search;
             btnMakanan.Image = makanan;
             btnMinuman.Image = minuman;
@@ -91,5 +93,13 @@ namespace MangCook
             }
         }
 
+        private void Beranda_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Apakah anda yakin ingin keluar?", "Keluar", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                formMasuk.Close();
+            } else {
+                e.Cancel = true;
+            }
+        }
     }
 }

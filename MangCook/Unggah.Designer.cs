@@ -49,6 +49,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.copyRight = new System.Windows.Forms.Label();
@@ -60,13 +62,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).BeginInit();
@@ -74,8 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnProfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeranda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -247,9 +247,9 @@
             this.label4.ForeColor = System.Drawing.Color.Maroon;
             this.label4.Location = new System.Drawing.Point(3, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 23);
+            this.label4.Size = new System.Drawing.Size(154, 23);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Bahan Dasar";
+            this.label4.Text = "Alat dan Bahan";
             // 
             // panel3
             // 
@@ -313,6 +313,26 @@
             this.label11.Size = new System.Drawing.Size(209, 39);
             this.label11.TabIndex = 6;
             this.label11.Text = "Sayur Lodeh";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MangCook.Properties.Resources.daun;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(248, 111);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::MangCook.Properties.Resources.daun;
+            this.pictureBox4.Location = new System.Drawing.Point(219, 17);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(194, 80);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 8;
+            this.pictureBox4.TabStop = false;
             // 
             // panel4
             // 
@@ -434,26 +454,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Mang-Cook";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::MangCook.Properties.Resources.daun;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(248, 111);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::MangCook.Properties.Resources.daun;
-            this.pictureBox4.Location = new System.Drawing.Point(219, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(194, 80);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 8;
-            this.pictureBox4.TabStop = false;
-            // 
             // Unggah
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,6 +471,8 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).EndInit();
@@ -478,8 +480,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeranda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }

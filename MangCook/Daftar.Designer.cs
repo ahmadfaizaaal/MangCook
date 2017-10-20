@@ -33,7 +33,7 @@
             this.panelMasuk = new System.Windows.Forms.Panel();
             this.ImgLine = new System.Windows.Forms.PictureBox();
             this.btnDaftar = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataTglLahir = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.panelMasuk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelMasuk.Controls.Add(this.ImgLine);
             this.panelMasuk.Controls.Add(this.btnDaftar);
-            this.panelMasuk.Controls.Add(this.dateTimePicker1);
+            this.panelMasuk.Controls.Add(this.dataTglLahir);
             this.panelMasuk.Controls.Add(this.label8);
             this.panelMasuk.Controls.Add(this.label7);
             this.panelMasuk.Controls.Add(this.label6);
@@ -116,20 +116,21 @@
             this.btnDaftar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDaftar.TabIndex = 18;
             this.btnDaftar.TabStop = false;
+            this.btnDaftar.Click += new System.EventHandler(this.btnDaftar_Click);
             this.btnDaftar.MouseEnter += new System.EventHandler(this.btnDaftar_MouseEnter);
             this.btnDaftar.MouseLeave += new System.EventHandler(this.btnDaftar_MouseLeave);
             // 
-            // dateTimePicker1
+            // dataTglLahir
             // 
-            this.dateTimePicker1.CustomFormat = "dd MMMM yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(190, 343);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(169, 24);
-            this.dateTimePicker1.TabIndex = 17;
+            this.dataTglLahir.CustomFormat = "dd MMMM yyyy";
+            this.dataTglLahir.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataTglLahir.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dataTglLahir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dataTglLahir.Location = new System.Drawing.Point(190, 343);
+            this.dataTglLahir.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.dataTglLahir.Name = "dataTglLahir";
+            this.dataTglLahir.Size = new System.Drawing.Size(169, 24);
+            this.dataTglLahir.TabIndex = 17;
             // 
             // label8
             // 
@@ -343,7 +344,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dataTglLahir;
         private System.Windows.Forms.PictureBox btnCancel;
         private System.Windows.Forms.PictureBox btnDaftar;
         private System.Windows.Forms.PictureBox ImgLine;

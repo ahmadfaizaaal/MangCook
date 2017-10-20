@@ -14,12 +14,16 @@ namespace MangCook
     public partial class Masuk : Form
     {
         public static Daftar formDaftar;
+        public static Beranda formBeranda;
         Image masuk = Resources.btnMasuk;
+        public string emailPengguna = "ahmadfaizaaal@gmail.com";
+        public string kataSandi = "bismillah22";
         public Masuk()
         {
             InitializeComponent();
             formDaftar = new Daftar(this);
-            txtNamaPengguna.Text = "Nama Pengguna";
+            formBeranda = new Beranda(this);
+            txtEmail.Text = "Email Pengguna";
             txtKataSandi.Text = "Kata Sandi";
             btnLogin.Image = masuk;
         }
@@ -27,7 +31,7 @@ namespace MangCook
         private void placeHolderEnter(object sender, EventArgs e)
         {
             TextBox textbox = (TextBox)sender;
-            if (textbox.Text == "Nama Pengguna") {
+            if (textbox.Text == "Email Pengguna") {
                 textbox.Text = "";
             } else if (textbox.Text == "Kata Sandi") {
                 textbox.Text = "";
@@ -38,8 +42,8 @@ namespace MangCook
         private void placeHolderLeave(object sender, EventArgs e)
         {
             TextBox textbox = (TextBox)sender;
-            if (textbox.Name == "txtNamaPengguna" && textbox.Text == "") {
-                textbox.Text = "Nama Pengguna";
+            if (textbox.Name == "txtEmail" && textbox.Text == "") {
+                textbox.Text = "Email Pengguna";
             } else if (textbox.Name == "txtKataSandi" && textbox.Text == "") {
                 textbox.PasswordChar = '\0';
                 textbox.Text = "Kata Sandi";
@@ -70,6 +74,33 @@ namespace MangCook
         {
             formDaftar.Show();
             this.Hide();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            cekAuthority();
+        }
+
+        public void cekAuthority()
+        {
+            if (!String.IsNullOrEmpty(txtEmail.Text) && !String.IsNullOrEmpty(txtKataSandi.Text)) {
+                if (txtEmail.Text == emailPengguna && txtKataSandi.Text == kataSandi) {
+                    formBeranda.Show();
+                    this.Hide();
+                } else {
+                    MessageBox.Show("Email pengguna atau kata sandi salah!", "Error", MessageBoxButtons.OK);
+                }
+            } else {
+                MessageBox.Show("Isi email pengguna dan kata sandi!", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void whenEnterPressed(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cekAuthority();
+            }
         }
     }
 }

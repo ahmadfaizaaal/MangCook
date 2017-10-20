@@ -35,7 +35,7 @@
             this.lblBlmPunyaAkun = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.PictureBox();
             this.txtKataSandi = new System.Windows.Forms.TextBox();
-            this.txtNamaPengguna = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.copyRight = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.panelMasuk.SuspendLayout();
@@ -59,7 +59,7 @@
             this.panelMasuk.Controls.Add(this.lblBlmPunyaAkun);
             this.panelMasuk.Controls.Add(this.btnLogin);
             this.panelMasuk.Controls.Add(this.txtKataSandi);
-            this.panelMasuk.Controls.Add(this.txtNamaPengguna);
+            this.panelMasuk.Controls.Add(this.txtEmail);
             this.panelMasuk.Location = new System.Drawing.Point(248, 251);
             this.panelMasuk.Name = "panelMasuk";
             this.panelMasuk.Size = new System.Drawing.Size(289, 217);
@@ -101,6 +101,7 @@
             this.btnLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnLogin.TabIndex = 2;
             this.btnLogin.TabStop = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             this.btnLogin.MouseEnter += new System.EventHandler(this.loginEnter);
             this.btnLogin.MouseLeave += new System.EventHandler(this.loginLeave);
             // 
@@ -114,19 +115,21 @@
             this.txtKataSandi.Text = "Kata Sandi";
             this.txtKataSandi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtKataSandi.Enter += new System.EventHandler(this.placeHolderEnter);
+            this.txtKataSandi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.whenEnterPressed);
             this.txtKataSandi.Leave += new System.EventHandler(this.placeHolderLeave);
             // 
-            // txtNamaPengguna
+            // txtEmail
             // 
-            this.txtNamaPengguna.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamaPengguna.Location = new System.Drawing.Point(15, 14);
-            this.txtNamaPengguna.Name = "txtNamaPengguna";
-            this.txtNamaPengguna.Size = new System.Drawing.Size(261, 27);
-            this.txtNamaPengguna.TabIndex = 0;
-            this.txtNamaPengguna.Text = "Nama Pengguna";
-            this.txtNamaPengguna.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNamaPengguna.Enter += new System.EventHandler(this.placeHolderEnter);
-            this.txtNamaPengguna.Leave += new System.EventHandler(this.placeHolderLeave);
+            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(15, 14);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(261, 27);
+            this.txtEmail.TabIndex = 0;
+            this.txtEmail.Text = "Email Pengguna";
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmail.Enter += new System.EventHandler(this.placeHolderEnter);
+            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.whenEnterPressed);
+            this.txtEmail.Leave += new System.EventHandler(this.placeHolderLeave);
             // 
             // copyRight
             // 
@@ -168,7 +171,7 @@
 
         private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.Panel panelMasuk;
-        private System.Windows.Forms.TextBox txtNamaPengguna;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtKataSandi;
         private System.Windows.Forms.PictureBox btnLogin;
         private System.Windows.Forms.Label lblSignUp;

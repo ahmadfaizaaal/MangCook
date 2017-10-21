@@ -113,7 +113,7 @@ namespace MangCook
         private void backgroundWorkerMasuk_DoWork(object sender, DoWorkEventArgs e)
         {
             for (int i = 1; i <= 10; i++) {
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 backgroundWorkerMasuk.ReportProgress(i * 10);
             }
         }

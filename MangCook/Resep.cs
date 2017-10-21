@@ -8,5 +8,25 @@ namespace MangCook
 {
     class Resep
     {
+        public static void makanan()
+        {
+
+        }
+        
+        public static void minuman()
+        {
+
+        }
+
+        public static void detail()
+        {
+
+        }
+
+        public static void pencarian()
+        {
+
+        }
+        
     }
 }

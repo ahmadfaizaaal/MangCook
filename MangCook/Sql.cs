@@ -10,8 +10,8 @@ namespace MangCook
     class Sql
     {
         public static MySqlConnection koneksi;
-        public static MySqlDataReader pembaca;
-        public static MySqlCommand query;
+        public static MySqlDataReader reader;
+        public static MySqlCommand command;
 
         public Sql()
         {

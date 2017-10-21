@@ -30,21 +30,8 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.tbResep = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -62,9 +49,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.gambarMasakan = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panelContent.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -76,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnProfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeranda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gambarMasakan)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -100,7 +88,7 @@
             // panelContent
             // 
             this.panelContent.BackColor = System.Drawing.Color.Cornsilk;
-            this.panelContent.Controls.Add(this.panel5);
+            this.panelContent.Controls.Add(this.gambarMasakan);
             this.panelContent.Controls.Add(this.panel3);
             this.panelContent.Controls.Add(this.panel1);
             this.panelContent.Controls.Add(this.panel4);
@@ -110,166 +98,25 @@
             this.panelContent.Size = new System.Drawing.Size(756, 441);
             this.panelContent.TabIndex = 13;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Moccasin;
-            this.panel5.Controls.Add(this.label16);
-            this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.label14);
-            this.panel5.Controls.Add(this.label15);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.richTextBox1);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(12, 136);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(263, 291);
-            this.panel5.TabIndex = 4;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(13, 256);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 17);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "- Santan";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(13, 232);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 17);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "- Santan";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(13, 209);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 17);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "- Santan";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(13, 185);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 17);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "- Santan";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 163);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 17);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "- Santan";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 115);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 17);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "- Santan";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 139);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 17);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "- Santan";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 91);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 17);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "- Santan";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "- Santan";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 17);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "- Santan";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.Moccasin;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(10, 40);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(243, 239);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(3, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 23);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Alat dan Bahan";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Moccasin;
-            this.panel3.Controls.Add(this.richTextBox2);
+            this.panel3.Controls.Add(this.tbResep);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(286, 136);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(460, 291);
             this.panel3.TabIndex = 3;
             // 
-            // richTextBox2
+            // tbResep
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.Moccasin;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Location = new System.Drawing.Point(7, 40);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(448, 239);
-            this.richTextBox2.TabIndex = 9;
-            this.richTextBox2.Text = "";
+            this.tbResep.BackColor = System.Drawing.Color.Moccasin;
+            this.tbResep.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbResep.Location = new System.Drawing.Point(7, 40);
+            this.tbResep.Name = "tbResep";
+            this.tbResep.Size = new System.Drawing.Size(448, 239);
+            this.tbResep.TabIndex = 9;
+            this.tbResep.Text = "";
             // 
             // label5
             // 
@@ -278,9 +125,9 @@
             this.label5.ForeColor = System.Drawing.Color.Maroon;
             this.label5.Location = new System.Drawing.Point(3, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(170, 23);
+            this.label5.Size = new System.Drawing.Size(66, 23);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Cara Pembuatan";
+            this.label5.Text = "Resep";
             // 
             // panel1
             // 
@@ -454,6 +301,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Mang-Cook";
             // 
+            // gambarMasakan
+            // 
+            this.gambarMasakan.Location = new System.Drawing.Point(26, 176);
+            this.gambarMasakan.Name = "gambarMasakan";
+            this.gambarMasakan.Size = new System.Drawing.Size(254, 217);
+            this.gambarMasakan.TabIndex = 4;
+            this.gambarMasakan.TabStop = false;
+            // 
             // Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,8 +320,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelContent.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -480,6 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBeranda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gambarMasakan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -488,21 +342,8 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox tbResep;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label12;
@@ -520,5 +361,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox gambarMasakan;
     }
 }

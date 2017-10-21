@@ -37,6 +37,9 @@
             this.txtKataSandi = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.copyRight = new System.Windows.Forms.Label();
+            this.progressBarMasuk = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorkerMasuk = new System.ComponentModel.BackgroundWorker();
+            this.labelProgress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.panelMasuk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogin)).BeginInit();
@@ -144,20 +147,46 @@
             this.copyRight.Text = "Powered by 4 Negeri 5 Menara";
             this.copyRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // progressBarMasuk
+            // 
+            this.progressBarMasuk.Location = new System.Drawing.Point(248, 267);
+            this.progressBarMasuk.Name = "progressBarMasuk";
+            this.progressBarMasuk.Size = new System.Drawing.Size(289, 23);
+            this.progressBarMasuk.TabIndex = 3;
+            // 
+            // backgroundWorkerMasuk
+            // 
+            this.backgroundWorkerMasuk.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerMasuk_DoWork);
+            this.backgroundWorkerMasuk.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerMasuk_ProgressChanged);
+            this.backgroundWorkerMasuk.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerMasuk_RunWorkerCompleted);
+            // 
+            // labelProgress
+            // 
+            this.labelProgress.AutoSize = true;
+            this.labelProgress.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProgress.ForeColor = System.Drawing.Color.White;
+            this.labelProgress.Location = new System.Drawing.Point(543, 272);
+            this.labelProgress.Name = "labelProgress";
+            this.labelProgress.Size = new System.Drawing.Size(26, 16);
+            this.labelProgress.TabIndex = 4;
+            this.labelProgress.Text = "0%";
+            // 
             // Masuk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.labelProgress);
             this.Controls.Add(this.copyRight);
             this.Controls.Add(this.panelMasuk);
             this.Controls.Add(this.pctLogo);
+            this.Controls.Add(this.progressBarMasuk);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Masuk";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mang-Cook ~ LOGIN";
+            this.Text = "Mang-Cook ~ MASUK";
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.panelMasuk.ResumeLayout(false);
             this.panelMasuk.PerformLayout();
@@ -177,5 +206,8 @@
         private System.Windows.Forms.Label lblSignUp;
         private System.Windows.Forms.Label lblBlmPunyaAkun;
         private System.Windows.Forms.Label copyRight;
+        private System.Windows.Forms.ProgressBar progressBarMasuk;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerMasuk;
+        private System.Windows.Forms.Label labelProgress;
     }
 }

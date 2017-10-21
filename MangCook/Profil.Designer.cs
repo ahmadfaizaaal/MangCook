@@ -124,7 +124,7 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(21, 95);
+            this.panel3.Location = new System.Drawing.Point(24, 95);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(215, 441);
             this.panel3.TabIndex = 14;
@@ -197,9 +197,9 @@
             this.panelContent.Controls.Add(this.label9);
             this.panelContent.Controls.Add(this.label8);
             this.panelContent.Controls.Add(this.label7);
-            this.panelContent.Location = new System.Drawing.Point(243, 96);
+            this.panelContent.Location = new System.Drawing.Point(243, 95);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(525, 441);
+            this.panelContent.Size = new System.Drawing.Size(514, 441);
             this.panelContent.TabIndex = 13;
             // 
             // panel9

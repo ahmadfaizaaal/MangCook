@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MangCook.Properties;
+using System.Threading;
 
 namespace MangCook
 {
@@ -21,6 +22,12 @@ namespace MangCook
         public Masuk()
         {
             InitializeComponent();
+            //untuk progressBar
+            this.Text = "Mang-Cook";
+            backgroundWorkerMasuk.RunWorkerAsync();
+            backgroundWorkerMasuk.WorkerReportsProgress = true;
+            panelMasuk.Visible = false;
+            //
             formDaftar = new Daftar(this);
             formBeranda = new Beranda(this);
             txtEmail.Text = "Email Pengguna";
@@ -100,6 +107,35 @@ namespace MangCook
             if (e.KeyCode == Keys.Enter)
             {
                 cekAuthority();
+            }
+        }
+
+        private void backgroundWorkerMasuk_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 1; i <= 10; i++) {
+                Thread.Sleep(1000);
+                backgroundWorkerMasuk.ReportProgress(i * 10);
+            }
+        }
+
+        private void backgroundWorkerMasuk_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBarMasuk.Value = e.ProgressPercentage;
+            labelProgress.Text = (e.ProgressPercentage.ToString() + "%");
+        }
+
+        private void backgroundWorkerMasuk_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if ((e.Cancelled == true)) {
+                labelProgress.Text = "Canceled!";
+            } else if (!(e.Error == null)) {
+                labelProgress.Text = ("Error: " + e.Error.Message);
+            } else {
+                labelProgress.Text = "Done!";
+                labelProgress.Visible = false;
+                this.Text += " ~ MASUK";
+                panelMasuk.Visible = true;
+                labelProgress.Visible = false;
             }
         }
     }

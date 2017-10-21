@@ -5,10 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MangCook.Properties;
-using System.Threading;
 
 namespace MangCook
 {
@@ -104,8 +104,7 @@ namespace MangCook
 
         private void whenEnterPressed(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
+            if (e.KeyCode == Keys.Enter) {
                 cekAuthority();
             }
         }

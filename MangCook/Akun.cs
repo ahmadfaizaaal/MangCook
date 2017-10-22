@@ -48,32 +48,39 @@ namespace MangCook
             return hasil;
         }
 
-        public string daftar(string namaDepan, string namaBelakang, string email, string katSan, string jeniskel, string tglLahir)
+        public string daftar(string id,string namaDepan, string namaBelakang, string email, string katSan, string jeniskel, string tglLahir)
+        {            
+            koneksi.Open();           
+            queri = "insert into akun (idAkun,namaDepan,namaBelakang,email,password,jeniskelamin,tgllahir) value('" + id + "','" + namaDepan + "','" + namaBelakang + "','" + email + "','" + katSan + "','" + jeniskel + "','" + tglLahir + "')";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            string hasil = "sukses";
+            koneksi.Close();
+            return hasil;                               
+        }        
+        public string cekemail(string email)
         {
             int count = 0;
-            string hasil = "belum ada";
+            string hasil;
             koneksi.Open();
-            queri = "select* from akun where email = '"+email+ "' or pass='" + katSan + "'";
+            queri = "select* from akun where email = '" + email + "'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                count += 1;
+              count += 1;
             }
             if (count == 0)
             {
-                queri = "insert into mangcook () value('"+namaDepan + "','" + namaBelakang + "','" + email + "','" + katSan + "','" + jeniskel + "','" + tglLahir + "')";
-                command = new MySqlCommand(queri, koneksi);
-                reader = command.ExecuteReader();
+                hasil = "belum ada";
             }
             else
             {
                 hasil = "sudah ada";
             }
+            koneksi.Close();
             return hasil;
-            koneksi.Close();                    
-
-        }        
+        }
          
         public void profil()
         {          

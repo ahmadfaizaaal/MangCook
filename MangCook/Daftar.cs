@@ -17,6 +17,7 @@ namespace MangCook
         Image cancel = Resources.cancel;
         Image daftar = Resources.btnDaftar;
         public string namaLengkap, jenisKelamin, tglLahir;
+        Akun akun = new Akun();
         public Daftar(Masuk parent)
         {
             InitializeComponent();
@@ -54,9 +55,21 @@ namespace MangCook
                     formMasuk.kataSandi = txtKataSandi.Text;
                     jenisKelamin = cbJK.SelectedItem.ToString();
                     tglLahir = date.ToString("dd-MM-yyyy");
-                    if (MessageBox.Show("Pendaftaran akun telah berhasil!", "MangCook", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK) {
-                        btnCancel_Click(sender, e);
+
+                    
+                    if (akun.cekemail(txtEmail.Text)=="belum ada")
+                    {
+                        akun.daftar("", txtNamaDepan.Text, txtNamaBelakang.Text, txtEmail.Text, txtKataSandi.Text, jenisKelamin, tglLahir);
+                        if (MessageBox.Show("Pendaftaran akun telah berhasil!", "MangCook", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                        {
+                            btnCancel_Click(sender, e);
+                        }
                     }
+                    else
+                    {
+                        MessageBox.Show("Email telah terdaftar!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                   
                 } else {
                     txtKonfirmKataSandi.SelectAll();
                     txtKonfirmKataSandi.Focus();

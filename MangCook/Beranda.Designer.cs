@@ -46,6 +46,14 @@
             this.btnMinuman = new System.Windows.Forms.PictureBox();
             this.btnMakanan = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFavorit)).BeginInit();
@@ -58,6 +66,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinuman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMakanan)).BeginInit();
             this.panel4.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -87,6 +100,7 @@
             this.btnUnggah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnUnggah.TabIndex = 11;
             this.btnUnggah.TabStop = false;
+            this.btnUnggah.Click += new System.EventHandler(this.btnUnggah_Click);
             this.btnUnggah.MouseLeave += new System.EventHandler(this.zoomMouseLeave);
             this.btnUnggah.MouseHover += new System.EventHandler(this.zoomMouseHover);
             // 
@@ -100,6 +114,7 @@
             this.btnFavorit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnFavorit.TabIndex = 10;
             this.btnFavorit.TabStop = false;
+            this.btnFavorit.Click += new System.EventHandler(this.btnFavorit_Click);
             this.btnFavorit.MouseLeave += new System.EventHandler(this.zoomMouseLeave);
             this.btnFavorit.MouseHover += new System.EventHandler(this.zoomMouseHover);
             // 
@@ -113,6 +128,7 @@
             this.btnProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnProfil.TabIndex = 9;
             this.btnProfil.TabStop = false;
+            this.btnProfil.Click += new System.EventHandler(this.btnProfil_Click);
             this.btnProfil.MouseLeave += new System.EventHandler(this.zoomMouseLeave);
             this.btnProfil.MouseHover += new System.EventHandler(this.zoomMouseHover);
             // 
@@ -126,6 +142,7 @@
             this.btnBeranda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBeranda.TabIndex = 8;
             this.btnBeranda.TabStop = false;
+            this.btnBeranda.Click += new System.EventHandler(this.btnBeranda_Click);
             this.btnBeranda.MouseLeave += new System.EventHandler(this.zoomMouseLeave);
             this.btnBeranda.MouseHover += new System.EventHandler(this.zoomMouseHover);
             // 
@@ -263,6 +280,7 @@
             // 
             this.panel4.AutoScroll = true;
             this.panel4.BackColor = System.Drawing.Color.Cornsilk;
+            this.panel4.Controls.Add(this.flowLayoutPanel1);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.btnSearch);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -270,6 +288,90 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(614, 439);
             this.panel4.TabIndex = 5;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.panel7);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(73, 70);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(495, 366);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Moccasin;
+            this.panel7.Controls.Add(this.pictureBox13);
+            this.panel7.Controls.Add(this.label17);
+            this.panel7.Controls.Add(this.pictureBox14);
+            this.panel7.Controls.Add(this.label18);
+            this.panel7.Controls.Add(this.label19);
+            this.panel7.Controls.Add(this.pictureBox5);
+            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(232, 76);
+            this.panel7.TabIndex = 17;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::MangCook.Properties.Resources.komentar;
+            this.pictureBox13.Location = new System.Drawing.Point(86, 53);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 23;
+            this.pictureBox13.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(125, 53);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(13, 13);
+            this.label17.TabIndex = 25;
+            this.label17.Text = "8";
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = global::MangCook.Properties.Resources.starkopong;
+            this.pictureBox14.Location = new System.Drawing.Point(107, 51);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 24;
+            this.pictureBox14.TabStop = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(82, 27);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(78, 12);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "Ala Gusna Ikhsan";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(79, 8);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(80, 16);
+            this.label19.TabIndex = 22;
+            this.label19.Text = "Sayur Sop";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::MangCook.Properties.Resources.mang_cook;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(82, 73);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 15;
+            this.pictureBox5.TabStop = false;
             // 
             // Beranda
             // 
@@ -287,6 +389,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Beranda_FormClosing);
+            this.Load += new System.EventHandler(this.Beranda_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).EndInit();
@@ -302,6 +405,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMakanan)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,5 +434,13 @@
         private System.Windows.Forms.Label copyRight;
         private System.Windows.Forms.PictureBox btnMinuman;
         private System.Windows.Forms.PictureBox btnMakanan;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

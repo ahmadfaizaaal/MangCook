@@ -112,6 +112,40 @@ namespace MangCook
             }
         }
 
+        private void Beranda_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Akun akun = new Akun();
+                flowLayoutPanel1.Controls.Add(akun.contentFlow());                
+
+            }
+        }
+
+        private void btnBeranda_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void btnProfil_Click(object sender, EventArgs e)
+        {
+            Profil prof = new Profil();
+            this.Hide();
+            prof.Show();
+        }
+
+        private void btnFavorit_Click(object sender, EventArgs e)
+        {
+            Favorit favo = new Favorit();
+            this.Hide();
+            favo.Show();
+        }
+
+        private void btnUnggah_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Beranda_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Apakah anda yakin ingin keluar?", "MangCook", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK) {

@@ -92,7 +92,7 @@ namespace MangCook
         {
             if (!String.IsNullOrEmpty(txtEmail.Text) && !String.IsNullOrEmpty(txtKataSandi.Text)) {
                 Akun akun = new Akun();
-                akun.login(txtEmail.Text, txtKataSandi.Text);
+                
                 if (akun.login(txtEmail.Text, txtKataSandi.Text)=="sukses") {
                     formBeranda.Show();
                     this.Hide();
@@ -114,7 +114,7 @@ namespace MangCook
         private void backgroundWorkerMasuk_DoWork(object sender, DoWorkEventArgs e)
         {
             for (int i = 1; i <= 10; i++) {
-                Thread.Sleep(250);
+                Thread.Sleep(200);
                 backgroundWorkerMasuk.ReportProgress(i * 10);
             }
         }

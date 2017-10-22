@@ -124,7 +124,7 @@
             this.panel3.Controls.Add(this.label21);
             this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.richTextBox2);
+            //this.panel3.Controls.Add(this.richTextBox2);
             this.panel3.Controls.Add(this.tbResep);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(286, 136);

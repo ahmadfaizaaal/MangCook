@@ -14,7 +14,7 @@ namespace MangCook
     class Akun:Sql
     {              
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri;
-        Resep res = new Resep();        
+                
         public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
         {
             this.namaDepan = namaDepan;
@@ -97,7 +97,7 @@ namespace MangCook
             
             for (int i = 0; i <10; i++)
             {
-                a.Controls.Add(contentFlow());
+                a.Controls.Add(contentFlow("a", "Jangan Sop", "Ala Gusna", "10"));
             }
         }
        
@@ -110,7 +110,7 @@ namespace MangCook
         {
             for (int i = 0; i < 10; i++)
             {
-                b.Controls.Add(contentFlow());
+                b.Controls.Add(contentFlow("a","Jangan Asem","Ala Gusna","15"));
             }
         }
 
@@ -127,18 +127,19 @@ namespace MangCook
             reader = command.ExecuteReader();
             koneksi.Close();
         }
-
-        public Panel contentFlow()
+        
+        public Panel contentFlow(string foto, string judul, string ala, string jumlahfavorit)
         {
+            Resep res = new Resep();
             Panel panFlow = new Panel();            
             panFlow.BackColor = System.Drawing.Color.Moccasin;
             panFlow.Cursor = System.Windows.Forms.Cursors.Hand;
-            panFlow.Controls.Add(res.fotoMakanan("a"));
-            panFlow.Controls.Add(res.judulMakanan("Jangan Lodeh"));
-            panFlow.Controls.Add(res.namaAla("Ala Gusna Ikhsan"));
+            panFlow.Controls.Add(res.fotoMakanan(foto));
+            panFlow.Controls.Add(res.judulMakanan(judul));
+            panFlow.Controls.Add(res.namaAla(ala));
             panFlow.Controls.Add(res.iconKomen());
             panFlow.Controls.Add(res.iconStar());
-            panFlow.Controls.Add(res.jumlahFav("10"));
+            panFlow.Controls.Add(res.jumlahFav(jumlahfavorit));
             panFlow.Size = new System.Drawing.Size(232, 76);
             return panFlow;
         }       

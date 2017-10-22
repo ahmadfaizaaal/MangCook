@@ -19,8 +19,9 @@ namespace MangCook
 
         private void btnBeranda_Click(object sender, EventArgs e)
         {
-            //Beranda beranda = new Beranda();
+            Beranda beranda = new Beranda();
             this.Hide();
+            beranda.Show();
         }
 
         private void btnProfil_Click(object sender, EventArgs e)

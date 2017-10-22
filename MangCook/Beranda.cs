@@ -26,6 +26,7 @@ namespace MangCook
         public static Profil formProfil;
         public static Favorit formFfavorit;
         public static Unggah formUnggah;
+        Resep res = new Resep();
         public Beranda()
         {
             InitializeComponent();
@@ -68,12 +69,18 @@ namespace MangCook
             if (button.Name == "btnMakanan") {
                 MakananClicked = true; MinumanClicked = false;
                 btnMakanan.Image = Resources.btnMakanan_FixWhite;
-                kategoriMouseEnter(sender, e);                           
+                kategoriMouseEnter(sender, e);
+                res.resetflowpanel(flowLayoutPanel1);
+                res.makanan(flowLayoutPanel1);
+                
 
             } else if (button.Name == "btnMinuman") {
                 MinumanClicked = true; MakananClicked = false;
                 btnMinuman.Image = Resources.btnMinuman_FixWhite;
                 kategoriMouseEnter(sender, e);
+                res.resetflowpanel(flowLayoutPanel1);
+                res.minuman(flowLayoutPanel1);
+
             }
         }
 
@@ -115,11 +122,10 @@ namespace MangCook
                 button.Image = search;
             }
         }
-
+        
         private void Beranda_Load(object sender, EventArgs e)
         {
-            Akun a = new Akun();
-            a.resepProfil(flowLayoutPanel1);
+            res.makanan(flowLayoutPanel1);
         }
 
         private void btnBeranda_Click(object sender, EventArgs e)

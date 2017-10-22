@@ -7,24 +7,36 @@ using System.Windows.Forms;
 
 namespace MangCook
 {
-    class Resep
+    class Resep:Sql
     {
-        public static void makanan()
+        Akun akun = new Akun();
+        public void makanan(FlowLayoutPanel flow)
         {
-
+            
+            for (int i = 0; i < 8; i++)
+            {
+                flow.Controls.Add(akun.contentFlow("a", "Jangan Terong", "Ala Gusna", "8"));
+            }
         }
         
-        public static void minuman()
+        public void minuman(FlowLayoutPanel fl)
+        {            
+            for (int i = 0; i < 10; i++)
+            {
+                fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
+            }           
+        }
+
+        public void resetflowpanel(FlowLayoutPanel reset)
+        {
+            reset.Controls.Clear();
+        }
+        public void detail()
         {
 
         }
 
-        public static void detail()
-        {
-
-        }
-
-        public static void pencarian()
+        public void pencarian()
         {
 
         }

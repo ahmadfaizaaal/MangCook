@@ -29,7 +29,7 @@ namespace MangCook
             panelMasuk.Visible = false;
             //
             formDaftar = new Daftar(this);
-            formBeranda = new Beranda(this);
+            formBeranda = new Beranda();
             txtEmail.Text = "Email Pengguna";
             txtKataSandi.Text = "Kata Sandi";
             btnLogin.Image = masuk;

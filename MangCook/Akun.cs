@@ -15,6 +15,7 @@ namespace MangCook
     {              
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri;
         Resep res = new Resep();
+        Form f = new Form();
         public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
         {
             this.namaDepan = namaDepan;
@@ -48,10 +49,10 @@ namespace MangCook
             return hasil;
         }
 
-        public string daftar(string id,string namaDepan, string namaBelakang, string email, string katSan, string jeniskel, string tglLahir)
+        public string daftar(string namaDepan, string namaBelakang, string email, string katSan, string jeniskel, string tglLahir)
         {            
             koneksi.Open();           
-            queri = "insert into akun (idAkun,namaDepan,namaBelakang,email,password,jeniskelamin,tgllahir) value('" + id + "','" + namaDepan + "','" + namaBelakang + "','" + email + "','" + katSan + "','" + jeniskel + "','" + tglLahir + "')";
+            queri = "insert into akun (idAkun,namaDepan,namaBelakang,jenisKelamin,tanggalLahir,email,password) value('"+"','" + namaDepan + "','" + namaBelakang + "','" + jeniskel + "','" + tglLahir + "','" + email + "','" + katSan + "')";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             string hasil = "sukses";
@@ -82,9 +83,12 @@ namespace MangCook
             return hasil;
         }
          
-        public void profil()
-        {          
-            
+        public void profil(FlowLayoutPanel a)
+        {            
+            for (int i = 0; i <10; i++)
+            {
+                a.Controls.Add(contentFlow());
+            }
         }
         
         public void memfavorit()
@@ -105,16 +109,11 @@ namespace MangCook
         public void unggah()
         {
 
-        }
-        public void suka()
-        {
-
-        }
+        }       
         
         public Panel contentFlow()
         {
-            Panel panFlow = new Panel();
-            
+            Panel panFlow = new Panel();            
             panFlow.BackColor = System.Drawing.Color.Moccasin;
             panFlow.Cursor = System.Windows.Forms.Cursors.Hand;
             panFlow.Controls.Add(res.fotoMakanan("a"));

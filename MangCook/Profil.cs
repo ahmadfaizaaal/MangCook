@@ -44,7 +44,8 @@ namespace MangCook
 
         private void btnBeranda_Click(object sender, EventArgs e)
         {
-            //Beranda beranda = new Beranda();
+            Beranda formBeranda = new Beranda();
+            formBeranda.Show();
             this.Hide();
            
         }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21 Okt 2017 pada 11.40
+-- Generation Time: 22 Okt 2017 pada 10.41
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -30,6 +30,8 @@ CREATE TABLE `akun` (
   `idAkun` varchar(5) NOT NULL,
   `namaDepan` text NOT NULL,
   `namaBelakang` text,
+  `jenisKelamin` text NOT NULL,
+  `tanggalLahir` date NOT NULL,
   `email` text NOT NULL,
   `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -38,8 +40,31 @@ CREATE TABLE `akun` (
 -- Dumping data untuk tabel `akun`
 --
 
-INSERT INTO `akun` (`idAkun`, `namaDepan`, `namaBelakang`, `email`, `password`) VALUES
-('A0001', 'Akhmad Muzanni', 'Safi\'i', 'akhmadmuzannisafii@gmail.com', 'muzanni15');
+INSERT INTO `akun` (`idAkun`, `namaDepan`, `namaBelakang`, `jenisKelamin`, `tanggalLahir`, `email`, `password`) VALUES
+('A0001', 'Akhmad Muzanni', 'Safi\'i', 'Laki-Laki', '1998-06-15', 'akhmadmuzannisafii@gmail.com', 'muzanni15'),
+('A0002', 'Ahmad Faizal', '', '', '0000-00-00', 'ahmadfaizal@gmail.com', 'faizal12'),
+('A0003', 'Gusna Ikhsan', '', '', '0000-00-00', 'gusnaikhsan@gmail.com', 'gusna55');
+
+--
+-- Trigger `akun`
+--
+DELIMITER $$
+CREATE TRIGGER `tr_autoIdAkun` BEFORE INSERT ON `akun` FOR EACH ROW BEGIN
+SET @hitung = CONVERT((RIGHT((SELECT idAkun FROM `akun` ORDER by idAkun DESC LIMIT 1), 4)), UNSIGNED) + 1;
+if (@hitung > 1) THEN
+if (@hitung < 10) THEN 
+SET new.idAkun = concat('A000',@hitung);
+ELSEIF (@hitung < 100) THEN
+SET new.idAkun = concat('A00',@hitung);
+ELSEIF (@hitung < 1000) THEN
+SET new.idAkun = concat('A0',@hitung);
+ELSE
+SET new.idAkun = concat('A',@hitung);
+END IF;
+END IF;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -76,6 +101,27 @@ CREATE TABLE `komentar` (
   `komentar` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Trigger `komentar`
+--
+DELIMITER $$
+CREATE TRIGGER `tr_autoIdKomentar` BEFORE INSERT ON `komentar` FOR EACH ROW BEGIN
+SET @hitung = CONVERT((RIGHT((SELECT idKomentar FROM `komnetar` ORDER by idKomentar DESC LIMIT 1), 4)), UNSIGNED) + 1;
+if (@hitung > 1) THEN
+if (@hitung < 10) THEN 
+SET new.idKomentar = concat('K000',@hitung);
+ELSEIF (@hitung < 100) THEN
+SET new.idKomentar = concat('K00',@hitung);
+ELSEIF (@hitung < 1000) THEN
+SET new.idKomentar = concat('K0',@hitung);
+ELSE
+SET new.idKomentar = concat('K',@hitung);
+END IF;
+END IF;
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -88,8 +134,32 @@ CREATE TABLE `resep` (
   `namaResep` text NOT NULL,
   `gambar` text NOT NULL,
   `tglUpload` date NOT NULL,
-  `favorit` int(11) NOT NULL
+  `favorit` int(11) NOT NULL,
+  `kategori` varchar(20) NOT NULL,
+  `bahan` text NOT NULL,
+  `step` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Trigger `resep`
+--
+DELIMITER $$
+CREATE TRIGGER `tr_autoIdResep` BEFORE INSERT ON `resep` FOR EACH ROW BEGIN
+SET @hitung = CONVERT((RIGHT((SELECT idResep FROM `resep` ORDER by idResep DESC LIMIT 1), 4)), UNSIGNED) + 1;
+if (@hitung > 1) THEN
+if (@hitung < 10) THEN 
+SET new.idResep = concat('R000',@hitung);
+ELSEIF (@hitung < 100) THEN
+SET new.idResep = concat('R00',@hitung);
+ELSEIF (@hitung < 1000) THEN
+SET new.idResep = concat('R0',@hitung);
+ELSE
+SET new.idResep = concat('R',@hitung);
+END IF;
+END IF;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 

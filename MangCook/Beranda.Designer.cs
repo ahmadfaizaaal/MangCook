@@ -387,7 +387,7 @@
             this.MaximizeBox = false;
             this.Name = "Beranda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mang-Cook";
+            this.Text = "Mang-Cook ~ BERANDA";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Beranda_FormClosing);
             this.Load += new System.EventHandler(this.Beranda_Load);
             this.panel2.ResumeLayout(false);

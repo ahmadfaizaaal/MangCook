@@ -59,7 +59,7 @@ namespace MangCook
                     
                     if (akun.cekemail(txtEmail.Text)=="belum ada")
                     {
-                        akun.daftar("", txtNamaDepan.Text, txtNamaBelakang.Text, txtEmail.Text, txtKataSandi.Text, jenisKelamin, tglLahir);
+                        akun.daftar(txtNamaDepan.Text, txtNamaBelakang.Text, txtEmail.Text, txtKataSandi.Text, jenisKelamin, tglLahir);
                         if (MessageBox.Show("Pendaftaran akun telah berhasil!", "MangCook", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                         {
                             btnCancel_Click(sender, e);

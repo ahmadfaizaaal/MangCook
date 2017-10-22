@@ -111,11 +111,15 @@ namespace MangCook
 
         }
 
-        public void unggah()
+        public void unggah(string idResep, string idAkun, string judul, string file, string date, int fav, string kategori, string bahan, string step)
         {
+            koneksi.Open();
+            queri = "insert into resep (idResep,idAkun,namaResep,gambar,tglUpload,favorit,kategori,bahan,step) value('" + idResep + "','" + idAkun + "','" + judul + "','" + file + "','" + date + "','" + fav + "','" + kategori + "','" + bahan + "','" + step + "')";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            koneksi.Close();
+        }
 
-        }       
-        
         public Panel contentFlow()
         {
             Panel panFlow = new Panel();            

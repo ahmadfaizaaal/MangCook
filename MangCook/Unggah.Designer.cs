@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Unggah));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.lbBahan = new System.Windows.Forms.Label();
+            this.tbBahan = new System.Windows.Forms.RichTextBox();
+            this.cbKategori = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnUnggahResep = new System.Windows.Forms.Button();
             this.btnBatalUnggah = new System.Windows.Forms.Button();
             this.tbFileGambar = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
-            this.rbMinuman = new System.Windows.Forms.RadioButton();
-            this.rbMakanan = new System.Windows.Forms.RadioButton();
-            this.tbDeskripsiResep = new System.Windows.Forms.RichTextBox();
+            this.tbStepMasak = new System.Windows.Forms.RichTextBox();
             this.lblGambar = new System.Windows.Forms.Label();
             this.lblDeskripsi = new System.Windows.Forms.Label();
             this.lblKategori = new System.Windows.Forms.Label();
@@ -83,15 +85,16 @@
             // 
             // panelContent
             // 
-            this.panelContent.BackColor = System.Drawing.Color.Transparent;
+            this.panelContent.BackColor = System.Drawing.Color.Cornsilk;
+            this.panelContent.Controls.Add(this.lbBahan);
+            this.panelContent.Controls.Add(this.tbBahan);
+            this.panelContent.Controls.Add(this.cbKategori);
             this.panelContent.Controls.Add(this.label4);
             this.panelContent.Controls.Add(this.btnUnggahResep);
             this.panelContent.Controls.Add(this.btnBatalUnggah);
             this.panelContent.Controls.Add(this.tbFileGambar);
             this.panelContent.Controls.Add(this.btnBrowse);
-            this.panelContent.Controls.Add(this.rbMinuman);
-            this.panelContent.Controls.Add(this.rbMakanan);
-            this.panelContent.Controls.Add(this.tbDeskripsiResep);
+            this.panelContent.Controls.Add(this.tbStepMasak);
             this.panelContent.Controls.Add(this.lblGambar);
             this.panelContent.Controls.Add(this.lblDeskripsi);
             this.panelContent.Controls.Add(this.lblKategori);
@@ -103,12 +106,50 @@
             this.panelContent.Size = new System.Drawing.Size(756, 441);
             this.panelContent.TabIndex = 13;
             // 
+            // lbBahan
+            // 
+            this.lbBahan.AutoSize = true;
+            this.lbBahan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBahan.ForeColor = System.Drawing.Color.Maroon;
+            this.lbBahan.Location = new System.Drawing.Point(99, 79);
+            this.lbBahan.Name = "lbBahan";
+            this.lbBahan.Size = new System.Drawing.Size(131, 19);
+            this.lbBahan.TabIndex = 17;
+            this.lbBahan.Text = "Alat dan Bahan";
+            // 
+            // tbBahan
+            // 
+            this.tbBahan.BackColor = System.Drawing.Color.Moccasin;
+            this.tbBahan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBahan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBahan.Location = new System.Drawing.Point(294, 77);
+            this.tbBahan.Name = "tbBahan";
+            this.tbBahan.Size = new System.Drawing.Size(368, 119);
+            this.tbBahan.TabIndex = 16;
+            this.tbBahan.Text = "";
+            // 
+            // cbKategori
+            // 
+            this.cbKategori.BackColor = System.Drawing.Color.Moccasin;
+            this.cbKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKategori.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbKategori.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKategori.ForeColor = System.Drawing.Color.Black;
+            this.cbKategori.FormattingEnabled = true;
+            this.cbKategori.Items.AddRange(new object[] {
+            "Makanan",
+            "Minuman"});
+            this.cbKategori.Location = new System.Drawing.Point(294, 43);
+            this.cbKategori.Name = "cbKategori";
+            this.cbKategori.Size = new System.Drawing.Size(167, 28);
+            this.cbKategori.TabIndex = 15;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(296, 370);
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
+            this.label4.Location = new System.Drawing.Point(296, 374);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 16);
             this.label4.TabIndex = 14;
@@ -128,6 +169,7 @@
             this.btnUnggahResep.TabIndex = 13;
             this.btnUnggahResep.Text = "Unggah";
             this.btnUnggahResep.UseVisualStyleBackColor = false;
+            this.btnUnggahResep.Click += new System.EventHandler(this.btnUnggahResep_Click);
             // 
             // btnBatalUnggah
             // 
@@ -142,9 +184,12 @@
             this.btnBatalUnggah.TabIndex = 12;
             this.btnBatalUnggah.Text = "Batal";
             this.btnBatalUnggah.UseVisualStyleBackColor = false;
+            this.btnBatalUnggah.Click += new System.EventHandler(this.btnBatalUnggah_Click);
             // 
             // tbFileGambar
             // 
+            this.tbFileGambar.BackColor = System.Drawing.Color.Moccasin;
+            this.tbFileGambar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFileGambar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFileGambar.Location = new System.Drawing.Point(294, 341);
             this.tbFileGambar.Name = "tbFileGambar";
@@ -153,10 +198,11 @@
             // 
             // btnBrowse
             // 
-            this.btnBrowse.BackColor = System.Drawing.Color.Silver;
+            this.btnBrowse.BackColor = System.Drawing.Color.LightGray;
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBrowse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.ForeColor = System.Drawing.Color.Black;
             this.btnBrowse.Location = new System.Drawing.Point(565, 339);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(97, 29);
@@ -165,89 +211,67 @@
             this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
-            // rbMinuman
+            // tbStepMasak
             // 
-            this.rbMinuman.AutoSize = true;
-            this.rbMinuman.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMinuman.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbMinuman.Location = new System.Drawing.Point(434, 54);
-            this.rbMinuman.Name = "rbMinuman";
-            this.rbMinuman.Size = new System.Drawing.Size(102, 25);
-            this.rbMinuman.TabIndex = 9;
-            this.rbMinuman.TabStop = true;
-            this.rbMinuman.Text = "Minuman";
-            this.rbMinuman.UseVisualStyleBackColor = true;
-            // 
-            // rbMakanan
-            // 
-            this.rbMakanan.AutoSize = true;
-            this.rbMakanan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMakanan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbMakanan.Location = new System.Drawing.Point(294, 54);
-            this.rbMakanan.Name = "rbMakanan";
-            this.rbMakanan.Size = new System.Drawing.Size(104, 25);
-            this.rbMakanan.TabIndex = 8;
-            this.rbMakanan.TabStop = true;
-            this.rbMakanan.Text = "Makanan";
-            this.rbMakanan.UseVisualStyleBackColor = true;
-            // 
-            // tbDeskripsiResep
-            // 
-            this.tbDeskripsiResep.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDeskripsiResep.Location = new System.Drawing.Point(294, 96);
-            this.tbDeskripsiResep.Name = "tbDeskripsiResep";
-            this.tbDeskripsiResep.Size = new System.Drawing.Size(368, 230);
-            this.tbDeskripsiResep.TabIndex = 7;
-            this.tbDeskripsiResep.Text = "";
+            this.tbStepMasak.BackColor = System.Drawing.Color.Moccasin;
+            this.tbStepMasak.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbStepMasak.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStepMasak.Location = new System.Drawing.Point(294, 202);
+            this.tbStepMasak.Name = "tbStepMasak";
+            this.tbStepMasak.Size = new System.Drawing.Size(368, 131);
+            this.tbStepMasak.TabIndex = 7;
+            this.tbStepMasak.Text = "";
             // 
             // lblGambar
             // 
             this.lblGambar.AutoSize = true;
-            this.lblGambar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGambar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblGambar.Location = new System.Drawing.Point(103, 343);
+            this.lblGambar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGambar.ForeColor = System.Drawing.Color.Maroon;
+            this.lblGambar.Location = new System.Drawing.Point(83, 344);
             this.lblGambar.Name = "lblGambar";
-            this.lblGambar.Size = new System.Drawing.Size(137, 21);
+            this.lblGambar.Size = new System.Drawing.Size(141, 19);
             this.lblGambar.TabIndex = 6;
             this.lblGambar.Text = "Pilih File Gambar";
             // 
             // lblDeskripsi
             // 
             this.lblDeskripsi.AutoSize = true;
-            this.lblDeskripsi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeskripsi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDeskripsi.Location = new System.Drawing.Point(103, 96);
+            this.lblDeskripsi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeskripsi.ForeColor = System.Drawing.Color.Maroon;
+            this.lblDeskripsi.Location = new System.Drawing.Point(95, 204);
             this.lblDeskripsi.Name = "lblDeskripsi";
-            this.lblDeskripsi.Size = new System.Drawing.Size(125, 21);
+            this.lblDeskripsi.Size = new System.Drawing.Size(129, 19);
             this.lblDeskripsi.TabIndex = 5;
-            this.lblDeskripsi.Text = "Deskripsi Resep";
+            this.lblDeskripsi.Text = "Cara Memasak";
             // 
             // lblKategori
             // 
             this.lblKategori.AutoSize = true;
-            this.lblKategori.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKategori.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblKategori.Location = new System.Drawing.Point(103, 56);
+            this.lblKategori.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKategori.ForeColor = System.Drawing.Color.Maroon;
+            this.lblKategori.Location = new System.Drawing.Point(152, 45);
             this.lblKategori.Name = "lblKategori";
-            this.lblKategori.Size = new System.Drawing.Size(76, 21);
+            this.lblKategori.Size = new System.Drawing.Size(74, 19);
             this.lblKategori.TabIndex = 4;
             this.lblKategori.Text = "Kategori";
             // 
             // lblJudul
             // 
             this.lblJudul.AutoSize = true;
-            this.lblJudul.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJudul.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblJudul.Location = new System.Drawing.Point(103, 10);
+            this.lblJudul.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJudul.ForeColor = System.Drawing.Color.Maroon;
+            this.lblJudul.Location = new System.Drawing.Point(125, 9);
             this.lblJudul.Name = "lblJudul";
-            this.lblJudul.Size = new System.Drawing.Size(103, 21);
+            this.lblJudul.Size = new System.Drawing.Size(102, 19);
             this.lblJudul.TabIndex = 3;
             this.lblJudul.Text = "Judul Resep";
             // 
             // tbJudulResep
             // 
+            this.tbJudulResep.BackColor = System.Drawing.Color.Moccasin;
+            this.tbJudulResep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbJudulResep.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbJudulResep.Location = new System.Drawing.Point(294, 10);
+            this.tbJudulResep.Location = new System.Drawing.Point(294, 8);
             this.tbJudulResep.Name = "tbJudulResep";
             this.tbJudulResep.Size = new System.Drawing.Size(368, 26);
             this.tbJudulResep.TabIndex = 2;
@@ -362,9 +386,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Unggah";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Unggah";
+            this.Text = "Mang-Cook ~ UNGGAH";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelContent.ResumeLayout(false);
@@ -393,9 +418,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbFileGambar;
         private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.RadioButton rbMinuman;
-        private System.Windows.Forms.RadioButton rbMakanan;
-        private System.Windows.Forms.RichTextBox tbDeskripsiResep;
+        private System.Windows.Forms.RichTextBox tbStepMasak;
         private System.Windows.Forms.Label lblGambar;
         private System.Windows.Forms.Label lblDeskripsi;
         private System.Windows.Forms.Label lblKategori;
@@ -403,6 +426,9 @@
         private System.Windows.Forms.TextBox tbJudulResep;
         private System.Windows.Forms.Button btnUnggahResep;
         private System.Windows.Forms.Button btnBatalUnggah;
+        private System.Windows.Forms.ComboBox cbKategori;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbBahan;
+        private System.Windows.Forms.RichTextBox tbBahan;
     }
 }

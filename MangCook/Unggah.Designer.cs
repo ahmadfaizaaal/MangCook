@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Unggah));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.lbBahan = new System.Windows.Forms.Label();
+            this.tbBahan = new System.Windows.Forms.RichTextBox();
+            this.cbKategori = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnUnggahResep = new System.Windows.Forms.Button();
             this.btnBatalUnggah = new System.Windows.Forms.Button();
             this.tbFileGambar = new System.Windows.Forms.TextBox();
@@ -49,10 +54,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbKategori = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbBahan = new System.Windows.Forms.RichTextBox();
-            this.lbBahan = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).BeginInit();
@@ -104,6 +105,55 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(756, 441);
             this.panelContent.TabIndex = 13;
+            // 
+            // lbBahan
+            // 
+            this.lbBahan.AutoSize = true;
+            this.lbBahan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBahan.ForeColor = System.Drawing.Color.Maroon;
+            this.lbBahan.Location = new System.Drawing.Point(99, 79);
+            this.lbBahan.Name = "lbBahan";
+            this.lbBahan.Size = new System.Drawing.Size(131, 19);
+            this.lbBahan.TabIndex = 17;
+            this.lbBahan.Text = "Alat dan Bahan";
+            // 
+            // tbBahan
+            // 
+            this.tbBahan.BackColor = System.Drawing.Color.Moccasin;
+            this.tbBahan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbBahan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBahan.Location = new System.Drawing.Point(294, 77);
+            this.tbBahan.Name = "tbBahan";
+            this.tbBahan.Size = new System.Drawing.Size(368, 119);
+            this.tbBahan.TabIndex = 16;
+            this.tbBahan.Text = "";
+            // 
+            // cbKategori
+            // 
+            this.cbKategori.BackColor = System.Drawing.Color.Moccasin;
+            this.cbKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKategori.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbKategori.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKategori.ForeColor = System.Drawing.Color.Black;
+            this.cbKategori.FormattingEnabled = true;
+            this.cbKategori.Items.AddRange(new object[] {
+            "Makanan",
+            "Minuman"});
+            this.cbKategori.Location = new System.Drawing.Point(294, 43);
+            this.cbKategori.Name = "cbKategori";
+            this.cbKategori.Size = new System.Drawing.Size(167, 28);
+            this.cbKategori.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
+            this.label4.Location = new System.Drawing.Point(296, 374);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "*) File Dalam Bentuk .jpg";
             // 
             // btnUnggahResep
             // 
@@ -329,64 +379,16 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Mang-Cook";
             // 
-            // cbKategori
-            // 
-            this.cbKategori.BackColor = System.Drawing.Color.Moccasin;
-            this.cbKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKategori.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbKategori.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKategori.ForeColor = System.Drawing.Color.Black;
-            this.cbKategori.FormattingEnabled = true;
-            this.cbKategori.Items.AddRange(new object[] {
-            "Makanan",
-            "Minuman"});
-            this.cbKategori.Location = new System.Drawing.Point(294, 43);
-            this.cbKategori.Name = "cbKategori";
-            this.cbKategori.Size = new System.Drawing.Size(167, 28);
-            this.cbKategori.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(296, 374);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 16);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "*) File Dalam Bentuk .jpg";
-            // 
-            // tbBahan
-            // 
-            this.tbBahan.BackColor = System.Drawing.Color.Moccasin;
-            this.tbBahan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbBahan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBahan.Location = new System.Drawing.Point(294, 77);
-            this.tbBahan.Name = "tbBahan";
-            this.tbBahan.Size = new System.Drawing.Size(368, 119);
-            this.tbBahan.TabIndex = 16;
-            this.tbBahan.Text = "";
-            // 
-            // lbBahan
-            // 
-            this.lbBahan.AutoSize = true;
-            this.lbBahan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBahan.ForeColor = System.Drawing.Color.Maroon;
-            this.lbBahan.Location = new System.Drawing.Point(99, 79);
-            this.lbBahan.Name = "lbBahan";
-            this.lbBahan.Size = new System.Drawing.Size(131, 19);
-            this.lbBahan.TabIndex = 17;
-            this.lbBahan.Text = "Alat dan Bahan";
-            // 
             // Unggah
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Unggah";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Unggah";
+            this.Text = "Mang-Cook ~ UNGGAH";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelContent.ResumeLayout(false);

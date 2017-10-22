@@ -17,5 +17,29 @@ namespace MangCook
             InitializeComponent();
             panelContent.VerticalScroll.Visible = true;
         }
+
+              
+        private void Profil_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {                
+                Akun akun = new Akun();                            
+                flowLayoutPanel1.Controls.Add(akun.contentFlow());                
+                //panel3.Controls.Add(akun.panelKiri());
+
+            }
+        }
+
+        private void bisaDiklik(object sender, EventArgs e)
+        {
+            Detail det = new Detail();
+            det.Show();
+            this.Hide();
+        }
+
+        private void panelContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

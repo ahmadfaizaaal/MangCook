@@ -15,7 +15,7 @@ namespace MangCook
 
         public Sql()
         {
-            string str = "datasource = localhost; port = 3306; username = root;database =;";
+            string str = "datasource = localhost; port = 3306; username = root;database =mangcook;";
             koneksi = new MySqlConnection(str);
         }
     }

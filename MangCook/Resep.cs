@@ -4,27 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MangCook
 {
     class Resep:Sql
     {
         Akun akun = new Akun();
+        string queri;
         public void makanan(FlowLayoutPanel flow)
         {
-            
-            for (int i = 0; i < 8; i++)
+            koneksi.Open();
+            queri = "select*from akun";
+            command = new MySqlCommand(queri,koneksi);
+            reader = command.ExecuteReader();
+            while(reader.Read())
             {
-                flow.Controls.Add(akun.contentFlow("a", "Jangan Terong", "Ala Gusna", "8"));
+                string ala = reader.GetString("namaDepan");                
+                flow.Controls.Add(akun.contentFlow("a", "Jangan Terong",ala, "8"));
             }
+            koneksi.Close();
         }
         
         public void minuman(FlowLayoutPanel fl)
-        {            
-            for (int i = 0; i < 10; i++)
+        {
+            koneksi.Open();
+            queri = "select*from resep where ketegori = minuman";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while(reader.Read())
             {
                 fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
-            }           
+            }
+            koneksi.Close();
         }
 
         public void resetflowpanel(FlowLayoutPanel reset)
@@ -38,7 +50,11 @@ namespace MangCook
 
         public void pencarian(FlowLayoutPanel flowle,string cari)
         {
-            for (int i = 0; i < 4; i++)
+            koneksi.Open();
+            queri = "select*from resep where namaResep = '" + cari + "' ";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while(reader.Read())
             {
                 flowle.Controls.Add(akun.contentFlow("a", "Jangan Bayem", "Ala Gusna", "6"));
             }

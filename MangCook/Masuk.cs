@@ -91,7 +91,9 @@ namespace MangCook
         public void cekAuthority()
         {
             if (!String.IsNullOrEmpty(txtEmail.Text) && !String.IsNullOrEmpty(txtKataSandi.Text)) {
-                if (txtEmail.Text == emailPengguna && txtKataSandi.Text == kataSandi) {
+                Akun akun = new Akun();
+                akun.login(txtEmail.Text, txtKataSandi.Text);
+                if (akun.login(txtEmail.Text, txtKataSandi.Text)=="sukses") {
                     formBeranda.Show();
                     this.Hide();
                 } else {
@@ -112,7 +114,7 @@ namespace MangCook
         private void backgroundWorkerMasuk_DoWork(object sender, DoWorkEventArgs e)
         {
             for (int i = 1; i <= 10; i++) {
-                Thread.Sleep(500);
+                Thread.Sleep(250);
                 backgroundWorkerMasuk.ReportProgress(i * 10);
             }
         }

@@ -31,20 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profil));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -52,15 +45,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.copyRight = new System.Windows.Forms.Label();
@@ -72,6 +56,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -81,21 +67,13 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelContent.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFavorit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfil)).BeginInit();
@@ -130,15 +108,25 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Cornsilk;
+            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(24, 95);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(215, 441);
             this.panel3.TabIndex = 14;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MangCook.Properties.Resources.mang_cook;
+            this.pictureBox2.Location = new System.Drawing.Point(51, 45);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(120, 109);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
             // 
             // button1
             // 
@@ -154,7 +142,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 219);
+            this.label6.Location = new System.Drawing.Point(29, 219);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(169, 13);
             this.label6.TabIndex = 3;
@@ -164,7 +152,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 186);
+            this.label5.Location = new System.Drawing.Point(61, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 16);
             this.label5.TabIndex = 2;
@@ -173,34 +161,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 158);
+            this.label4.Location = new System.Drawing.Point(44, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "gusna.ikhsan7@gmail.com";
             // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(42, 33);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(130, 119);
-            this.panel4.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MangCook.Properties.Resources.mang_cook;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(120, 109);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
             // panelContent
             // 
             this.panelContent.AutoScroll = true;
+            this.panelContent.BackColor = System.Drawing.Color.Cornsilk;
             this.panelContent.AutoScrollMargin = new System.Drawing.Size(0, 10);
             this.panelContent.BackColor = System.Drawing.Color.Cornsilk;
             this.panelContent.Controls.Add(this.panel1);
@@ -209,86 +179,24 @@
             this.panelContent.Controls.Add(this.panel5);
             this.panelContent.Controls.Add(this.label10);
             this.panelContent.Controls.Add(this.label9);
+            this.panelContent.Controls.Add(this.flowLayoutPanel1);
             this.panelContent.Controls.Add(this.label8);
             this.panelContent.Controls.Add(this.label7);
             this.panelContent.Location = new System.Drawing.Point(243, 95);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(514, 441);
             this.panelContent.TabIndex = 13;
+            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 
-            // panel9
+            // flowLayoutPanel1
             // 
-            this.panel9.BackColor = System.Drawing.Color.Moccasin;
-            this.panel9.Controls.Add(this.pictureBox17);
-            this.panel9.Controls.Add(this.label23);
-            this.panel9.Controls.Add(this.pictureBox18);
-            this.panel9.Controls.Add(this.label24);
-            this.panel9.Controls.Add(this.label25);
-            this.panel9.Controls.Add(this.pictureBox7);
-            this.panel9.Location = new System.Drawing.Point(21, 299);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(232, 76);
-            this.panel9.TabIndex = 18;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = global::MangCook.Properties.Resources.komentar;
-            this.pictureBox17.Location = new System.Drawing.Point(86, 53);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(15, 15);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 23;
-            this.pictureBox17.TabStop = false;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(125, 53);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(13, 13);
-            this.label23.TabIndex = 25;
-            this.label23.Text = "8";
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Image = global::MangCook.Properties.Resources.starkopong;
-            this.pictureBox18.Location = new System.Drawing.Point(107, 51);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox18.TabIndex = 24;
-            this.pictureBox18.TabStop = false;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(82, 27);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(78, 12);
-            this.label24.TabIndex = 21;
-            this.label24.Text = "Ala Gusna Ikhsan";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(79, 8);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(147, 16);
-            this.label25.TabIndex = 22;
-            this.label25.Text = "Arang-arang Ginang";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::MangCook.Properties.Resources.mang_cook;
-            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(82, 73);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 15;
-            this.pictureBox7.TabStop = false;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.panel7);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 98);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(496, 340);
+            this.flowLayoutPanel1.TabIndex = 19;
             // 
             // panel7
             // 
@@ -299,10 +207,12 @@
             this.panel7.Controls.Add(this.label18);
             this.panel7.Controls.Add(this.label19);
             this.panel7.Controls.Add(this.pictureBox5);
-            this.panel7.Location = new System.Drawing.Point(21, 207);
+            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel7.Location = new System.Drawing.Point(3, 3);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(232, 76);
             this.panel7.TabIndex = 16;
+            this.panel7.Click += new System.EventHandler(this.bisaDiklik);
             // 
             // pictureBox13
             // 
@@ -363,100 +273,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 15;
             this.pictureBox5.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Moccasin;
-            this.panel5.Controls.Add(this.pictureBox10);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.pictureBox9);
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Location = new System.Drawing.Point(21, 112);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(232, 76);
-            this.panel5.TabIndex = 9;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::MangCook.Properties.Resources.komentar;
-            this.pictureBox10.Location = new System.Drawing.Point(86, 54);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(15, 15);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 19;
-            this.pictureBox10.TabStop = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(125, 54);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(13, 13);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "8";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::MangCook.Properties.Resources.starkopong;
-            this.pictureBox9.Location = new System.Drawing.Point(107, 52);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 19;
-            this.pictureBox9.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(82, 28);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 12);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Ala Gusna Ikhsan";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(79, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 16);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Sayur Lodeh";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::MangCook.Properties.Resources.mang_cook;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(82, 73);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 15;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(271, 32);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 37);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "15";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(192, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 37);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "10";
             // 
             // label8
             // 
@@ -577,6 +393,25 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Mang-Cook";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(192, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 37);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "10";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(267, 33);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 37);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "10";
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Moccasin;
@@ -661,29 +496,20 @@
             this.Name = "Profil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MangCook ~ PROFIL";
+            this.Load += new System.EventHandler(this.Profil_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFavorit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfil)).EndInit();
@@ -710,39 +536,25 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label copyRight;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label14;

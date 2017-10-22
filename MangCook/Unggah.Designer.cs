@@ -81,7 +81,7 @@
             this.panel2.TabIndex = 4;
             // 
             // panelContent
-            // 
+            //             
             this.panelContent.BackColor = System.Drawing.Color.Transparent;
             this.panelContent.Controls.Add(this.label4);
             this.panelContent.Controls.Add(this.btnUnggahResep);

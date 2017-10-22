@@ -16,5 +16,19 @@ namespace MangCook
         {
             InitializeComponent();
         }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "File Gambar (*.jpg)|*.jpg";
+            openFileDialog1.Title = "Pilih Gambar";
+            openFileDialog1.DefaultExt = "jpg";
+            
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                //menampilkan pada kolom nama gambar
+                tbFileGambar.Text = openFileDialog1.FileName;
+            }
+        }
     }
 }

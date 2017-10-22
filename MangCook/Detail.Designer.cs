@@ -73,7 +73,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gambarMasakan)).BeginInit();
@@ -89,7 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -467,7 +465,6 @@
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.richTextBox2);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.pictureBox6);
             this.panel5.Location = new System.Drawing.Point(17, 440);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(712, 379);
@@ -587,22 +584,12 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::MangCook.Properties.Resources.daun;
-            this.pictureBox5.Location = new System.Drawing.Point(15, 196);
+            this.pictureBox5.Location = new System.Drawing.Point(15, 216);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(248, 111);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 13;
             this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::MangCook.Properties.Resources.daun;
-            this.pictureBox6.Location = new System.Drawing.Point(15, 316);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(242, 63);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 14;
-            this.pictureBox6.TabStop = false;
             // 
             // Detail
             // 
@@ -632,7 +619,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -684,6 +670,5 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

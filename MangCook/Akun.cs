@@ -11,11 +11,12 @@ using System.Data;
 
 namespace MangCook
 {
-    class Akun : Sql
-    {
+    class Akun:Sql
+    {              
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri;
         Resep res = new Resep();
-        public Akun(string namaDepan, string namaBelakang, string email, string katSan, string jeniskel, string tglLahir)
+        Form f = new Form();
+        public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
         {
             this.namaDepan = namaDepan;
             this.namaBelakang = namaBelakang;
@@ -33,14 +34,14 @@ namespace MangCook
             string hasil = "gagal";
             int count = 0;
             koneksi.Open();
-            queri = "select * from akun where email ='" + emailuser + "' and password='" + pass + "'";
-            command = new MySqlCommand(queri, koneksi);
+            queri = "select * from akun where email ='"+emailuser+ "' and password='" + pass + "'";
+            command = new MySqlCommand(queri,koneksi);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
                 count += 1;
             }
-            if (count == 1)
+            if (count==1)
             {
                 hasil = "sukses";
             }
@@ -48,16 +49,16 @@ namespace MangCook
             return hasil;
         }
 
-        public string daftar(string id, string namaDepan, string namaBelakang, string email, string katSan, string jeniskel, string tglLahir)
-        {
-            koneksi.Open();
-            queri = "insert into akun (idAkun,namaDepan,namaBelakang,email,password,jeniskelamin,tgllahir) value('" + id + "','" + namaDepan + "','" + namaBelakang + "','" + email + "','" + katSan + "','" + jeniskel + "','" + tglLahir + "')";
+        public string daftar(string namaDepan, string namaBelakang, string email, string katSan, string jeniskel, string tglLahir)
+        {            
+            koneksi.Open();           
+            queri = "insert into akun (idAkun,namaDepan,namaBelakang,jenisKelamin,tanggalLahir,email,password) value('"+"','" + namaDepan + "','" + namaBelakang + "','" + jeniskel + "','" + tglLahir + "','" + email + "','" + katSan + "')";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             string hasil = "sukses";
             koneksi.Close();
-            return hasil;
-        }
+            return hasil;                               
+        }        
         public string cekemail(string email)
         {
             int count = 0;
@@ -68,7 +69,7 @@ namespace MangCook
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                count += 1;
+              count += 1;
             }
             if (count == 0)
             {
@@ -81,12 +82,15 @@ namespace MangCook
             koneksi.Close();
             return hasil;
         }
-
-        public void profil()
-        {
-
+         
+        public void profil(FlowLayoutPanel a)
+        {            
+            for (int i = 0; i <10; i++)
+            {
+                a.Controls.Add(contentFlow());
+            }
         }
-
+        
         public void memfavorit()
         {
 
@@ -102,23 +106,14 @@ namespace MangCook
 
         }
 
-        public void unggah(string idResep, string idAkun, string judul, string file, string date, int fav, string kategori, string bahan, string step)
-        {
-            koneksi.Open();
-            queri = "insert into resep (idResep,idAkun,namaResep,gambar,tglUpload,favorit,kategori,bahan,step) value('" + idResep + "','" + idAkun + "','" + judul + "','" + file + "','" + date + "','" + fav + "','" + kategori + "','" + bahan + "','" + step + "')";
-            command = new MySqlCommand(queri, koneksi);
-            reader = command.ExecuteReader();
-            koneksi.Close();
-        }
-        public void suka()
+        public void unggah()
         {
 
-        }
-
+        }       
+        
         public Panel contentFlow()
         {
-            Panel panFlow = new Panel();
-
+            Panel panFlow = new Panel();            
             panFlow.BackColor = System.Drawing.Color.Moccasin;
             panFlow.Cursor = System.Windows.Forms.Cursors.Hand;
             panFlow.Controls.Add(res.fotoMakanan("a"));
@@ -129,6 +124,6 @@ namespace MangCook
             panFlow.Controls.Add(res.jumlahFav("10"));
             panFlow.Size = new System.Drawing.Size(232, 76);
             return panFlow;
-        }
+        }       
     }
 }

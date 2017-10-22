@@ -21,24 +21,27 @@ namespace MangCook
         Image profil = Resources.btnProfil2;
         Image favorit = Resources.btnFavorit2;
         Image unggah = Resources.btnUnggah2;
-        public bool MakananClicked, MinumanClicked;
+        public bool MakananClicked = true, MinumanClicked;
         //integrasi menu
         public static Profil formProfil;
         public static Favorit formFfavorit;
         public static Unggah formUnggah;
-        public Beranda(Masuk parent)
+        public Beranda()
         {
             InitializeComponent();
-            formMasuk = parent;
+            //formMasuk = parent;
             btnSearch.Image = search;
-            btnMakanan.Image = makanan;
+            btnMakanan.Image = Resources.btnMakanan_FixWhite;
             btnMinuman.Image = minuman;
             btnBeranda.Image = beranda;
             btnProfil.Image = profil;
             btnFavorit.Image = favorit;
             btnUnggah.Image = unggah;
         }
+        //public Beranda()
+        //{
 
+        //}
         public void kategoriMouseEnter(object sender, EventArgs e)
         {
             PictureBox button = (PictureBox)sender;
@@ -65,7 +68,8 @@ namespace MangCook
             if (button.Name == "btnMakanan") {
                 MakananClicked = true; MinumanClicked = false;
                 btnMakanan.Image = Resources.btnMakanan_FixWhite;
-                kategoriMouseEnter(sender, e);
+                kategoriMouseEnter(sender, e);                           
+
             } else if (button.Name == "btnMinuman") {
                 MinumanClicked = true; MakananClicked = false;
                 btnMinuman.Image = Resources.btnMinuman_FixWhite;
@@ -114,12 +118,8 @@ namespace MangCook
 
         private void Beranda_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                Akun akun = new Akun();
-                flowLayoutPanel1.Controls.Add(akun.contentFlow());                
-
-            }
+            Akun a = new Akun();
+            a.profil(flowLayoutPanel1);
         }
 
         private void btnBeranda_Click(object sender, EventArgs e)
@@ -155,8 +155,6 @@ namespace MangCook
             } else {
                 e.Cancel = true;
             }
-        }
-
-        
+        }              
     }
 }

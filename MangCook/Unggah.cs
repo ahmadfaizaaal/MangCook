@@ -12,22 +12,26 @@ namespace MangCook
 {
     public partial class Unggah : Form
     {
+        public string idResep, idAkun, judul, kategori, alatBahan, stepMasak, file, date;
+        public int fav;
+        Akun akun = new Akun();
         public Unggah()
         {
             InitializeComponent();
+            cbKategori.SelectedIndex = 0;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "File Gambar (*.jpg)|*.jpg";
-            openFileDialog1.Title = "Pilih Gambar";
-            openFileDialog1.DefaultExt = "jpg";
-            
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            OpenFileDialog ambilGambar = new OpenFileDialog();
+            ambilGambar.Filter = "File Gambar (*.jpg)|*.jpg";
+            ambilGambar.Title = "Pilih Gambar";
+            ambilGambar.DefaultExt = "jpg";
+
+            if (ambilGambar.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 //menampilkan pada kolom nama gambar
-                tbFileGambar.Text = openFileDialog1.FileName;
+                tbFileGambar.Text = ambilGambar.SafeFileName;
             }
         }
 
@@ -49,6 +53,26 @@ namespace MangCook
             Favorit favo = new Favorit();
             this.Hide();
             favo.Show();
+        }
+
+        private void btnUnggahResep_Click(object sender, EventArgs e)
+        {
+            //data push
+            idResep = "10019";
+            idAkun = "A0001";
+            judul = tbJudulResep.Text;
+            file = tbFileGambar.Text;
+            date = "2017/10/27";
+            fav = 0;
+            kategori = cbKategori.SelectedItem.ToString();
+            alatBahan = tbBahan.Text;
+            stepMasak = tbStepMasak.Text;
+
+            //panggil method unggah
+            akun.unggah(idResep, idAkun, judul, file, date, fav, kategori, alatBahan, stepMasak);
+
+            this.Hide();
+            
         }
     }
 }

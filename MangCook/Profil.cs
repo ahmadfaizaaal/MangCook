@@ -21,13 +21,19 @@ namespace MangCook
               
         private void Profil_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
-            {                
-                Akun akun = new Akun();                            
-                flowLayoutPanel1.Controls.Add(akun.contentFlow());                
-                //panel3.Controls.Add(akun.panelKiri());
-
-            }
+            Akun akun = new Akun();
+            akun.resepProfil(flowLayoutPanel1);
+            
+        }
+        
+        public void isiData(string post, string fav, string email, string nama, string motivasi)
+        {
+            label9.Text = post;
+            label10.Text = fav;
+            //pictureBox2.Image = 
+            label4.Text = email;
+            label5.Text = nama;
+            label6.Text = motivasi;
         }
 
         private void bisaDiklik(object sender, EventArgs e)
@@ -62,6 +68,18 @@ namespace MangCook
             Unggah unggah = new Unggah();
             this.Hide();
             unggah.Show();
+        }
+
+        private void Profil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Apakah anda yakin ingin keluar?", "MangCook", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

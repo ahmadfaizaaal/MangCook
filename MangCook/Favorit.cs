@@ -46,5 +46,17 @@ namespace MangCook
 
             }
         }
+
+        private void Favorit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Apakah anda yakin ingin keluar?", "MangCook", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

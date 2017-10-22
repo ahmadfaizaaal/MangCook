@@ -83,14 +83,19 @@ namespace MangCook
             return hasil;
         }
          
-        public void profil(FlowLayoutPanel a)
-        {            
+        public void resepProfil(FlowLayoutPanel a)
+        {    
+            
             for (int i = 0; i <10; i++)
             {
                 a.Controls.Add(contentFlow());
             }
         }
-        
+
+        public void dataProfil()
+        {
+
+        }        
         public void memfavorit()
         {
 

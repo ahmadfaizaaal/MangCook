@@ -119,7 +119,7 @@ namespace MangCook
         private void Beranda_Load(object sender, EventArgs e)
         {
             Akun a = new Akun();
-            a.profil(flowLayoutPanel1);
+            a.resepProfil(flowLayoutPanel1);
         }
 
         private void btnBeranda_Click(object sender, EventArgs e)
@@ -150,8 +150,8 @@ namespace MangCook
 
         private void Beranda_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Apakah anda yakin ingin keluar?", "MangCook", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK) {
-                formMasuk.Close();
+            if (MessageBox.Show("Apakah anda yakin ingin keluar?", "MangCook", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                Environment.Exit(0);
             } else {
                 e.Cancel = true;
             }

@@ -300,6 +300,7 @@
             this.Name = "Favorit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MangCook ~ FAVORIT";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Favorit_FormClosing);
             this.Load += new System.EventHandler(this.Favorit_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

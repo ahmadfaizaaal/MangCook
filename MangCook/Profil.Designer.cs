@@ -317,6 +317,7 @@
             this.btnUnggah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnUnggah.TabIndex = 11;
             this.btnUnggah.TabStop = false;
+            this.btnUnggah.Click += new System.EventHandler(this.btnUnggah_Click);
             // 
             // btnFavorit
             // 
@@ -328,6 +329,7 @@
             this.btnFavorit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnFavorit.TabIndex = 10;
             this.btnFavorit.TabStop = false;
+            this.btnFavorit.Click += new System.EventHandler(this.btnFavorit_Click);
             // 
             // btnProfil
             // 
@@ -350,6 +352,7 @@
             this.btnBeranda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBeranda.TabIndex = 8;
             this.btnBeranda.TabStop = false;
+            this.btnBeranda.Click += new System.EventHandler(this.btnBeranda_Click);
             // 
             // label2
             // 

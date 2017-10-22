@@ -143,7 +143,9 @@ namespace MangCook
 
         private void btnUnggah_Click(object sender, EventArgs e)
         {
-
+            Unggah unggah = new Unggah();
+            this.Hide();
+            unggah.Show();
         }
 
         private void Beranda_FormClosing(object sender, FormClosingEventArgs e)

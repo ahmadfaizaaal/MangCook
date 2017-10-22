@@ -41,5 +41,26 @@ namespace MangCook
         {
 
         }
+
+        private void btnBeranda_Click(object sender, EventArgs e)
+        {
+            //Beranda beranda = new Beranda();
+            this.Hide();
+           
+        }
+
+        private void btnFavorit_Click(object sender, EventArgs e)
+        {
+            Favorit favo = new Favorit();
+            this.Hide();
+            favo.Show();
+        }
+
+        private void btnUnggah_Click(object sender, EventArgs e)
+        {
+            Unggah unggah = new Unggah();
+            this.Hide();
+            unggah.Show();
+        }
     }
 }

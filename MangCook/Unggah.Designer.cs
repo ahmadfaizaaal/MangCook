@@ -81,7 +81,7 @@
             this.panel2.TabIndex = 4;
             // 
             // panelContent
-            //             
+            // 
             this.panelContent.BackColor = System.Drawing.Color.Transparent;
             this.panelContent.Controls.Add(this.label4);
             this.panelContent.Controls.Add(this.btnUnggahResep);
@@ -284,6 +284,7 @@
             this.btnFavorit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnFavorit.TabIndex = 10;
             this.btnFavorit.TabStop = false;
+            this.btnFavorit.Click += new System.EventHandler(this.btnFavorit_Click);
             // 
             // btnProfil
             // 
@@ -295,6 +296,7 @@
             this.btnProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnProfil.TabIndex = 9;
             this.btnProfil.TabStop = false;
+            this.btnProfil.Click += new System.EventHandler(this.btnProfil_Click);
             // 
             // btnBeranda
             // 
@@ -306,6 +308,7 @@
             this.btnBeranda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBeranda.TabIndex = 8;
             this.btnBeranda.TabStop = false;
+            this.btnBeranda.Click += new System.EventHandler(this.btnBeranda_Click);
             // 
             // label2
             // 

@@ -30,5 +30,25 @@ namespace MangCook
                 tbFileGambar.Text = openFileDialog1.FileName;
             }
         }
+
+        private void btnBeranda_Click(object sender, EventArgs e)
+        {
+            //Beranda beranda = new Beranda();
+            this.Hide();
+        }
+
+        private void btnProfil_Click(object sender, EventArgs e)
+        {
+            Profil prof = new Profil();
+            this.Hide();
+            prof.Show();
+        }
+
+        private void btnFavorit_Click(object sender, EventArgs e)
+        {
+            Favorit favo = new Favorit();
+            this.Hide();
+            favo.Show();
+        }
     }
 }

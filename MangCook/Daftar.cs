@@ -46,9 +46,8 @@ namespace MangCook
         private void btnDaftar_Click(object sender, EventArgs e)
         {
             DateTime date = dataTglLahir.Value;
-            if (!String.IsNullOrEmpty(txtNamaDepan.Text) && !String.IsNullOrEmpty(txtNamaBelakang.Text) &&
-                !String.IsNullOrEmpty(txtEmail.Text) && !String.IsNullOrEmpty(txtKataSandi.Text) &&
-                !String.IsNullOrEmpty(txtKonfirmKataSandi.Text)) {
+            if (!String.IsNullOrEmpty(txtNamaDepan.Text) && !String.IsNullOrEmpty(txtEmail.Text) && 
+                !String.IsNullOrEmpty(txtKataSandi.Text) && !String.IsNullOrEmpty(txtKonfirmKataSandi.Text)) {
                 if (txtKataSandi.Text == txtKonfirmKataSandi.Text) {
                     namaLengkap = txtNamaDepan.Text + " " + txtNamaBelakang.Text;
                     formMasuk.emailPengguna = txtEmail.Text;

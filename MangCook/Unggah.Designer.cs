@@ -184,6 +184,7 @@
             this.btnBatalUnggah.TabIndex = 12;
             this.btnBatalUnggah.Text = "Batal";
             this.btnBatalUnggah.UseVisualStyleBackColor = false;
+            this.btnBatalUnggah.Click += new System.EventHandler(this.btnBatalUnggah_Click);
             // 
             // tbFileGambar
             // 

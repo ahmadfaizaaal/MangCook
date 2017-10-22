@@ -15,6 +15,14 @@ namespace MangCook
         public string idResep, idAkun, judul, kategori, alatBahan, stepMasak, file, date;
         public int fav;
         Akun akun = new Akun();
+
+        private void btnBatalUnggah_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formBeranda.Show();
+        }
+
+        Beranda formBeranda = new Beranda();
         public Unggah()
         {
             InitializeComponent();
@@ -69,10 +77,17 @@ namespace MangCook
             stepMasak = tbStepMasak.Text;
 
             //panggil method unggah
-            akun.unggah(idResep, idAkun, judul, file, date, fav, kategori, alatBahan, stepMasak);
 
-            this.Hide();
-            
+            if (String.IsNullOrEmpty(tbJudulResep.Text)&& String.IsNullOrEmpty(tbBahan.Text)&& String.IsNullOrEmpty(tbStepMasak.Text)&& String.IsNullOrEmpty(tbFileGambar.Text))
+            {
+                MessageBox.Show("Kolom Tidak Boleh Kosong","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+                akun.unggah(idResep, idAkun, judul, file, date, fav, kategori, alatBahan, stepMasak);
+                this.Hide();
+                formBeranda.Show();
+            }
         }
     }
 }

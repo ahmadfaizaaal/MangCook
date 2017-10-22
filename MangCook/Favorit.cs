@@ -37,14 +37,10 @@ namespace MangCook
             unggah.Show();
         }
 
+        Akun akun = new Akun();
         private void Favorit_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 20; i++)
-            {
-                Akun akun = new Akun();
-                flowLayoutPanel1.Controls.Add(akun.contentFlow());
-
-            }
+            akun.favorit(flowLayoutPanel1);         
         }
 
         private void Favorit_FormClosing(object sender, FormClosingEventArgs e)

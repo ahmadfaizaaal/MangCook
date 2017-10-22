@@ -18,23 +18,12 @@ namespace MangCook
             panelContent.VerticalScroll.Visible = true;
         }
 
-              
+        Akun akun = new Akun();
         private void Profil_Load(object sender, EventArgs e)
-        {
-            Akun akun = new Akun();
+        {                        
+            akun.dataProfil(label9, label10, pictureBox2, label4, label5, label6);
             akun.resepProfil(flowLayoutPanel1);
-            
-        }
-        
-        public void isiData(string post, string fav, string email, string nama, string motivasi)
-        {
-            label9.Text = post;
-            label10.Text = fav;
-            //pictureBox2.Image = 
-            label4.Text = email;
-            label5.Text = nama;
-            label6.Text = motivasi;
-        }
+        }               
 
         private void bisaDiklik(object sender, EventArgs e)
         {

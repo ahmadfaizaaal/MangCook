@@ -14,8 +14,7 @@ namespace MangCook
     class Akun:Sql
     {              
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri;
-        Resep res = new Resep();
-        Form f = new Form();
+        Resep res = new Resep();        
         public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
         {
             this.namaDepan = namaDepan;
@@ -82,7 +81,17 @@ namespace MangCook
             koneksi.Close();
             return hasil;
         }
-         
+
+        public void dataProfil(Label post, Label jumfav, PictureBox pic, Label email, Label nama, Label motiv)
+        {
+            post.Text = "90";
+            jumfav.Text = "80";
+            //pic.Image =
+            email.Text = "daniMbote@gmail.com";
+            nama.Text = "Dani Mendrofa";
+            motiv.Text = "Kuat Ora sambat";
+        }
+
         public void resepProfil(FlowLayoutPanel a)
         {    
             
@@ -91,19 +100,18 @@ namespace MangCook
                 a.Controls.Add(contentFlow());
             }
         }
-
-        public void dataProfil()
-        {
-
-        }        
+       
         public void memfavorit()
         {
 
         }
 
-        public void favorit()
+        public void favorit(FlowLayoutPanel b)
         {
-
+            for (int i = 0; i < 10; i++)
+            {
+                b.Controls.Add(contentFlow());
+            }
         }
 
         public void komentar()

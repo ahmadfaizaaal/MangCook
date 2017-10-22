@@ -130,31 +130,31 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 219);
+            this.label6.Location = new System.Drawing.Point(-2, 224);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 13);
+            this.label6.Size = new System.Drawing.Size(218, 25);
             this.label6.TabIndex = 3;
             this.label6.Text = "Masak adalah seni, mari memasak";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(61, 186);
+            this.label5.Location = new System.Drawing.Point(-2, 191);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 16);
+            this.label5.Size = new System.Drawing.Size(218, 23);
             this.label5.TabIndex = 2;
             this.label5.Text = "Gusna Ikhsan";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 158);
+            this.label4.Location = new System.Drawing.Point(0, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 13);
+            this.label4.Size = new System.Drawing.Size(216, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "gusna.ikhsan7@gmail.com";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelContent
             // 
@@ -414,7 +414,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();

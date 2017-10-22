@@ -296,6 +296,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel2);
             this.Name = "Favorit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Favorit";
             this.Load += new System.EventHandler(this.Favorit_Load);
             this.panel2.ResumeLayout(false);

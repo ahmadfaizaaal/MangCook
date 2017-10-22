@@ -200,6 +200,7 @@
             this.btnSearch.Size = new System.Drawing.Size(24, 24);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.TabStop = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             this.btnSearch.MouseLeave += new System.EventHandler(this.zoomMouseLeave);
             this.btnSearch.MouseHover += new System.EventHandler(this.zoomMouseHover);
             // 

@@ -36,9 +36,12 @@ namespace MangCook
 
         }
 
-        public void pencarian()
+        public void pencarian(FlowLayoutPanel flowle,string cari)
         {
-
+            for (int i = 0; i < 4; i++)
+            {
+                flowle.Controls.Add(akun.contentFlow("a", "Jangan Bayem", "Ala Gusna", "6"));
+            }
         }
         
         //content umum//

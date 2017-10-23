@@ -20,9 +20,9 @@ namespace MangCook
 
         Akun akun = new Akun();
         private void Profil_Load(object sender, EventArgs e)
-        {                        
-            akun.dataProfil(label9, label10, pictureBox2, label4, label5, label6);
-            akun.resepProfil(flowLayoutPanel1);
+        {
+            akun.resepProfil(flowLayoutPanel1, "A0003");
+            akun.dataProfil(label9, label10, pictureBox2, label4, label5, label6,"A0003");            
         }               
 
         private void bisaDiklik(object sender, EventArgs e)

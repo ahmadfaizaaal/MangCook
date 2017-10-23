@@ -41,7 +41,7 @@ namespace MangCook
         Akun akun = new Akun();
         private void Favorit_Load(object sender, EventArgs e)
         {
-            akun.favorit(flowLayoutPanel1);         
+            akun.favorit(flowLayoutPanel1,"A0003");         
         }
 
         private void Favorit_FormClosing(object sender, FormClosingEventArgs e)

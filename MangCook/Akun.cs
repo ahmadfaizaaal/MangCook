@@ -81,23 +81,38 @@ namespace MangCook
             koneksi.Close();
             return hasil;
         }
-
-        public void dataProfil(Label post, Label jumfav, PictureBox pic, Label email, Label nama, Label motiv)
+        int count = 0;
+        public void dataProfil(Label post, Label jumfav, PictureBox pic, Label email, Label nama, Label motiv, string x)
         {
-            post.Text = "90";
-            jumfav.Text = "80";
-            //pic.Image =
-            email.Text = "daniMbote@gmail.com";
-            nama.Text = "Dani Mendrofa";
-            motiv.Text = "Kuat Ora sambat";
+            koneksi.Open();
+            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + x + "'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                post.Text = count.ToString();
+                jumfav.Text = reader.GetString("favorit");
+                //pic.Image =
+                email.Text = reader.GetString("email");
+                nama.Text = reader.GetString("namaDepan");
+                motiv.Text = "Kuat Ora sambat";
+            }
+            
         }
 
-        public void resepProfil(FlowLayoutPanel a)
-        {    
-            
-            for (int i = 0; i <10; i++)
+        public void resepProfil(FlowLayoutPanel a,string y)
+        {
+            koneksi.Open();
+            queri = "SELECT namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '"+y+"'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while(reader.Read())
             {
-                a.Controls.Add(contentFlow("a", "Jangan Sop", "Ala Gusna", "10"));
+                count += 1;
+                string ala = reader.GetString("namaDepan");
+                string judulRes = reader.GetString("namaResep");
+                string favor = reader.GetString("favorit");
+                a.Controls.Add(contentFlow("a", judulRes, ala, favor));
             }
         }
        
@@ -106,11 +121,18 @@ namespace MangCook
 
         }
 
-        public void favorit(FlowLayoutPanel b)
+        public void favorit(FlowLayoutPanel b, string xx)
         {
-            for (int i = 0; i < 10; i++)
+            koneksi.Open();
+            queri = "SELECT * favorit FROM favorit join resep on favorit.idResep = resep.idResep where favorit.idAkun = '"+xx+"'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while(reader.Read())
             {
-                b.Controls.Add(contentFlow("a","Jangan Asem","Ala Gusna","15"));
+                string ala = reader.GetString("namaDepan");
+                string judulRes = reader.GetString("namaResep");
+                string favor = reader.GetString("favorit");
+                b.Controls.Add(contentFlow("a",judulRes,ala,favor));
             }
         }
 

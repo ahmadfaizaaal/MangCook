@@ -158,6 +158,8 @@ namespace MangCook
         {
             res.resetflowpanel(flowLayoutPanel1);
             res.pencarian(flowLayoutPanel1,textBox1.Text);
+            btnMakanan.Image = makanan;
+            btnMinuman.Image = minuman;
         }
 
         private void Beranda_FormClosing(object sender, FormClosingEventArgs e)

@@ -15,13 +15,16 @@ namespace MangCook
         public void makanan(FlowLayoutPanel flow)
         {
             koneksi.Open();
-            queri = "select*from akun";
+
+            queri = "SELECT namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Makanan'";
             command = new MySqlCommand(queri,koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
-                string ala = reader.GetString("namaDepan");                
-                flow.Controls.Add(akun.contentFlow("a", "Jangan Terong",ala, "8"));
+                string ala = reader.GetString("namaDepan");
+                string judulRes = reader.GetString("namaResep");
+                string favor = reader.GetString("favorit");
+                flow.Controls.Add(akun.contentFlow("a", judulRes,ala,favor));
             }
             koneksi.Close();
         }
@@ -29,12 +32,15 @@ namespace MangCook
         public void minuman(FlowLayoutPanel fl)
         {
             koneksi.Open();
-            queri = "select*from resep where ketegori = minuman";
+            queri = "SELECT namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Minuman'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
-                fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
+                string ala = reader.GetString("namaDepan");
+                string judulRes = reader.GetString("namaResep");
+                string favor = reader.GetString("favorit");
+                fl.Controls.Add(akun.contentFlow("a", judulRes, ala, favor));
             }
             koneksi.Close();
         }
@@ -51,12 +57,15 @@ namespace MangCook
         public void pencarian(FlowLayoutPanel flowle,string cari)
         {
             koneksi.Open();
-            queri = "select*from resep where namaResep = '" + cari + "' ";
+            queri = "SELECT namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.namaResep = '" + cari + "' ";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
-                flowle.Controls.Add(akun.contentFlow("a", "Jangan Bayem", "Ala Gusna", "6"));
+                string ala = reader.GetString("namaDepan");
+                string judulRes = reader.GetString("namaResep");
+                string favor = reader.GetString("favorit");
+                flowle.Controls.Add(akun.contentFlow("a", judulRes,ala, favor));
             }
         }
         

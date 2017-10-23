@@ -80,10 +80,11 @@ namespace MangCook
         {
             //data push
             idResep = "10019";
-            idAkun = "A0001";
+            idAkun = Akun.idAkun;
             judul = tbJudulResep.Text;
             file = tbFileGambar.Text;
-            date = "2017/10/27";
+            DateTime thisDay = DateTime.Today;
+            date = thisDay.ToString("yyyy-MM-dd");
             fav = 0;
             kategori = cbKategori.SelectedItem.ToString();
             alatBahan = tbBahan.Text;

@@ -74,12 +74,15 @@ namespace MangCook
         private void btnEditProfil_Click(object sender, EventArgs e)
         {
             EditProfil formEditProfil = new EditProfil();
+            this.Hide();
             formEditProfil.Show();
         }
 
-        private void tentangPengembang(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Akun.tentangPengembang();
+            Masuk mas = new Masuk();
+            this.Hide();
+            mas.Show();
         }
     }
 }

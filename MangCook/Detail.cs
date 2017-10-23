@@ -15,7 +15,8 @@ namespace MangCook
         public Detail()
         {
             InitializeComponent();
-           
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -40,9 +41,19 @@ namespace MangCook
             this.Hide();
         }
 
-        private void tentangPengembang(object sender, EventArgs e)
+        private void Detail_Load(object sender, EventArgs e)
         {
-            Akun.tentangPengembang();
+            Resep res = new Resep();
+            Akun akun = new Akun();
+            //MessageBox.Show(Resep.idResep, "Tes", MessageBoxButtons.OK);
+            res.detailData(label11, label12, pictureBox2, richTextBox1, tbResep);
+            akun.tampilKomentar(richTextBox2);
+            
+        }
+
+        private void btnKirimKomentar_Click(object sender, EventArgs e)
+        {
+            Akun akn = new Akun();            
         }
     }
 }

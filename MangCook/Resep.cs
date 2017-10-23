@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.IO;
 
 namespace MangCook
 {
@@ -16,8 +15,8 @@ namespace MangCook
         private int tempJumlahFavorit;
         public Label jumlahFavorit;
         public PictureBox favoritIcon;
-        public static string namaGambar;
-        string queri;
+        string queri; 
+        public static string idResep;
         public void makanan(FlowLayoutPanel flow)
         {
             koneksi.Open();
@@ -61,27 +60,29 @@ namespace MangCook
         {
             reset.Controls.Clear();
         }
+        public void setIdResep(string resepId)
+        {
+            idResep = resepId;
+        }
 
-        public void detail(Label judul, Label ala, PictureBox gambar, RichTextBox kiri, RichTextBox kanan, RichTextBox komen, string idResep)
+        public void detailData(Label judul, Label ala, PictureBox gambar, RichTextBox kiri, RichTextBox kanan)                 
         {
             koneksi.Open();
-            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where resep.idResep = '"+idResep+"'";
+            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where idResep='"+idResep+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while (reader.Read())
-            {
-                //fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
-                judul.Text = reader.GetString("namaDepan");
-                ala.Text = reader.GetString("namaResep");
+            {               
+                judul.Text = reader.GetString("namaResep");
+                ala.Text = "Ala "+reader.GetString("namaDepan")+" "+reader.GetString("namaBelakang");
                 //gambar.Image = reader.GetString("favorit");
-                kiri.Text = reader.GetString("idResep");
-                kanan.Text = reader.GetString("idAkun");
-                komen.Text = reader.GetString("komenentar");
+                kiri.Text = reader.GetString("bahan");
+                kanan.Text = reader.GetString("step");  
 
                 
             }
             koneksi.Close();
-        }
+        }       
 
         public void pencarian(FlowLayoutPanel flowle,string cari)
         {
@@ -118,7 +119,6 @@ namespace MangCook
 
         public void memfavoritkan()
         {
-            Favorit formFavorit = new Favorit();
             koneksi.Open();
             queri = "UPDATE resep SET favorit = '" + jumlahFavorit.Text + "' WHERE idResep = '" + favoritIcon.Name + "';";
             command = new MySqlCommand(queri, koneksi);
@@ -128,84 +128,22 @@ namespace MangCook
 
             }
             koneksi.Close();
-            addToFavorit();
         }
 
-        public void addToFavorit()
+        public void updateFavorit()
         {
             koneksi.Open();
-            queri = "insert into favorit (idAkun,idResep) value('" + Akun.idAkun + "','" + favoritIcon.Name + "')";
+            queri = "UPDATE resep SET favorit = '" + jumlahFavorit.Text + "' WHERE idResep = '" + favoritIcon.Name + "';";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+
+            }
             koneksi.Close();
         }
 
-
         //content umum//
-        //public void unggahResep(string idResepYangDiunggah, string idAkunYangDiunggah, string judul, string namaFile, string date, int fav, string kategori, string bahan, string step)
-        //{
-        //    //----------------------------------------
-        //    //MySqlConnection con = new MySqlConnection(ConString);
-        //    //MySqlCommand command;
-        //    FileStream fileStream;
-        //    BinaryReader binaryReader;
-
-        //    try {
-        //        if (namaFile.Length > 0) {
-        //            //string namaFile = txtStudentImage.Text;
-        //            byte[] ImageData;
-        //            fileStream = new FileStream(namaFile, FileMode.Open, FileAccess.Read);
-        //            binaryReader = new BinaryReader(fileStream);
-        //            ImageData = binaryReader.ReadBytes((int)fileStream.Length);
-        //            binaryReader.Close();
-        //            fileStream.Close();
-
-
-        //            queri = "INSERT INTO resep (idResep,idAkun,namaResep,gambar,tglUpload,favorit,kategori,bahan,step) " +
-        //                "VALUES (@idResep, @idAkun, @namaResep, @gambar, @tglUpload, @favorit, @kategori, @bahan, @step)";
-        //            command = new MySqlCommand(queri, koneksi);
-
-        //            command.Parameters.Add("@idResep", MySqlDbType.VarChar, 5);
-        //            command.Parameters.Add("@idAkun", MySqlDbType.VarChar, 5);
-        //            command.Parameters.Add("@namaResep", MySqlDbType.Text);
-        //            command.Parameters.Add("@gambar", MySqlDbType.MediumBlob);
-        //            command.Parameters.Add("@tglUpload", MySqlDbType.Date);
-        //            command.Parameters.Add("@favorit", MySqlDbType.Int32, 11);
-        //            command.Parameters.Add("@kategori", MySqlDbType.VarChar, 20);
-        //            command.Parameters.Add("@bahan", MySqlDbType.Text);
-        //            command.Parameters.Add("@step", MySqlDbType.Text);
-
-        //            command.Parameters["@idResep"].Value = idResepYangDiunggah;
-        //            command.Parameters["@idAkun"].Value = idAkunYangDiunggah;
-        //            command.Parameters["@namaResep"].Value = judul;
-        //            command.Parameters["@gambar"].Value = ImageData;
-        //            command.Parameters["@tglUpload"].Value = date;
-        //            command.Parameters["@favorit"].Value = fav;
-        //            command.Parameters["@kategori"].Value = kategori;
-        //            command.Parameters["@bahan"].Value = bahan;
-        //            command.Parameters["@step"].Value = step;
-
-        //            koneksi.Open();
-        //            int RowsAffected = command.ExecuteNonQuery();
-        //            if (RowsAffected > 0) {
-        //                MessageBox.Show("Image saved sucessfully!");
-        //            }
-        //            koneksi.Close();
-        //        } else {
-        //            MessageBox.Show("Incomplete data!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //    catch (Exception ex) {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //    finally {
-        //        if (koneksi.State == System.Data.ConnectionState.Open) {
-        //            koneksi.Close();
-        //        }
-        //    }
-        //    //---------------------------------------------
-        //}
-
         public PictureBox fotoMakanan(string fot)
         {
             PictureBox foto = new PictureBox();

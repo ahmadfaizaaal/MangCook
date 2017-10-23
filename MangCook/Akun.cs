@@ -14,7 +14,8 @@ namespace MangCook
     class Akun:Sql
     {              
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri;
-                
+        private Panel clickedPanel;
+        private bool clicked = false;
         public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
         {
             this.namaDepan = namaDepan;
@@ -103,7 +104,7 @@ namespace MangCook
         public void resepProfil(FlowLayoutPanel a,string y)
         {
             koneksi.Open();
-            queri = "SELECT namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '"+y+"'";
+            queri = "SELECT akun.idAkun,resep.idResep, namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + y+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
@@ -112,13 +113,10 @@ namespace MangCook
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                a.Controls.Add(contentFlow("a", judulRes,"Ala "+ala, favor));
+                string idResep = reader.GetString("idResep");
+                string idAkun = reader.GetString("idAkun");
+                a.Controls.Add(contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
             }
-        }
-       
-        public void memfavorit()
-        {
-
         }
 
         public void favorit(FlowLayoutPanel b, string xx)
@@ -132,7 +130,9 @@ namespace MangCook
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                b.Controls.Add(contentFlow("a",judulRes, "Ala " + ala, favor));
+                string idResep = reader.GetString("idResep");
+                string idAkun = reader.GetString("idAkun");
+                b.Controls.Add(contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
             }
         }
 
@@ -149,21 +149,38 @@ namespace MangCook
             reader = command.ExecuteReader();
             koneksi.Close();
         }
-        
-        public Panel contentFlow(string foto, string judul, string ala, string jumlahfavorit)
+
+        public void klikPanelContent(object sender, EventArgs e)
+        {
+            Panel panel = (Panel)sender;
+            if (!clicked) {
+                panel.BackColor = Color.SandyBrown;
+                clickedPanel = panel;
+                clicked = true;
+            } else {
+                clickedPanel.BackColor = Color.Moccasin;
+                panel.BackColor = Color.SandyBrown;
+                clickedPanel = panel;
+            }
+            MessageBox.Show(panel.Name, "Tes", MessageBoxButtons.OK);
+        }
+
+        public Panel contentFlow(string idAkun, string idResep, string foto, string judul, string ala, string jumlahfavorit)
         {
             Resep res = new Resep();
-            Panel panFlow = new Panel();            
+            Panel panFlow = new Panel();
             panFlow.BackColor = System.Drawing.Color.Moccasin;
             panFlow.Cursor = System.Windows.Forms.Cursors.Hand;
             panFlow.Controls.Add(res.fotoMakanan(foto));
             panFlow.Controls.Add(res.judulMakanan(judul));
             panFlow.Controls.Add(res.namaAla(ala));
             panFlow.Controls.Add(res.iconKomen());
-            panFlow.Controls.Add(res.iconStar());
+            panFlow.Controls.Add(res.iconStar(idResep, idAkun));
             panFlow.Controls.Add(res.jumlahFav(jumlahfavorit));
             panFlow.Size = new System.Drawing.Size(232, 76);
+            panFlow.Name = idResep;
+            panFlow.Click += new System.EventHandler(klikPanelContent);
             return panFlow;
-        }       
+        }
     }
 }

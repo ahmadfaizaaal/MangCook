@@ -11,20 +11,27 @@ namespace MangCook
     class Resep:Sql
     {
         Akun akun = new Akun();
+        private bool clicked = false;
+        private int tempJumlahFavorit;
+        public Label jumlahFavorit;
+        public PictureBox favoritIcon;
         string queri;
         public void makanan(FlowLayoutPanel flow)
         {
             koneksi.Open();
 
-            queri = "SELECT namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Makanan'";
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Makanan'";
             command = new MySqlCommand(queri,koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
+                //flow.Controls.Add(akun.contentFlow("a", "Jangan Terong", "Ala Gusna", "8"));
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                flow.Controls.Add(akun.contentFlow("a", judulRes, "Ala " + ala, favor));
+                string idResep = reader.GetString("idResep");
+                string idAkun = reader.GetString("idAkun");
+                flow.Controls.Add(akun.contentFlow(idAkun, idResep ,"a", judulRes, "Ala " + ala, favor));
             }
             koneksi.Close();
         }
@@ -32,16 +39,19 @@ namespace MangCook
         public void minuman(FlowLayoutPanel fl)
         {
             koneksi.Open();
-            queri = "SELECT namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Minuman'";
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Minuman'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
+                //fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                fl.Controls.Add(akun.contentFlow("a", judulRes, "Ala " + ala, favor));
-            }
+                string idResep = reader.GetString("idResep");
+                string idAkun = reader.GetString("idAkun");
+                fl.Controls.Add(akun.contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
+            }           
             koneksi.Close();
         }
 
@@ -57,7 +67,7 @@ namespace MangCook
         public void pencarian(FlowLayoutPanel flowle,string cari)
         {
             koneksi.Open();
-            queri = "SELECT namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.namaResep = '" + cari + "' ";
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.namaResep = '" + cari + "' ";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
@@ -65,10 +75,54 @@ namespace MangCook
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                flowle.Controls.Add(akun.contentFlow("a", judulRes, "Ala " + ala, favor));
+                string idResep = reader.GetString("idResep");
+                string idAkun = reader.GetString("idAkun");
+                flowle.Controls.Add(akun.contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
             }
         }
-        
+
+        public void klikIconFavorit(object sender, EventArgs e)
+        {
+            if (!clicked) {
+                favoritIcon.Image = global::MangCook.Properties.Resources.stargold;
+                clicked = true;
+                tempJumlahFavorit += 1;
+                jumlahFavorit.Text = tempJumlahFavorit.ToString();
+            } else {
+                favoritIcon.Image = global::MangCook.Properties.Resources.starkopong;
+                clicked = false;
+                tempJumlahFavorit -= 1;
+                jumlahFavorit.Text = tempJumlahFavorit.ToString();
+            }
+            memfavoritkan();
+        }
+
+        public void memfavoritkan()
+        {
+            koneksi.Open();
+            queri = "UPDATE resep SET favorit = '" + jumlahFavorit.Text + "' WHERE idResep = '" + favoritIcon.Name + "';";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+
+            }
+            koneksi.Close();
+        }
+
+        public void updateFavorit()
+        {
+            koneksi.Open();
+            queri = "UPDATE resep SET favorit = '" + jumlahFavorit.Text + "' WHERE idResep = '" + favoritIcon.Name + "';";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+
+            }
+            koneksi.Close();
+        }
+
         //content umum//
         public PictureBox fotoMakanan(string fot)
         {
@@ -82,17 +136,17 @@ namespace MangCook
             foto.TabStop = false;
             return foto;
         }
-        public Label judulMakanan(string judul)
+        public Label judulMakanan(string judulResep)
         {
-            Label jud = new Label();
-            jud.AutoSize = true;
-            jud.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            jud.Location = new System.Drawing.Point(79, 8);
-            jud.Name = "label19";
-            jud.Size = new System.Drawing.Size(80, 16);
-            jud.TabIndex = 22;
-            jud.Text = judul;
-            return jud;
+            Label judul = new Label();
+            judul.AutoSize = true;
+            judul.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            judul.Location = new System.Drawing.Point(79, 8);
+            judul.Name = "label19";
+            judul.Size = new System.Drawing.Size(80, 16);
+            judul.TabIndex = 22;
+            judul.Text = judulResep;
+            return judul;
         }
         public Label namaAla(string nama)
         {
@@ -119,29 +173,32 @@ namespace MangCook
             icon.Name = "iconKomen";
             return icon;
         }
-        public PictureBox iconStar()
+
+        public PictureBox iconStar(string idResep, string idAkun)
         {
-            PictureBox star = new PictureBox();
-            star.Image = global::MangCook.Properties.Resources.starkopong;
-            star.Location = new System.Drawing.Point(107, 51);
-            star.Name = "iconStar";
-            star.Size = new System.Drawing.Size(16, 16);
-            star.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            star.TabIndex = 24;
-            star.TabStop = false;
-            return star;
+            favoritIcon = new PictureBox();
+            favoritIcon.Image = global::MangCook.Properties.Resources.starkopong;
+            favoritIcon.Location = new System.Drawing.Point(107, 51);
+            favoritIcon.Name = idResep;
+            favoritIcon.Size = new System.Drawing.Size(16, 16);
+            favoritIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            favoritIcon.TabIndex = 24;
+            favoritIcon.TabStop = false;
+            favoritIcon.Click += new System.EventHandler(klikIconFavorit);
+            return favoritIcon;
         }
         public Label jumlahFav(string x)
         {
-            Label jum = new Label();
-            jum.AutoSize = true;
-            jum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            jum.Location = new System.Drawing.Point(125, 53);
-            jum.Name = "label17";
-            jum.Size = new System.Drawing.Size(13, 13);
-            jum.TabIndex = 25;
-            jum.Text = x;
-            return jum;
+            jumlahFavorit = new Label();
+            jumlahFavorit.AutoSize = true;
+            jumlahFavorit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            jumlahFavorit.Location = new System.Drawing.Point(125, 53);
+            jumlahFavorit.Name = "label17";
+            jumlahFavorit.Size = new System.Drawing.Size(13, 13);
+            jumlahFavorit.TabIndex = 25;
+            jumlahFavorit.Text = x;
+            tempJumlahFavorit = int.Parse(x);
+            return jumlahFavorit;
         }
         //------------------------------//
               

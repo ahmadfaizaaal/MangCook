@@ -12,8 +12,9 @@ using System.Data;
 namespace MangCook
 {
     class Akun:Sql
-    {              
+    {
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri;
+        public static string passwordMasuk, idAkun, namaDpn, namaBlk, jenisKelamin, tggalLahir, emailPengguna;
                 
         public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
         {
@@ -39,9 +40,16 @@ namespace MangCook
             while (reader.Read())
             {
                 count += 1;
+                idAkun = reader.GetString("idAkun");
             }
             if (count==1)
             {
+                namaDpn = reader.GetString("namaDepan");
+                namaBlk = reader.GetString("namaBelakang");
+                jenisKelamin = reader.GetString("jenisKelamin");
+                tggalLahir = reader.GetString("tanggalLahir");
+                emailPengguna = reader.GetString("email");
+                passwordMasuk = pass;
                 hasil = "sukses";
             }
             koneksi.Close();
@@ -90,6 +98,25 @@ namespace MangCook
             email.Text = "daniMbote@gmail.com";
             nama.Text = "Dani Mendrofa";
             motiv.Text = "Kuat Ora sambat";
+        }
+
+        public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password)
+        {
+            koneksi.Open();
+            queri = "update akun SET namaDepan = '" + namaDepan + "'" +
+                ", namaBelakang ='" + namaBelakang + "'" +
+                ", jenisKelamin ='" + jenisKelamin + "'" +
+                ", tanggalLahir ='" + tanggalLahir + "'" +
+                ", email = '" + email + "' " +
+                "where idAkun = '"+ idAkun + "';";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            string hasil = "sukses";
+            while (reader.Read())
+            {
+                
+            }
+            koneksi.Close();
         }
 
         public void resepProfil(FlowLayoutPanel a)

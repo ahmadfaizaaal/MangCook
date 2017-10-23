@@ -70,5 +70,12 @@ namespace MangCook
                 e.Cancel = true;
             }
         }
+
+        private void btnEditProfil_Click(object sender, EventArgs e)
+        {
+            EditProfil formEditProfil = new EditProfil();
+            this.Hide();
+            formEditProfil.Show();
+        }
     }
 }

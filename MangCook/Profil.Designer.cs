@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditProfil = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -97,8 +98,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Cornsilk;
-            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.btnEditProfil);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
@@ -117,16 +119,19 @@
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
-            // button1
+            // btnEditProfil
             // 
-            this.button1.BackColor = System.Drawing.Color.Firebrick;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(58, 393);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Edit Profil";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEditProfil.BackColor = System.Drawing.Color.Green;
+            this.btnEditProfil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditProfil.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProfil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEditProfil.Location = new System.Drawing.Point(110, 402);
+            this.btnEditProfil.Name = "btnEditProfil";
+            this.btnEditProfil.Size = new System.Drawing.Size(94, 23);
+            this.btnEditProfil.TabIndex = 4;
+            this.btnEditProfil.Text = "Edit Profil";
+            this.btnEditProfil.UseVisualStyleBackColor = false;
+            this.btnEditProfil.Click += new System.EventHandler(this.btnEditProfil_Click);
             // 
             // label6
             // 
@@ -399,6 +404,19 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Mang-Cook";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(11, 402);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Keluar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Profil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,7 +464,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Label copyRight;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditProfil;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -463,5 +481,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -110,6 +110,7 @@
             // 
             // txtKataSandi
             // 
+            this.txtKataSandi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtKataSandi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKataSandi.Location = new System.Drawing.Point(15, 61);
             this.txtKataSandi.Name = "txtKataSandi";

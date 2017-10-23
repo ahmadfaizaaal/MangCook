@@ -77,5 +77,12 @@ namespace MangCook
             this.Hide();
             formEditProfil.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Masuk mas = new Masuk();
+            this.Hide();
+            mas.Show();
+        }
     }
 }

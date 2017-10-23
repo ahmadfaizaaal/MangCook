@@ -15,7 +15,8 @@ namespace MangCook
         private int tempJumlahFavorit;
         public Label jumlahFavorit;
         public PictureBox favoritIcon;
-        string queri;
+        string queri; 
+        public static string idResep;
         public void makanan(FlowLayoutPanel flow)
         {
             koneksi.Open();
@@ -59,26 +60,29 @@ namespace MangCook
         {
             reset.Controls.Clear();
         }
-        public void detail(Label judul, Label ala, PictureBox gambar, RichTextBox kiri, RichTextBox kanan, RichTextBox komen, string idResep)
+        public void setIdResep(string resepId)
+        {
+            idResep = resepId;
+        }
+
+        public void detailData(Label judul, Label ala, PictureBox gambar, RichTextBox kiri, RichTextBox kanan)                 
         {
             koneksi.Open();
-            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where resep.idResep = '"+idResep+"'";
+            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where idResep='"+idResep+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while (reader.Read())
-            {
-                //fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
-                judul.Text = reader.GetString("namaDepan");
-                ala.Text = reader.GetString("namaResep");
+            {               
+                judul.Text = reader.GetString("namaResep");
+                ala.Text = "Ala "+reader.GetString("namaDepan")+" "+reader.GetString("namaBelakang");
                 //gambar.Image = reader.GetString("favorit");
-                kiri.Text = reader.GetString("idResep");
-                kanan.Text = reader.GetString("idAkun");
-                komen.Text = reader.GetString("komenentar");
+                kiri.Text = reader.GetString("bahan");
+                kanan.Text = reader.GetString("step");  
 
                 
             }
             koneksi.Close();
-        }
+        }       
 
         public void pencarian(FlowLayoutPanel flowle,string cari)
         {

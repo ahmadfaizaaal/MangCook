@@ -13,9 +13,9 @@ namespace MangCook
 {
     class Akun:Sql
     {              
-        public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri;
+        public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri, idResep;
         public static string passwordMasuk, idAkun, namaDpn, namaBlk, jenisKelamin, tggalLahir, emailPengguna, bio = "";
-        private Panel clickedPanel;
+        public Panel panelFlow,clickedPanel;
         private bool clicked = false;
         public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
         {
@@ -164,10 +164,18 @@ namespace MangCook
         }
 
 
-        public void komentar()
+        public void tampilKomentar(RichTextBox r)
         {
-
-        }
+            koneksi.Open();
+            queri = "SELECT * FROM komentar where idResep = '"+idResep+"'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                r.AppendText(reader.GetString("komentar"));
+                r.AppendText(Environment.NewLine);
+            }
+        }        
 
         public void unggah(string idResep, string idAkun, string judul, string file, string date, int fav, string kategori, string bahan, string step)
         {
@@ -189,8 +197,8 @@ namespace MangCook
                 clickedPanel.BackColor = Color.Moccasin;
                 panel.BackColor = Color.SandyBrown;
                 clickedPanel = panel;
-            }
-            MessageBox.Show(panel.Name, "Tes", MessageBoxButtons.OK);
+            }           
+            //MessageBox.Show(panel.Name, "Tes", MessageBoxButtons.OK);
         }
 
         public void detailContent(object sender, EventArgs e)
@@ -198,14 +206,16 @@ namespace MangCook
             Panel panel = (Panel)sender;
             Detail formDetailResep = new Detail();
             Resep resep = new Resep();
-            resep.detail(panel.Name);
+            //resep.setIdResep(panel.Name);
+            Resep.idResep = panel.Name;
+            idResep = panel.Name;
             formDetailResep.Show();
         }
 
         public Panel contentFlow(string idAkun, string idResep, string foto, string judul, string ala, string jumlahfavorit)
         {
             Resep resep = new Resep();
-            Panel panelFlow = new Panel();
+            panelFlow = new Panel();
             panelFlow.BackColor = System.Drawing.Color.Moccasin;
             panelFlow.Cursor = System.Windows.Forms.Cursors.Hand;
             panelFlow.Controls.Add(resep.fotoMakanan(foto));

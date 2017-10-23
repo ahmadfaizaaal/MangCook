@@ -24,7 +24,7 @@ namespace MangCook
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                flow.Controls.Add(akun.contentFlow("a", judulRes,ala,favor));
+                flow.Controls.Add(akun.contentFlow("a", judulRes, "Ala " + ala, favor));
             }
             koneksi.Close();
         }
@@ -40,7 +40,7 @@ namespace MangCook
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                fl.Controls.Add(akun.contentFlow("a", judulRes, ala, favor));
+                fl.Controls.Add(akun.contentFlow("a", judulRes, "Ala " + ala, favor));
             }
             koneksi.Close();
         }
@@ -65,7 +65,7 @@ namespace MangCook
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                flowle.Controls.Add(akun.contentFlow("a", judulRes,ala, favor));
+                flowle.Controls.Add(akun.contentFlow("a", judulRes, "Ala " + ala, favor));
             }
         }
         

@@ -112,7 +112,7 @@ namespace MangCook
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                a.Controls.Add(contentFlow("a", judulRes, ala, favor));
+                a.Controls.Add(contentFlow("a", judulRes,"Ala "+ala, favor));
             }
         }
        
@@ -132,7 +132,7 @@ namespace MangCook
                 string ala = reader.GetString("namaDepan");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
-                b.Controls.Add(contentFlow("a",judulRes,ala,favor));
+                b.Controls.Add(contentFlow("a",judulRes, "Ala " + ala, favor));
             }
         }
 

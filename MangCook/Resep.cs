@@ -59,7 +59,8 @@ namespace MangCook
         {
             reset.Controls.Clear();
         }
-        public void detail()
+
+        public void detail(string idResep)
         {
 
         }

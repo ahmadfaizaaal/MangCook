@@ -34,5 +34,10 @@ namespace MangCook
                 e.Cancel = true;
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

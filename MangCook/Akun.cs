@@ -193,22 +193,32 @@ namespace MangCook
             MessageBox.Show(panel.Name, "Tes", MessageBoxButtons.OK);
         }
 
+        public void detailContent(object sender, EventArgs e)
+        {
+            Panel panel = (Panel)sender;
+            Detail formDetailResep = new Detail();
+            Resep resep = new Resep();
+            resep.detail(panel.Name);
+            formDetailResep.Show();
+        }
+
         public Panel contentFlow(string idAkun, string idResep, string foto, string judul, string ala, string jumlahfavorit)
         {
-            Resep res = new Resep();
-            Panel panFlow = new Panel();
-            panFlow.BackColor = System.Drawing.Color.Moccasin;
-            panFlow.Cursor = System.Windows.Forms.Cursors.Hand;
-            panFlow.Controls.Add(res.fotoMakanan(foto));
-            panFlow.Controls.Add(res.judulMakanan(judul));
-            panFlow.Controls.Add(res.namaAla(ala));
-            panFlow.Controls.Add(res.iconKomen());
-            panFlow.Controls.Add(res.iconStar(idResep, idAkun));
-            panFlow.Controls.Add(res.jumlahFav(jumlahfavorit));
-            panFlow.Size = new System.Drawing.Size(232, 76);
-            panFlow.Name = idResep;
-            panFlow.Click += new System.EventHandler(klikPanelContent);
-            return panFlow;
+            Resep resep = new Resep();
+            Panel panelFlow = new Panel();
+            panelFlow.BackColor = System.Drawing.Color.Moccasin;
+            panelFlow.Cursor = System.Windows.Forms.Cursors.Hand;
+            panelFlow.Controls.Add(resep.fotoMakanan(foto));
+            panelFlow.Controls.Add(resep.judulMakanan(judul));
+            panelFlow.Controls.Add(resep.namaAla(ala));
+            panelFlow.Controls.Add(resep.iconKomen());
+            panelFlow.Controls.Add(resep.iconStar(idResep, idAkun));
+            panelFlow.Controls.Add(resep.jumlahFav(jumlahfavorit));
+            panelFlow.Size = new System.Drawing.Size(232, 76);
+            panelFlow.Name = idResep;
+            panelFlow.Click += new System.EventHandler(klikPanelContent);
+            panelFlow.DoubleClick += new System.EventHandler(detailContent);
+            return panelFlow;
         }
     }
 }

@@ -215,11 +215,29 @@ namespace MangCook
         public Panel contentFlow(string idAkun, string idResep, string foto, string judul, string ala, string jumlahfavorit)
         {
             Resep resep = new Resep();
+            Panel panelFlow = new Panel();
+            ToolTip toolTipJudulResep = new ToolTip();
+            string tempJudul;
+            if (judul.Length > 15)
+            {
+                tempJudul = judul.Substring(0, 15) + " ..";
+            }
+            else
+            {
+                tempJudul = judul;
+            }
+            panelFlow.Controls.Add(resep.judulMakanan(tempJudul));
+            //tool tip untuk judul yang dipangkas-----
+            toolTipJudulResep.AutoPopDelay = 5000;
+            toolTipJudulResep.InitialDelay = 1000;
+            toolTipJudulResep.ReshowDelay = 500;
+            toolTipJudulResep.ShowAlways = true;
+            toolTipJudulResep.SetToolTip(panelFlow, judul);
+            //-----------------------------------------
             panelFlow = new Panel();
             panelFlow.BackColor = System.Drawing.Color.Moccasin;
             panelFlow.Cursor = System.Windows.Forms.Cursors.Hand;
             panelFlow.Controls.Add(resep.fotoMakanan(foto));
-            panelFlow.Controls.Add(resep.judulMakanan(judul));
             panelFlow.Controls.Add(resep.namaAla(ala));
             panelFlow.Controls.Add(resep.iconKomen());
             panelFlow.Controls.Add(resep.iconStar(idResep, idAkun));
@@ -229,6 +247,19 @@ namespace MangCook
             panelFlow.Click += new System.EventHandler(klikPanelContent);
             panelFlow.DoubleClick += new System.EventHandler(detailContent);
             return panelFlow;
+        }
+
+        public static void tentangPengembang()
+        {
+            MessageBox.Show("Versi Aplikasi :\t\tMangCook v0.01\n\n" +
+                  "Tim Pengembang :\n" +
+                  "1. Akhmad Muzanni Safi'i\t(155150200111270)\n" +
+                  "2. Ahmad Faizal\t\t(155150200111271)\n" +
+                  "3. Gusna Ikhsan\t\t(155150200111272)\n" +
+                  "4. Aidi Rahman\t\t(155150201111160)\n" +
+                  "5. Moh. Zulfiqar Naufal M\t(155150201111353)\n" +
+                  "6. Riza Anisul Fu'ad\t\t(155150201111355)\n\n" +
+                  "Dosen Pengampu :\nNurizal Dwi Priandani, S.Kom.", "Tentang Kami", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

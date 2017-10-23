@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbJenisKelamin = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tbTglLahir = new System.Windows.Forms.DateTimePicker();
             this.btnSimpan = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbNamaDepanBaru = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbJenisKelamin = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFavorit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfil)).BeginInit();
@@ -204,6 +204,30 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(756, 441);
             this.panelContent.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Maroon;
+            this.label11.Location = new System.Drawing.Point(174, 170);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 18);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Jenis Kelamin";
+            // 
+            // cbJenisKelamin
+            // 
+            this.cbJenisKelamin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbJenisKelamin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbJenisKelamin.FormattingEnabled = true;
+            this.cbJenisKelamin.Items.AddRange(new object[] {
+            "Laki-Laki",
+            "Perempuan"});
+            this.cbJenisKelamin.Location = new System.Drawing.Point(323, 166);
+            this.cbJenisKelamin.Name = "cbJenisKelamin";
+            this.cbJenisKelamin.Size = new System.Drawing.Size(201, 28);
+            this.cbJenisKelamin.TabIndex = 20;
             // 
             // label10
             // 
@@ -403,36 +427,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "cari resep kuliner lezat";
             // 
-            // cbJenisKelamin
-            // 
-            this.cbJenisKelamin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbJenisKelamin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbJenisKelamin.FormattingEnabled = true;
-            this.cbJenisKelamin.Items.AddRange(new object[] {
-            "Laki-Laki",
-            "Perempuan"});
-            this.cbJenisKelamin.Location = new System.Drawing.Point(323, 166);
-            this.cbJenisKelamin.Name = "cbJenisKelamin";
-            this.cbJenisKelamin.Size = new System.Drawing.Size(201, 28);
-            this.cbJenisKelamin.TabIndex = 20;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Maroon;
-            this.label11.Location = new System.Drawing.Point(174, 170);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 18);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Jenis Kelamin";
-            // 
             // EditProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
             this.Name = "EditProfil";
             this.Text = "EditProfil";
             ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).EndInit();

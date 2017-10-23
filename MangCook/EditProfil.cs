@@ -58,6 +58,7 @@ namespace MangCook
             fotoProfil = tbFotoProfil.Text;
             if (kataSandi == Akun.passwordMasuk)
             {
+                Akun.bio = tbBio.Text;
                 akun.updateProfil(Akun.idAkun, namaDepan, namaBelakang, jenisKelamin, tglLahir, email, Akun.passwordMasuk);
                 this.Hide();
                 formProfil.Show();

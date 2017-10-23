@@ -235,7 +235,7 @@
             this.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSimpan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSimpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSimpan.Location = new System.Drawing.Point(530, 464);
+            this.btnSimpan.Location = new System.Drawing.Point(530, 450);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(98, 28);
             this.btnSimpan.TabIndex = 15;
@@ -249,7 +249,7 @@
             this.btnBatal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBatal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBatal.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBatal.Location = new System.Drawing.Point(426, 464);
+            this.btnBatal.Location = new System.Drawing.Point(426, 450);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(98, 28);
             this.btnBatal.TabIndex = 14;
@@ -261,7 +261,7 @@
             this.btnCariGambar.BackColor = System.Drawing.Color.LightGray;
             this.btnCariGambar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCariGambar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCariGambar.Location = new System.Drawing.Point(530, 297);
+            this.btnCariGambar.Location = new System.Drawing.Point(530, 244);
             this.btnCariGambar.Name = "btnCariGambar";
             this.btnCariGambar.Size = new System.Drawing.Size(98, 28);
             this.btnCariGambar.TabIndex = 13;
@@ -273,7 +273,7 @@
             // 
             this.tbBio.BackColor = System.Drawing.Color.Moccasin;
             this.tbBio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBio.Location = new System.Drawing.Point(323, 349);
+            this.tbBio.Location = new System.Drawing.Point(323, 285);
             this.tbBio.Name = "tbBio";
             this.tbBio.Size = new System.Drawing.Size(305, 98);
             this.tbBio.TabIndex = 12;
@@ -284,7 +284,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(249, 348);
+            this.label9.Location = new System.Drawing.Point(249, 284);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(31, 18);
             this.label9.TabIndex = 11;
@@ -295,7 +295,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(202, 301);
+            this.label8.Location = new System.Drawing.Point(202, 248);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 18);
             this.label8.TabIndex = 9;
@@ -305,7 +305,7 @@
             // 
             this.tbFotoProfil.BackColor = System.Drawing.Color.Moccasin;
             this.tbFotoProfil.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFotoProfil.Location = new System.Drawing.Point(323, 297);
+            this.tbFotoProfil.Location = new System.Drawing.Point(323, 244);
             this.tbFotoProfil.Name = "tbFotoProfil";
             this.tbFotoProfil.Size = new System.Drawing.Size(201, 26);
             this.tbFotoProfil.TabIndex = 8;
@@ -315,7 +315,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(114, 254);
+            this.label7.Location = new System.Drawing.Point(114, 400);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(165, 18);
             this.label7.TabIndex = 7;
@@ -325,7 +325,7 @@
             // 
             this.tbPassword.BackColor = System.Drawing.Color.Moccasin;
             this.tbPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.Location = new System.Drawing.Point(323, 250);
+            this.tbPassword.Location = new System.Drawing.Point(323, 396);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(305, 26);
             this.tbPassword.TabIndex = 6;

@@ -14,10 +14,7 @@ namespace MangCook
     class Akun:Sql
     {              
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri;
-        private Panel clickedPanel;
-        private bool clicked = false;
-        private int counter = 1;
-
+                
         public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
         {
             this.namaDepan = namaDepan;
@@ -84,36 +81,58 @@ namespace MangCook
             koneksi.Close();
             return hasil;
         }
-
-        public void dataProfil(Label post, Label jumfav, PictureBox pic, Label email, Label nama, Label motiv)
+        int count = 0;
+        public void dataProfil(Label post, Label jumfav, PictureBox pic, Label email, Label nama, Label motiv, string x)
         {
-            post.Text = "90";
-            jumfav.Text = "80";
-            //pic.Image =
-            email.Text = "daniMbote@gmail.com";
-            nama.Text = "Dani Mendrofa";
-            motiv.Text = "Kuat Ora sambat";
+            koneksi.Open();
+            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + x + "'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                post.Text = count.ToString();
+                jumfav.Text = reader.GetString("favorit");
+                //pic.Image =
+                email.Text = reader.GetString("email");
+                nama.Text = reader.GetString("namaDepan");
+                motiv.Text = "Kuat Ora sambat";
+            }
+            
         }
 
-        public void resepProfil(FlowLayoutPanel a)
-        {    
-            
-            for (int i = 0; i <10; i++)
+        public void resepProfil(FlowLayoutPanel a,string y)
+        {
+            koneksi.Open();
+            queri = "SELECT namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '"+y+"'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while(reader.Read())
             {
-                a.Controls.Add(contentFlow("a", "Jangan Sop", "Ala Gusna", 10));
+                count += 1;
+                string ala = reader.GetString("namaDepan");
+                string judulRes = reader.GetString("namaResep");
+                string favor = reader.GetString("favorit");
+                a.Controls.Add(contentFlow("a", judulRes,"Ala "+ala, favor));
             }
         }
        
-        public void memfavoritkan()
+        public void memfavorit()
         {
 
         }
 
-        public void favorit(FlowLayoutPanel b)
+        public void favorit(FlowLayoutPanel b, string xx)
         {
-            for (int i = 0; i < 10; i++)
+            koneksi.Open();
+            queri = "SELECT * favorit FROM favorit join resep on favorit.idResep = resep.idResep where favorit.idAkun = '"+xx+"'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while(reader.Read())
             {
-                b.Controls.Add(contentFlow("a","Jangan Asem","Ala Gusna",15));
+                string ala = reader.GetString("namaDepan");
+                string judulRes = reader.GetString("namaResep");
+                string favor = reader.GetString("favorit");
+                b.Controls.Add(contentFlow("a",judulRes, "Ala " + ala, favor));
             }
         }
 
@@ -130,24 +149,8 @@ namespace MangCook
             reader = command.ExecuteReader();
             koneksi.Close();
         }
-
-        public void klikPanelContent(object sender, EventArgs e)
-        {
-            Panel panel = (Panel)sender;
-            if (!clicked) {
-                panel.BackColor = Color.SandyBrown;
-                clickedPanel = panel;
-                clicked = true;
-            } else {
-                clickedPanel.BackColor = Color.Moccasin;
-                panel.BackColor = Color.SandyBrown;
-                clickedPanel = panel;
-            }
-            MessageBox.Show(panel.Name, "Tes", MessageBoxButtons.OK);
-            
-        }
         
-        public Panel contentFlow(string foto, string judul, string ala, int jumlahfavorit)
+        public Panel contentFlow(string foto, string judul, string ala, string jumlahfavorit)
         {
             Resep res = new Resep();
             Panel panFlow = new Panel();            
@@ -160,9 +163,6 @@ namespace MangCook
             panFlow.Controls.Add(res.iconStar());
             panFlow.Controls.Add(res.jumlahFav(jumlahfavorit));
             panFlow.Size = new System.Drawing.Size(232, 76);
-            panFlow.Name = "panelContent" + counter.ToString();
-            counter++;
-            panFlow.Click += new System.EventHandler(klikPanelContent);
             return panFlow;
         }       
     }

@@ -154,6 +154,14 @@ namespace MangCook
             unggah.Show();
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            res.resetflowpanel(flowLayoutPanel1);
+            res.pencarian(flowLayoutPanel1,textBox1.Text);
+            btnMakanan.Image = makanan;
+            btnMinuman.Image = minuman;
+        }
+
         private void Beranda_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Apakah anda yakin ingin keluar?", "MangCook", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {

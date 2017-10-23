@@ -63,9 +63,9 @@ namespace MangCook
             queri = "insert into akun (idAkun,namaDepan,namaBelakang,jenisKelamin,tanggalLahir,email,password) value('"+"','" + namaDepan + "','" + namaBelakang + "','" + jeniskel + "','" + tglLahir + "','" + email + "','" + katSan + "')";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
-            string hasil = "sukses";
+            string hasil = "sukses";            
+            return hasil;
             koneksi.Close();
-            return hasil;                               
         }        
         public string cekemail(string email)
         {
@@ -106,7 +106,7 @@ namespace MangCook
                 nama.Text = reader.GetString("namaDepan");
                 motiv.Text = bio;
             }
-            
+            koneksi.Close();
         }
 
         public void resepProfil(FlowLayoutPanel a,string y)
@@ -125,6 +125,7 @@ namespace MangCook
                 string idAkun = reader.GetString("idAkun");
                 a.Controls.Add(contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
             }
+            koneksi.Close();
         }
 
         public void favorit(FlowLayoutPanel b, string xx)
@@ -142,6 +143,7 @@ namespace MangCook
                 string idAkun = reader.GetString("idAkun");
                 b.Controls.Add(contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
             }
+            koneksi.Close();
         }
 
         public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password)
@@ -167,14 +169,46 @@ namespace MangCook
         public void tampilKomentar(RichTextBox r)
         {
             koneksi.Open();
-            queri = "SELECT * FROM komentar where idResep = '"+idResep+"'";
+            queri = "SELECT * FROM komentar join akun on komentar.idAkun = akun.idAkun where idResep = '"+Resep.idResep+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
+                r.SelectionFont = new Font("century gothic",10,FontStyle.Bold);
+                r.AppendText(reader.GetString("namaDepan")+" "+ reader.GetString("namaBelakang"));
+                r.SelectionFont = new Font("century gothic", 10, FontStyle.Regular);
+                r.AppendText(Environment.NewLine);
                 r.AppendText(reader.GetString("komentar"));
                 r.AppendText(Environment.NewLine);
+                r.AppendText(Environment.NewLine);                
             }
+            koneksi.Close();
+
+        }
+        public void komentar(string isi, RichTextBox ri)
+        {
+            koneksi.Open();
+            queri = "insert into komentar (idKomentar,idResep,idAkun,komentar) values ('','" +Resep.idResep + "','"+ Akun.idAkun +"','" + isi + "')";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            koneksi.Close();
+
+            koneksi.Open();
+            queri = "select * from akun where idAkun = '" + Akun.idAkun + "'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                ri.SelectionFont = new Font("century gothic", 10, FontStyle.Bold);
+                ri.AppendText(reader.GetString("namaDepan")+" "+ reader.GetString("namaBelakang"));
+                ri.SelectionFont = new Font("century gothic", 10, FontStyle.Regular);
+                ri.AppendText(Environment.NewLine);
+                ri.AppendText(isi);
+                ri.AppendText(Environment.NewLine);
+                ri.AppendText(Environment.NewLine);
+                ri.AppendText(Environment.NewLine);
+            }            
+            koneksi.Close();
         }        
 
         public void unggah(string idResep, string idAkun, string judul, string file, string date, int fav, string kategori, string bahan, string step)

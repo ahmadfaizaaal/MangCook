@@ -41,19 +41,24 @@ namespace MangCook
             this.Hide();
         }
 
+        private void btnKirimKomentar_Click(object sender, EventArgs e)
+        {
+            Akun akn = new Akun();
+            akn.komentar(textBox1.Text,richTextBox2);
+            textBox1.Text = "";
+            //MessageBox.Show(Resep.idResep + " " + Akun.idAkun, "Tes", MessageBoxButtons.OK);
+        }
+
         private void Detail_Load(object sender, EventArgs e)
         {
             Resep res = new Resep();
             Akun akun = new Akun();
-            //MessageBox.Show(Resep.idResep, "Tes", MessageBoxButtons.OK);
+            //MessageBox.Show(Resep.idResep+" "+Akun.idAkun, "Tes", MessageBoxButtons.OK);
             res.detailData(label11, label12, pictureBox2, richTextBox1, tbResep);
             akun.tampilKomentar(richTextBox2);
             
         }
 
-        private void btnKirimKomentar_Click(object sender, EventArgs e)
-        {
-            Akun akn = new Akun();            
-        }
+        
     }
 }

@@ -99,6 +99,7 @@ namespace MangCook
                 string idAkun = reader.GetString("idAkun");
                 flowle.Controls.Add(akun.contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
             }
+            koneksi.Close();
         }
 
         public void klikIconFavorit(object sender, EventArgs e)

@@ -204,7 +204,7 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 98);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(496, 340);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(481, 340);
             this.flowLayoutPanel1.TabIndex = 19;
             // 
             // label8

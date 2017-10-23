@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProfil));
             this.copyRight = new System.Windows.Forms.Label();
-            this.btnUnggah = new System.Windows.Forms.PictureBox();
-            this.btnFavorit = new System.Windows.Forms.PictureBox();
-            this.btnProfil = new System.Windows.Forms.PictureBox();
-            this.btnBeranda = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,13 +55,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbNamaDepanBaru = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFavorit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProfil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBeranda)).BeginInit();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             this.SuspendLayout();
             // 
             // copyRight
@@ -78,50 +73,7 @@
             this.copyRight.TabIndex = 12;
             this.copyRight.Text = "Powered by 4 Negeri 5 Menara";
             this.copyRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnUnggah
-            // 
-            this.btnUnggah.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUnggah.Image = global::MangCook.Properties.Resources.btnUnggah;
-            this.btnUnggah.Location = new System.Drawing.Point(675, 43);
-            this.btnUnggah.Name = "btnUnggah";
-            this.btnUnggah.Size = new System.Drawing.Size(92, 28);
-            this.btnUnggah.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnUnggah.TabIndex = 11;
-            this.btnUnggah.TabStop = false;
-            // 
-            // btnFavorit
-            // 
-            this.btnFavorit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFavorit.Image = global::MangCook.Properties.Resources.btnFavorit;
-            this.btnFavorit.Location = new System.Drawing.Point(577, 43);
-            this.btnFavorit.Name = "btnFavorit";
-            this.btnFavorit.Size = new System.Drawing.Size(92, 28);
-            this.btnFavorit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnFavorit.TabIndex = 10;
-            this.btnFavorit.TabStop = false;
-            // 
-            // btnProfil
-            // 
-            this.btnProfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfil.Image = global::MangCook.Properties.Resources.btnProfil;
-            this.btnProfil.Location = new System.Drawing.Point(479, 43);
-            this.btnProfil.Name = "btnProfil";
-            this.btnProfil.Size = new System.Drawing.Size(92, 28);
-            this.btnProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnProfil.TabIndex = 9;
-            this.btnProfil.TabStop = false;
-            // 
-            // btnBeranda
-            // 
-            this.btnBeranda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBeranda.Image = global::MangCook.Properties.Resources.btnBeranda2;
-            this.btnBeranda.Location = new System.Drawing.Point(381, 43);
-            this.btnBeranda.Name = "btnBeranda";
-            this.btnBeranda.Size = new System.Drawing.Size(92, 28);
-            this.btnBeranda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBeranda.TabIndex = 8;
-            this.btnBeranda.TabStop = false;
+            this.copyRight.Click += new System.EventHandler(this.tentangPengembang);
             // 
             // label2
             // 
@@ -159,12 +111,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.panelContent);
             this.panel2.Controls.Add(this.copyRight);
-            this.panel2.Controls.Add(this.btnUnggah);
-            this.panel2.Controls.Add(this.btnFavorit);
-            this.panel2.Controls.Add(this.btnProfil);
-            this.panel2.Controls.Add(this.btnBeranda);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label3);
@@ -256,6 +205,7 @@
             // btnSimpan
             // 
             this.btnSimpan.BackColor = System.Drawing.Color.Green;
+            this.btnSimpan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSimpan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSimpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -270,6 +220,7 @@
             // btnBatal
             // 
             this.btnBatal.BackColor = System.Drawing.Color.Maroon;
+            this.btnBatal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBatal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBatal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBatal.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -279,10 +230,12 @@
             this.btnBatal.TabIndex = 14;
             this.btnBatal.Text = "Batal";
             this.btnBatal.UseVisualStyleBackColor = false;
+            this.btnBatal.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCariGambar
             // 
             this.btnCariGambar.BackColor = System.Drawing.Color.LightGray;
+            this.btnCariGambar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCariGambar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCariGambar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCariGambar.Location = new System.Drawing.Point(530, 244);
@@ -427,24 +380,36 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "cari resep kuliner lezat";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Image = global::MangCook.Properties.Resources.cancel;
+            this.btnCancel.Location = new System.Drawing.Point(748, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(24, 24);
+            this.btnCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // EditProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "EditProfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditProfil";
-            ((System.ComponentModel.ISupportInitialize)(this.btnUnggah)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFavorit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBeranda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,10 +417,6 @@
         #endregion
 
         private System.Windows.Forms.Label copyRight;
-        private System.Windows.Forms.PictureBox btnUnggah;
-        private System.Windows.Forms.PictureBox btnFavorit;
-        private System.Windows.Forms.PictureBox btnProfil;
-        private System.Windows.Forms.PictureBox btnBeranda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
@@ -481,5 +442,6 @@
         private System.Windows.Forms.DateTimePicker tbTglLahir;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbJenisKelamin;
+        private System.Windows.Forms.PictureBox btnCancel;
     }
 }

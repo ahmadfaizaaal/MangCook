@@ -21,13 +21,13 @@ namespace MangCook
         {
             koneksi.Open();
 
-            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Makanan'";
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Makanan'";
             command = new MySqlCommand(queri,koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
                 //flow.Controls.Add(akun.contentFlow("a", "Jangan Terong", "Ala Gusna", "8"));
-                string ala = reader.GetString("namaDepan");
+                string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
@@ -40,13 +40,13 @@ namespace MangCook
         public void minuman(FlowLayoutPanel fl)
         {
             koneksi.Open();
-            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Minuman'";
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Minuman'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
                 //fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
-                string ala = reader.GetString("namaDepan");
+                string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
@@ -87,12 +87,12 @@ namespace MangCook
         public void pencarian(FlowLayoutPanel flowle,string cari)
         {
             koneksi.Open();
-            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.namaResep = '" + cari + "' ";
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.namaResep = '" + cari + "' ";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
-                string ala = reader.GetString("namaDepan");
+                string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
@@ -129,18 +129,15 @@ namespace MangCook
 
             }
             koneksi.Close();
+            addToFavorit();
         }
 
-        public void updateFavorit()
+        public void addToFavorit()
         {
             koneksi.Open();
-            queri = "UPDATE resep SET favorit = '" + jumlahFavorit.Text + "' WHERE idResep = '" + favoritIcon.Name + "';";
+            queri = "insert into favorit (idAkun,idResep) value ('" + Akun.idAkun + "','" + favoritIcon.Name + "')";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-
-            }
             koneksi.Close();
         }
 

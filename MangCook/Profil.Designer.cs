@@ -100,6 +100,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -124,6 +125,7 @@
             // btnEditProfil
             // 
             this.btnEditProfil.BackColor = System.Drawing.Color.Green;
+            this.btnEditProfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditProfil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditProfil.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProfil.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -236,6 +238,7 @@
             this.copyRight.TabIndex = 12;
             this.copyRight.Text = "Powered by 4 Negeri 5 Menara";
             this.copyRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.copyRight.Click += new System.EventHandler(this.tentangPengembang);
             // 
             // btnUnggah
             // 

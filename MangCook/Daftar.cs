@@ -79,6 +79,11 @@ namespace MangCook
                 MessageBox.Show("Data tidak boleh kosong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void tentangPengembang(object sender, EventArgs e)
+        {
+            Akun.tentangPengembang();
+        }
     }
 }
 

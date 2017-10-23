@@ -69,6 +69,7 @@
             this.copyRight.TabIndex = 5;
             this.copyRight.Text = "Powered by 4 Negeri 5 Menara";
             this.copyRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.copyRight.Click += new System.EventHandler(this.tentangPengembang);
             // 
             // panelMasuk
             // 

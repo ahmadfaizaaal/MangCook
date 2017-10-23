@@ -63,9 +63,9 @@ namespace MangCook
             queri = "insert into akun (idAkun,namaDepan,namaBelakang,jenisKelamin,tanggalLahir,email,password) value('"+"','" + namaDepan + "','" + namaBelakang + "','" + jeniskel + "','" + tglLahir + "','" + email + "','" + katSan + "')";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
-            string hasil = "sukses";            
-            return hasil;
+            string hasil = "sukses";
             koneksi.Close();
+            return hasil;
         }        
         public string cekemail(string email)
         {
@@ -103,7 +103,7 @@ namespace MangCook
                 jumfav.Text = reader.GetString("favorit");
                 //pic.Image =
                 email.Text = reader.GetString("email");
-                nama.Text = reader.GetString("namaDepan");
+                nama.Text = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 motiv.Text = bio;
             }
             koneksi.Close();
@@ -112,13 +112,13 @@ namespace MangCook
         public void resepProfil(FlowLayoutPanel a,string y)
         {
             koneksi.Open();
-            queri = "SELECT akun.idAkun,resep.idResep, namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + y+"'";
+            queri = "SELECT akun.idAkun,resep.idResep, namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + y+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
                 count += 1;
-                string ala = reader.GetString("namaDepan");
+                string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
@@ -131,12 +131,12 @@ namespace MangCook
         public void favorit(FlowLayoutPanel b, string xx)
         {
             koneksi.Open();
-            queri = "SELECT * favorit FROM favorit join resep on favorit.idResep = resep.idResep where favorit.idAkun = '"+xx+"'";
+            queri = "SELECT * FROM favorit join resep on favorit.idResep = resep.idResep join akun on favorit.idAkun = akun.idAkun where favorit.idAkun = '"+xx+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
-                string ala = reader.GetString("namaDepan");
+                string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
@@ -169,45 +169,14 @@ namespace MangCook
         public void tampilKomentar(RichTextBox r)
         {
             koneksi.Open();
-            queri = "SELECT * FROM komentar join akun on komentar.idAkun = akun.idAkun where idResep = '"+Resep.idResep+"'";
+            queri = "SELECT * FROM komentar where idResep = '"+idResep+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                r.SelectionFont = new Font("century gothic",10,FontStyle.Bold);
-                r.AppendText(reader.GetString("namaDepan")+" "+ reader.GetString("namaBelakang"));
-                r.SelectionFont = new Font("century gothic", 10, FontStyle.Regular);
-                r.AppendText(Environment.NewLine);
                 r.AppendText(reader.GetString("komentar"));
                 r.AppendText(Environment.NewLine);
-                r.AppendText(Environment.NewLine);                
             }
-            koneksi.Close();
-
-        }
-        public void komentar(string isi, RichTextBox ri)
-        {
-            koneksi.Open();
-            queri = "insert into komentar (idKomentar,idResep,idAkun,komentar) values ('','" +Resep.idResep + "','"+ Akun.idAkun +"','" + isi + "')";
-            command = new MySqlCommand(queri, koneksi);
-            reader = command.ExecuteReader();
-            koneksi.Close();
-
-            koneksi.Open();
-            queri = "select * from akun where idAkun = '" + Akun.idAkun + "'";
-            command = new MySqlCommand(queri, koneksi);
-            reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                ri.SelectionFont = new Font("century gothic", 10, FontStyle.Bold);
-                ri.AppendText(reader.GetString("namaDepan")+" "+ reader.GetString("namaBelakang"));
-                ri.SelectionFont = new Font("century gothic", 10, FontStyle.Regular);
-                ri.AppendText(Environment.NewLine);
-                ri.AppendText(isi);
-                ri.AppendText(Environment.NewLine);
-                ri.AppendText(Environment.NewLine);
-                ri.AppendText(Environment.NewLine);
-            }            
             koneksi.Close();
         }        
 
@@ -249,11 +218,28 @@ namespace MangCook
         public Panel contentFlow(string idAkun, string idResep, string foto, string judul, string ala, string jumlahfavorit)
         {
             Resep resep = new Resep();
+            ToolTip toolTipJudulResep = new ToolTip();
+            string tempJudul;
             panelFlow = new Panel();
+            if (judul.Length > 15)
+            {
+                tempJudul = judul.Substring(0, 15) + " ..";
+            }
+            else
+            {
+                tempJudul = judul;
+            }
+            panelFlow.Controls.Add(resep.judulMakanan(tempJudul));
+            //tool tip untuk judul yang dipangkas-----
+            toolTipJudulResep.AutoPopDelay = 3000;
+            toolTipJudulResep.InitialDelay = 1000;
+            toolTipJudulResep.ReshowDelay = 500;
+            toolTipJudulResep.ShowAlways = true;
+            toolTipJudulResep.SetToolTip(panelFlow, judul);
+            //-----------------------------------------
             panelFlow.BackColor = System.Drawing.Color.Moccasin;
             panelFlow.Cursor = System.Windows.Forms.Cursors.Hand;
             panelFlow.Controls.Add(resep.fotoMakanan(foto));
-            panelFlow.Controls.Add(resep.judulMakanan(judul));
             panelFlow.Controls.Add(resep.namaAla(ala));
             panelFlow.Controls.Add(resep.iconKomen());
             panelFlow.Controls.Add(resep.iconStar(idResep, idAkun));
@@ -263,6 +249,19 @@ namespace MangCook
             panelFlow.Click += new System.EventHandler(klikPanelContent);
             panelFlow.DoubleClick += new System.EventHandler(detailContent);
             return panelFlow;
+        }
+
+        public static void tentangPengembang()
+        {
+            MessageBox.Show("Versi Aplikasi :\t\tMangCook v0.01\n\n" +
+                  "Tim Pengembang :\n" +
+                  "1. Akhmad Muzanni Safi'i\t(155150200111270)\n" +
+                  "2. Ahmad Faizal\t\t(155150200111271)\n" +
+                  "3. Gusna Ikhsan\t\t(155150200111272)\n" +
+                  "4. Aidi Rahman\t\t(155150201111160)\n" +
+                  "5. Moh. Zulfiqar Naufal M\t(155150201111353)\n" +
+                  "6. Riza Anisul Fu'ad\t\t(155150201111355)\n\n" +
+                  "Dosen Pengampu :\nNurizal Dwi Priandani, S.Kom.", "Tentang Kami", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

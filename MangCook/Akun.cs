@@ -65,7 +65,7 @@ namespace MangCook
             reader = command.ExecuteReader();
             string hasil = "sukses";
             koneksi.Close();
-            return hasil;                               
+            return hasil;
         }        
         public string cekemail(string email)
         {
@@ -103,45 +103,47 @@ namespace MangCook
                 jumfav.Text = reader.GetString("favorit");
                 //pic.Image =
                 email.Text = reader.GetString("email");
-                nama.Text = reader.GetString("namaDepan");
+                nama.Text = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 motiv.Text = bio;
             }
-            
+            koneksi.Close();
         }
 
         public void resepProfil(FlowLayoutPanel a,string y)
         {
             koneksi.Open();
-            queri = "SELECT akun.idAkun,resep.idResep, namaResep,akun.namaDepan,favorit FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + y+"'";
+            queri = "SELECT akun.idAkun,resep.idResep, namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + y+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
                 count += 1;
-                string ala = reader.GetString("namaDepan");
+                string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
                 string idAkun = reader.GetString("idAkun");
                 a.Controls.Add(contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
             }
+            koneksi.Close();
         }
 
         public void favorit(FlowLayoutPanel b, string xx)
         {
             koneksi.Open();
-            queri = "SELECT * favorit FROM favorit join resep on favorit.idResep = resep.idResep where favorit.idAkun = '"+xx+"'";
+            queri = "SELECT * FROM favorit join resep on favorit.idResep = resep.idResep join akun on favorit.idAkun = akun.idAkun where favorit.idAkun = '"+xx+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())
             {
-                string ala = reader.GetString("namaDepan");
+                string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
                 string idAkun = reader.GetString("idAkun");
                 b.Controls.Add(contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
             }
+            koneksi.Close();
         }
 
         public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password)
@@ -175,6 +177,7 @@ namespace MangCook
                 r.AppendText(reader.GetString("komentar"));
                 r.AppendText(Environment.NewLine);
             }
+            koneksi.Close();
         }        
 
         public void unggah(string idResep, string idAkun, string judul, string file, string date, int fav, string kategori, string bahan, string step)
@@ -215,9 +218,9 @@ namespace MangCook
         public Panel contentFlow(string idAkun, string idResep, string foto, string judul, string ala, string jumlahfavorit)
         {
             Resep resep = new Resep();
-            Panel panelFlow = new Panel();
             ToolTip toolTipJudulResep = new ToolTip();
             string tempJudul;
+            panelFlow = new Panel();
             if (judul.Length > 15)
             {
                 tempJudul = judul.Substring(0, 15) + " ..";
@@ -228,13 +231,12 @@ namespace MangCook
             }
             panelFlow.Controls.Add(resep.judulMakanan(tempJudul));
             //tool tip untuk judul yang dipangkas-----
-            toolTipJudulResep.AutoPopDelay = 5000;
+            toolTipJudulResep.AutoPopDelay = 3000;
             toolTipJudulResep.InitialDelay = 1000;
             toolTipJudulResep.ReshowDelay = 500;
             toolTipJudulResep.ShowAlways = true;
             toolTipJudulResep.SetToolTip(panelFlow, judul);
             //-----------------------------------------
-            panelFlow = new Panel();
             panelFlow.BackColor = System.Drawing.Color.Moccasin;
             panelFlow.Cursor = System.Windows.Forms.Cursors.Hand;
             panelFlow.Controls.Add(resep.fotoMakanan(foto));

@@ -53,7 +53,7 @@ namespace MangCook
             {
                 //menampilkan pada kolom nama gambar
                 tbFileGambar.Text = ambilGambar.SafeFileName;
-                Resep.namaGambar = ambilGambar.FileName;
+                //Resep.namaGambar = ambilGambar.FileName;
             }
         }
 
@@ -82,7 +82,7 @@ namespace MangCook
         {
             Resep resep = new Resep();
             //data push
-            idResep = "";
+            idResep = "R0001";
             idAkun = Akun.idAkun;
             judul = tbJudulResep.Text;
             file = tbFileGambar.Text;

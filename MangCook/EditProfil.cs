@@ -73,6 +73,7 @@ namespace MangCook
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
+            formProfil.Show();
         }
 
         private void tentangPengembang(object sender, EventArgs e)

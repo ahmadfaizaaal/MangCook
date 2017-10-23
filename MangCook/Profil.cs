@@ -75,6 +75,7 @@ namespace MangCook
         {
             EditProfil formEditProfil = new EditProfil();
             formEditProfil.Show();
+            this.Hide();
         }
 
         private void tentangPengembang(object sender, EventArgs e)

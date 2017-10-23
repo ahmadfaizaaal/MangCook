@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detail));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -70,8 +70,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.PictureBox();
+            this.btnKirimKomentar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
@@ -82,7 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -100,6 +100,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(784, 565);
             this.panel2.TabIndex = 5;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Image = global::MangCook.Properties.Resources.cancel;
+            this.btnCancel.Location = new System.Drawing.Point(748, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(24, 24);
+            this.btnCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panelContent
             // 
@@ -142,8 +154,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Moccasin;
+            this.panel5.Controls.Add(this.btnKirimKomentar);
             this.panel5.Controls.Add(this.pictureBox5);
-            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.richTextBox2);
             this.panel5.Controls.Add(this.label6);
@@ -161,16 +173,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 13;
             this.pictureBox5.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(161, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -539,17 +541,20 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Mang-Cook";
             // 
-            // btnCancel
+            // btnKirimKomentar
             // 
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Image = global::MangCook.Properties.Resources.cancel;
-            this.btnCancel.Location = new System.Drawing.Point(748, 12);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(24, 24);
-            this.btnCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.TabStop = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnKirimKomentar.BackColor = System.Drawing.Color.Green;
+            this.btnKirimKomentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKirimKomentar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKirimKomentar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnKirimKomentar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKirimKomentar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnKirimKomentar.Location = new System.Drawing.Point(160, 173);
+            this.btnKirimKomentar.Name = "btnKirimKomentar";
+            this.btnKirimKomentar.Size = new System.Drawing.Size(97, 29);
+            this.btnKirimKomentar.TabIndex = 14;
+            this.btnKirimKomentar.Text = "Kirim";
+            this.btnKirimKomentar.UseVisualStyleBackColor = false;
             // 
             // Detail
             // 
@@ -565,6 +570,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detail_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -579,7 +585,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -625,8 +630,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox btnCancel;
+        private System.Windows.Forms.Button btnKirimKomentar;
     }
 }

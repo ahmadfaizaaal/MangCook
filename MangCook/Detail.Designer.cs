@@ -295,7 +295,7 @@
             this.tbResep.Location = new System.Drawing.Point(7, 40);
             this.tbResep.Name = "tbResep";
             this.tbResep.ReadOnly = true;
-            this.tbResep.Size = new System.Drawing.Size(421, 239);
+            this.tbResep.Size = new System.Drawing.Size(433, 239);
             this.tbResep.TabIndex = 9;
             this.tbResep.Text = "";
             // 

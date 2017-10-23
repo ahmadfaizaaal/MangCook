@@ -59,9 +59,25 @@ namespace MangCook
         {
             reset.Controls.Clear();
         }
-        public void detail()
+        public void detail(Label judul, Label ala, PictureBox gambar, RichTextBox kiri, RichTextBox kanan, RichTextBox komen, string idResep)
         {
+            koneksi.Open();
+            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where resep.idResep = '"+idResep+"'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                //fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
+                judul.Text = reader.GetString("namaDepan");
+                ala.Text = reader.GetString("namaResep");
+                //gambar.Image = reader.GetString("favorit");
+                kiri.Text = reader.GetString("idResep");
+                kanan.Text = reader.GetString("idAkun");
+                komen.Text = reader.GetString("komenentar");
 
+                
+            }
+            koneksi.Close();
         }
 
         public void pencarian(FlowLayoutPanel flowle,string cari)

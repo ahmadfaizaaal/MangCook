@@ -34,5 +34,10 @@ namespace MangCook
                 e.Cancel = true;
             }
         }
+
+        private void Detail_Load(object sender, EventArgs e)
+        {
+            //label11.Text;
+        }
     }
 }

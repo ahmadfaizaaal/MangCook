@@ -35,7 +35,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -74,6 +73,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnUnggahResep = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -151,8 +151,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Moccasin;
+            this.panel5.Controls.Add(this.btnUnggahResep);
             this.panel5.Controls.Add(this.pictureBox5);
-            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.richTextBox2);
             this.panel5.Controls.Add(this.label6);
@@ -170,16 +170,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 13;
             this.pictureBox5.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(161, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -433,7 +423,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(3, 3);
+            this.label5.Location = new System.Drawing.Point(3, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(154, 23);
             this.label5.TabIndex = 8;
@@ -592,6 +582,21 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Mang-Cook";
             // 
+            // btnUnggahResep
+            // 
+            this.btnUnggahResep.BackColor = System.Drawing.Color.Green;
+            this.btnUnggahResep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnUnggahResep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUnggahResep.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUnggahResep.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnggahResep.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnUnggahResep.Location = new System.Drawing.Point(160, 173);
+            this.btnUnggahResep.Name = "btnUnggahResep";
+            this.btnUnggahResep.Size = new System.Drawing.Size(97, 29);
+            this.btnUnggahResep.TabIndex = 14;
+            this.btnUnggahResep.Text = "Kirim";
+            this.btnUnggahResep.UseVisualStyleBackColor = false;
+            // 
             // Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,6 +608,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook ~ DETAIL RESEP";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detail_FormClosing);
+            this.Load += new System.EventHandler(this.Detail_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelContent.ResumeLayout(false);
@@ -672,7 +678,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnUnggahResep;
     }
 }

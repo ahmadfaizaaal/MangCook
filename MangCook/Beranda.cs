@@ -138,6 +138,7 @@ namespace MangCook
             Profil prof = new Profil();
             this.Hide();
             prof.Show();
+            
         }
 
         private void btnFavorit_Click(object sender, EventArgs e)

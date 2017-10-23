@@ -139,5 +139,10 @@ namespace MangCook
                 labelProgress.Visible = false;
             }
         }
+
+        private void tentangPengembang(object sender, EventArgs e)
+        {
+            Akun.tentangPengembang();
+        }
     }
 }

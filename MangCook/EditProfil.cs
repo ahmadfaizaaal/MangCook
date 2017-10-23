@@ -18,6 +18,7 @@ namespace MangCook
         public EditProfil()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             tbNamaDepanBaru.Text = Akun.namaDpn;
             tbNamaBelakangBaru.Text = Akun.namaBlk;
             tbTglLahir.Text = Akun.tggalLahir;
@@ -67,6 +68,16 @@ namespace MangCook
             {
                 MessageBox.Show("Password Salah", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void tentangPengembang(object sender, EventArgs e)
+        {
+            Akun.tentangPengembang();
         }
     }
 }

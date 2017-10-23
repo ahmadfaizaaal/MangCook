@@ -179,10 +179,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
             this.label9.Location = new System.Drawing.Point(288, 28);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(196, 37);
+            this.label9.Size = new System.Drawing.Size(206, 38);
             this.label9.TabIndex = 7;
             this.label9.Text = "Favorit Saya";
             // 
@@ -197,6 +198,7 @@
             this.copyRight.TabIndex = 12;
             this.copyRight.Text = "Powered by 4 Negeri 5 Menara";
             this.copyRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.copyRight.Click += new System.EventHandler(this.tentangPengembang);
             // 
             // btnUnggah
             // 

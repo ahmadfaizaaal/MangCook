@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MangCook
 {
@@ -52,6 +53,7 @@ namespace MangCook
             {
                 //menampilkan pada kolom nama gambar
                 tbFileGambar.Text = ambilGambar.SafeFileName;
+                Resep.namaGambar = ambilGambar.FileName;
             }
         }
 
@@ -78,8 +80,9 @@ namespace MangCook
 
         private void btnUnggahResep_Click(object sender, EventArgs e)
         {
+            Resep resep = new Resep();
             //data push
-            idResep = "10019";
+            idResep = "";
             idAkun = Akun.idAkun;
             judul = tbJudulResep.Text;
             file = tbFileGambar.Text;
@@ -99,9 +102,15 @@ namespace MangCook
             else
             {
                 akun.unggah(idResep, idAkun, judul, file, date, fav, kategori, alatBahan, stepMasak);
+                //resep.unggahResep(idResep, idAkun, judul, file, date, fav, kategori, alatBahan, stepMasak);
                 this.Hide();
                 formBeranda.Show();
             }
+        }
+
+        private void tentangPengembang(object sender, EventArgs e)
+        {
+            Akun.tentangPengembang();
         }
     }
 }

@@ -170,6 +170,11 @@ namespace MangCook
             } else {
                 e.Cancel = true;
             }
-        }              
+        }
+
+        private void tentangPengembang(object sender, EventArgs e)
+        {
+            Akun.tentangPengembang();
+        }
     }
 }

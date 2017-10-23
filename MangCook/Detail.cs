@@ -39,5 +39,10 @@ namespace MangCook
         {
             this.Hide();
         }
+
+        private void tentangPengembang(object sender, EventArgs e)
+        {
+            Akun.tentangPengembang();
+        }
     }
 }

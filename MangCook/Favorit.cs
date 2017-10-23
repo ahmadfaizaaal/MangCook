@@ -41,7 +41,7 @@ namespace MangCook
         Akun akun = new Akun();
         private void Favorit_Load(object sender, EventArgs e)
         {
-            akun.favorit(flowLayoutPanel1,"A0003");         
+            akun.favorit(flowLayoutPanel1, Akun.idAkun); 
         }
 
         private void Favorit_FormClosing(object sender, FormClosingEventArgs e)
@@ -54,6 +54,11 @@ namespace MangCook
             {
                 e.Cancel = true;
             }
+        }
+
+        private void tentangPengembang(object sender, EventArgs e)
+        {
+            Akun.tentangPengembang();
         }
     }
 }

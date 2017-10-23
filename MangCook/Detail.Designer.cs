@@ -35,6 +35,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnKirimKomentar = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -70,7 +71,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnKirimKomentar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             this.panelContent.SuspendLayout();
@@ -163,6 +163,21 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(712, 379);
             this.panel5.TabIndex = 28;
+            // 
+            // btnKirimKomentar
+            // 
+            this.btnKirimKomentar.BackColor = System.Drawing.Color.Green;
+            this.btnKirimKomentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKirimKomentar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKirimKomentar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnKirimKomentar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKirimKomentar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnKirimKomentar.Location = new System.Drawing.Point(160, 173);
+            this.btnKirimKomentar.Name = "btnKirimKomentar";
+            this.btnKirimKomentar.Size = new System.Drawing.Size(97, 29);
+            this.btnKirimKomentar.TabIndex = 14;
+            this.btnKirimKomentar.Text = "Kirim";
+            this.btnKirimKomentar.UseVisualStyleBackColor = false;
             // 
             // pictureBox5
             // 
@@ -495,6 +510,7 @@
             this.copyRight.TabIndex = 12;
             this.copyRight.Text = "Powered by 4 Negeri 5 Menara";
             this.copyRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.copyRight.Click += new System.EventHandler(this.tentangPengembang);
             // 
             // label2
             // 
@@ -540,21 +556,6 @@
             this.label1.Size = new System.Drawing.Size(129, 38);
             this.label1.TabIndex = 3;
             this.label1.Text = "Mang-Cook";
-            // 
-            // btnKirimKomentar
-            // 
-            this.btnKirimKomentar.BackColor = System.Drawing.Color.Green;
-            this.btnKirimKomentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnKirimKomentar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKirimKomentar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnKirimKomentar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKirimKomentar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnKirimKomentar.Location = new System.Drawing.Point(160, 173);
-            this.btnKirimKomentar.Name = "btnKirimKomentar";
-            this.btnKirimKomentar.Size = new System.Drawing.Size(97, 29);
-            this.btnKirimKomentar.TabIndex = 14;
-            this.btnKirimKomentar.Text = "Kirim";
-            this.btnKirimKomentar.UseVisualStyleBackColor = false;
             // 
             // Detail
             // 

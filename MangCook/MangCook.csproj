@@ -308,5 +308,8 @@
   <ItemGroup>
     <None Include="Resources\daun.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixel-wallpapers-8.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

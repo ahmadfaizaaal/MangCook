@@ -40,7 +40,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelTester = new System.Windows.Forms.Panel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -64,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelContent.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panelTester.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -200,7 +200,7 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.panel7);
+            this.flowLayoutPanel1.Controls.Add(this.panelTester);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 98);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(496, 340);
@@ -208,19 +208,19 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.Moccasin;
-            this.panel7.Controls.Add(this.pictureBox13);
-            this.panel7.Controls.Add(this.label17);
-            this.panel7.Controls.Add(this.pictureBox14);
-            this.panel7.Controls.Add(this.label18);
-            this.panel7.Controls.Add(this.label19);
-            this.panel7.Controls.Add(this.pictureBox5);
-            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel7.Location = new System.Drawing.Point(3, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(232, 76);
-            this.panel7.TabIndex = 16;
-            this.panel7.Click += new System.EventHandler(this.bisaDiklik);
+            this.panelTester.BackColor = System.Drawing.Color.Moccasin;
+            this.panelTester.Controls.Add(this.pictureBox13);
+            this.panelTester.Controls.Add(this.label17);
+            this.panelTester.Controls.Add(this.pictureBox14);
+            this.panelTester.Controls.Add(this.label18);
+            this.panelTester.Controls.Add(this.label19);
+            this.panelTester.Controls.Add(this.pictureBox5);
+            this.panelTester.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelTester.Location = new System.Drawing.Point(3, 3);
+            this.panelTester.Name = "panelTester";
+            this.panelTester.Size = new System.Drawing.Size(232, 76);
+            this.panelTester.TabIndex = 16;
+            this.panelTester.Click += new System.EventHandler(this.bisaDiklik);
             // 
             // pictureBox13
             // 
@@ -436,8 +436,8 @@
             this.panelContent.ResumeLayout(false);
             this.panelContent.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panelTester.ResumeLayout(false);
+            this.panelTester.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -472,7 +472,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelTester;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox14;

@@ -22,6 +22,18 @@ namespace MangCook
             formBeranda.Show();
         }
 
+        private void Unggah_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Apakah anda yakin ingin keluar?", "MangCook", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
         Beranda formBeranda = new Beranda();
         public Unggah()
         {
@@ -45,7 +57,8 @@ namespace MangCook
 
         private void btnBeranda_Click(object sender, EventArgs e)
         {
-            //Beranda beranda = new Beranda();
+            Beranda formBeranda = new Beranda();
+            formBeranda.Show();
             this.Hide();
         }
 

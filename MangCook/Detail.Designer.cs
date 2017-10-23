@@ -602,6 +602,7 @@
             this.Name = "Detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook ~ DETAIL RESEP";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detail_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelContent.ResumeLayout(false);

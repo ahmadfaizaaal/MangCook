@@ -10,12 +10,15 @@ namespace MangCook
     class Resep:Sql
     {
         Akun akun = new Akun();
+        private bool clicked = false;
+        private int counter = 1, tempJumlahFavorit;
+        private Label jumlahFavorit;
         public void makanan(FlowLayoutPanel flow)
         {
             
             for (int i = 0; i < 8; i++)
             {
-                flow.Controls.Add(akun.contentFlow("a", "Jangan Terong", "Ala Gusna", "8"));
+                flow.Controls.Add(akun.contentFlow("a", "Jangan Terong", "Ala Gusna", 8));
             }
         }
         
@@ -23,7 +26,7 @@ namespace MangCook
         {            
             for (int i = 0; i < 10; i++)
             {
-                fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
+                fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", 9));
             }           
         }
 
@@ -91,29 +94,53 @@ namespace MangCook
             icon.Name = "iconKomen";
             return icon;
         }
+
+        public void klikIconFavorit(object sender, EventArgs e)
+        {
+            PictureBox favoritIcon = (PictureBox)sender;
+            if (!clicked) {
+                favoritIcon.Image = global::MangCook.Properties.Resources.stargold;
+                clicked = true;
+            } else {
+                favoritIcon.Image = global::MangCook.Properties.Resources.starkopong;
+                clicked = false;
+            }
+            favoritIcon.Location = new System.Drawing.Point(107, 51);
+            favoritIcon.Name = "iconStarChecked_" + counter.ToString();
+            counter++;
+            favoritIcon.Size = new System.Drawing.Size(16, 16);
+            favoritIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            favoritIcon.TabIndex = 24;
+            favoritIcon.TabStop = false;
+            
+        }
+
         public PictureBox iconStar()
         {
             PictureBox star = new PictureBox();
             star.Image = global::MangCook.Properties.Resources.starkopong;
             star.Location = new System.Drawing.Point(107, 51);
-            star.Name = "iconStar";
+            star.Name = "iconStarChecked_" + counter.ToString();
+            counter++;
             star.Size = new System.Drawing.Size(16, 16);
             star.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             star.TabIndex = 24;
             star.TabStop = false;
+            star.Click += new System.EventHandler(klikIconFavorit);
             return star;
         }
-        public Label jumlahFav(string x)
+        public Label jumlahFav(int x)
         {
-            Label jum = new Label();
-            jum.AutoSize = true;
-            jum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            jum.Location = new System.Drawing.Point(125, 53);
-            jum.Name = "label17";
-            jum.Size = new System.Drawing.Size(13, 13);
-            jum.TabIndex = 25;
-            jum.Text = x;
-            return jum;
+            jumlahFavorit = new Label();
+            jumlahFavorit.AutoSize = true;
+            jumlahFavorit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            jumlahFavorit.Location = new System.Drawing.Point(125, 53);
+            //jum.Name = "label17";
+            jumlahFavorit.Size = new System.Drawing.Size(13, 13);
+            jumlahFavorit.TabIndex = 25;
+            jumlahFavorit.Text = x.ToString();
+            tempJumlahFavorit = x;
+            return jumlahFavorit;
         }
         //------------------------------//
               

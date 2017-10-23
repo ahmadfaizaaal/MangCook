@@ -390,6 +390,7 @@
             this.Name = "Unggah";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook ~ UNGGAH";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Unggah_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelContent.ResumeLayout(false);

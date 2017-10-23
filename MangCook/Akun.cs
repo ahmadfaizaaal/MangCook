@@ -14,7 +14,10 @@ namespace MangCook
     class Akun:Sql
     {              
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri;
-                
+        private Panel clickedPanel;
+        private bool clicked = false;
+        private int counter = 1;
+
         public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
         {
             this.namaDepan = namaDepan;
@@ -97,11 +100,11 @@ namespace MangCook
             
             for (int i = 0; i <10; i++)
             {
-                a.Controls.Add(contentFlow("a", "Jangan Sop", "Ala Gusna", "10"));
+                a.Controls.Add(contentFlow("a", "Jangan Sop", "Ala Gusna", 10));
             }
         }
        
-        public void memfavorit()
+        public void memfavoritkan()
         {
 
         }
@@ -110,7 +113,7 @@ namespace MangCook
         {
             for (int i = 0; i < 10; i++)
             {
-                b.Controls.Add(contentFlow("a","Jangan Asem","Ala Gusna","15"));
+                b.Controls.Add(contentFlow("a","Jangan Asem","Ala Gusna",15));
             }
         }
 
@@ -127,8 +130,24 @@ namespace MangCook
             reader = command.ExecuteReader();
             koneksi.Close();
         }
+
+        public void klikPanelContent(object sender, EventArgs e)
+        {
+            Panel panel = (Panel)sender;
+            if (!clicked) {
+                panel.BackColor = Color.SandyBrown;
+                clickedPanel = panel;
+                clicked = true;
+            } else {
+                clickedPanel.BackColor = Color.Moccasin;
+                panel.BackColor = Color.SandyBrown;
+                clickedPanel = panel;
+            }
+            MessageBox.Show(panel.Name, "Tes", MessageBoxButtons.OK);
+            
+        }
         
-        public Panel contentFlow(string foto, string judul, string ala, string jumlahfavorit)
+        public Panel contentFlow(string foto, string judul, string ala, int jumlahfavorit)
         {
             Resep res = new Resep();
             Panel panFlow = new Panel();            
@@ -141,6 +160,9 @@ namespace MangCook
             panFlow.Controls.Add(res.iconStar());
             panFlow.Controls.Add(res.jumlahFav(jumlahfavorit));
             panFlow.Size = new System.Drawing.Size(232, 76);
+            panFlow.Name = "panelContent" + counter.ToString();
+            counter++;
+            panFlow.Click += new System.EventHandler(klikPanelContent);
             return panFlow;
         }       
     }

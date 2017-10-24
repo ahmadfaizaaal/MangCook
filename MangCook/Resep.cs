@@ -5,11 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
+using System.Data;
+using System.Drawing;
+using System.ComponentModel;
 
 namespace MangCook
 {
     class Resep:Sql
     {
+        MySqlDataAdapter dataAdapter;
         Akun akun = new Akun();
         private bool clicked = false;
         private int tempJumlahFavorit;
@@ -17,42 +22,53 @@ namespace MangCook
         public PictureBox favoritIcon;
         string queri; 
         public static string idResep;
+
         public void makanan(FlowLayoutPanel flow)
         {
             koneksi.Open();
 
-            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Makanan'";
-            command = new MySqlCommand(queri,koneksi);
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit,resep.gambar FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Makanan'";
+            command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
-            while(reader.Read())
+            while (reader.Read())
             {
-                //flow.Controls.Add(akun.contentFlow("a", "Jangan Terong", "Ala Gusna", "8"));
+                PictureBox hasilGambar = new PictureBox();
                 string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
                 string idAkun = reader.GetString("idAkun");
-                flow.Controls.Add(akun.contentFlow(idAkun, idResep ,"a", judulRes, "Ala " + ala, favor));
+
+                byte[] img = (byte[])reader["gambar"];
+                MemoryStream memorystream = new MemoryStream(img);
+                Image temp = Image.FromStream(memorystream);
+                hasilGambar.Image = new Bitmap(temp);
+                flow.Controls.Add(akun.contentFlow(idAkun, idResep, hasilGambar, judulRes, "Ala " + ala, favor));
             }
             koneksi.Close();
         }
-        
+
         public void minuman(FlowLayoutPanel fl)
         {
             koneksi.Open();
-            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Minuman'";
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit,resep.gambar FROM resep join akun on resep.idAkun = akun.idAkun where resep.kategori = 'Minuman'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
-            while(reader.Read())
+            while (reader.Read())
             {
-                //fl.Controls.Add(akun.contentFlow("a", "Jangan Mbayung", "Ala Gusna", "9"));
+                PictureBox hasilGambar = new PictureBox();
                 string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
                 string idAkun = reader.GetString("idAkun");
-                fl.Controls.Add(akun.contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
-            }           
+
+                byte[] img = (byte[])reader["gambar"];
+                MemoryStream memorystream = new MemoryStream(img);
+                Image temp = Image.FromStream(memorystream);
+                hasilGambar.Image = new Bitmap(temp);
+                fl.Controls.Add(akun.contentFlow(idAkun, idResep, hasilGambar, judulRes, "Ala " + ala, favor));
+            }
             koneksi.Close();
         }
 
@@ -70,37 +86,47 @@ namespace MangCook
             koneksi.Open();
             queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where idResep='"+idResep+"'";
             command = new MySqlCommand(queri, koneksi);
-            reader = command.ExecuteReader();
-            while (reader.Read())
-            {               
-                judul.Text = reader.GetString("namaResep");
-                ala.Text = "Ala "+reader.GetString("namaDepan")+" "+reader.GetString("namaBelakang");
-                //gambar.Image = reader.GetString("favorit");
-                kiri.Text = reader.GetString("bahan");
-                kanan.Text = reader.GetString("step");  
+            dataAdapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
+            dataAdapter.Fill(table);
 
-                
-            }
+            ala.Text = "Ala " + table.Rows[0][10].ToString() + " " + table.Rows[0][11].ToString();
+            judul.Text = table.Rows[0][2].ToString();
+            kiri.Text = table.Rows[0][7].ToString();
+            kanan.Text = table.Rows[0][8].ToString();
+
+            byte[] img = (byte[])table.Rows[0][3];
+            MemoryStream memoryStream = new MemoryStream(img);
+            memoryStream.Seek(0, SeekOrigin.Begin);
+            gambar.Image = Image.FromStream(memoryStream);
+            dataAdapter.Dispose();
             koneksi.Close();
-        }       
+        }
 
-        public void pencarian(FlowLayoutPanel flowle,string cari)
+        public void pencarian(FlowLayoutPanel flowle, string cari)
         {
             koneksi.Open();
-            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.namaResep like '%" + cari + "%' ";
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit,resep.gambar FROM resep join akun on resep.idAkun = akun.idAkun where resep.namaResep like '%" + cari + "%' ";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
-            while(reader.Read())
+            while (reader.Read())
             {
+                PictureBox hasilGambar = new PictureBox();
                 string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 string judulRes = reader.GetString("namaResep");
                 string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
                 string idAkun = reader.GetString("idAkun");
-                flowle.Controls.Add(akun.contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
+
+                byte[] img = (byte[])reader["gambar"];
+                MemoryStream memorystream = new MemoryStream(img);
+                Image temp = Image.FromStream(memorystream);
+                hasilGambar.Image = new Bitmap(temp);
+                flowle.Controls.Add(akun.contentFlow(idAkun, idResep, hasilGambar, judulRes, "Ala " + ala, favor));
             }
             koneksi.Close();
         }
+
 
         public void klikIconFavorit(object sender, EventArgs e)
         {
@@ -142,10 +168,8 @@ namespace MangCook
         }
 
         //content umum//
-        public PictureBox fotoMakanan(string fot)
+        public PictureBox fotoMakanan(PictureBox foto)
         {
-            PictureBox foto = new PictureBox();
-            foto.Image = global::MangCook.Properties.Resources.mang_cook;
             foto.Location = new System.Drawing.Point(0, 0);
             foto.Name = "pictureBox5";
             foto.Size = new System.Drawing.Size(82, 73);

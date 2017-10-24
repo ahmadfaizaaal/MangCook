@@ -13,8 +13,10 @@ namespace MangCook
 {
     public partial class Unggah : Form
     {
-        public string idResep, idAkun, judul, kategori, alatBahan, stepMasak, file, date;
+        public string idResep, idAkun, judul, kategori, alatBahan, stepMasak, date;
         public int fav;
+        public PictureBox gambarResep;
+        public byte[] file;
         Akun akun = new Akun();
 
         private void btnBatalUnggah_Click(object sender, EventArgs e)
@@ -44,6 +46,7 @@ namespace MangCook
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
+            gambarResep = new PictureBox();
             OpenFileDialog ambilGambar = new OpenFileDialog();
             ambilGambar.Filter = "File Gambar (*.jpg)|*.jpg";
             ambilGambar.Title = "Pilih Gambar";
@@ -53,6 +56,7 @@ namespace MangCook
             {
                 //menampilkan pada kolom nama gambar
                 tbFileGambar.Text = ambilGambar.SafeFileName;
+                gambarResep.Image = Image.FromFile(ambilGambar.FileName);
                 //Resep.namaGambar = ambilGambar.FileName;
             }
         }
@@ -78,6 +82,14 @@ namespace MangCook
             favo.Show();
         }
 
+        public byte[] byteImage()
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            gambarResep.Image.Save(memoryStream, gambarResep.Image.RawFormat);
+            byte[] image = memoryStream.ToArray();
+            return image;
+        }
+
         private void btnUnggahResep_Click(object sender, EventArgs e)
         {
             Resep resep = new Resep();
@@ -85,7 +97,7 @@ namespace MangCook
             idResep = "R0001";
             idAkun = Akun.idAkun;
             judul = tbJudulResep.Text;
-            file = tbFileGambar.Text;
+            file = byteImage();
             DateTime thisDay = DateTime.Today;
             date = thisDay.ToString("yyyy-MM-dd");
             fav = 0;

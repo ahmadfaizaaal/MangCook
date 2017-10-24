@@ -16,8 +16,8 @@ namespace MangCook
     {
         MySqlDataAdapter dataAdapter;
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri, idResep;
-        public static string passwordMasuk, idAkun, namaDpn, namaBlk, jenisKelamin, tggalLahir, emailPengguna, bio = "";
-        public Panel panelFlow, clickedPanel;
+        public static string passwordMasuk, idAkun, namaDpn, namaBlk, jenisKelamin, tggalLahir, emailPengguna, bio, fotoProfil;
+        public Panel panelFlow,clickedPanel;
         private bool clicked = false;
         public Akun(string namaDepan, string namaBelakang, string email, string katSan, string jeniskel, string tglLahir)
         {
@@ -28,6 +28,7 @@ namespace MangCook
             this.jeniskel = jeniskel;
             this.tglLahir = tglLahir;
         }
+
         public Akun()
         {
 
@@ -53,6 +54,8 @@ namespace MangCook
                 tggalLahir = reader.GetString("tanggalLahir");
                 emailPengguna = reader.GetString("email");
                 passwordMasuk = pass;
+                bio = reader.GetString("bio");
+                //fotoProfil = reader.GetString("fotoProfil");
                 hasil = "sukses";
             }
             koneksi.Close();
@@ -122,7 +125,7 @@ namespace MangCook
                 //pic.Image =
                 email.Text = reader.GetString("email");
                 nama.Text = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
-                motiv.Text = bio;
+                motiv.Text = reader.GetString("bio");
             }
             koneksi.Close();
             jumfav.Text = difavoritkan();
@@ -156,7 +159,7 @@ namespace MangCook
         public void favorit(FlowLayoutPanel b, string xx)
         {
             koneksi.Open();
-            queri = "SELECT * FROM favorit join resep on favorit.idResep = resep.idResep join akun on favorit.idAkun = akun.idAkun where favorit.idAkun = '" + xx + "'";
+            queri = "SELECT * FROM favorit join resep on favorit.idResep = resep.idResep join akun on resep.idAkun = akun.idAkun where favorit.idAkun = '"+xx+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -178,14 +181,16 @@ namespace MangCook
         }
 
 
-        public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password)
+        public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password, string bio, string fotoProfil)
         {
             koneksi.Open();
             queri = "update akun SET namaDepan = '" + namaDepan + "'" +
                 ", namaBelakang ='" + namaBelakang + "'" +
                 ", jenisKelamin ='" + jenisKelamin + "'" +
                 ", tanggalLahir ='" + tanggalLahir + "'" +
-                ", email = '" + email + "' " +
+                ", email = '" + email + "'" +
+                ", bio = '" + bio + "'" +
+                ", fotoProfil = '" + fotoProfil + "' " +
                 "where idAkun = '" + idAkun + "';";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
@@ -286,6 +291,7 @@ namespace MangCook
                 panel.BackColor = Color.SandyBrown;
                 clickedPanel = panel;
                 clicked = true;
+                Resep.idResep = panel.Name;
             } else {
                 clickedPanel.BackColor = Color.Moccasin;
                 panel.BackColor = Color.SandyBrown;
@@ -302,6 +308,27 @@ namespace MangCook
             Resep.idResep = panel.Name;
             idResep = panel.Name;
             formDetailResep.Show();
+        }
+
+        public void hapusContent(string idResep)
+        {
+            koneksi.Open();
+            queri = "delete from komentar where idResep = '"+idResep+"'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            koneksi.Close();
+
+            koneksi.Open();
+            queri = "delete from favorit where idResep = '" + idResep + "'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            koneksi.Close();
+
+            koneksi.Open();
+            queri = "delete from resep where idResep = '" + idResep + "'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            koneksi.Close();
         }
 
         public Panel contentFlow(string idAkun, string idResep, PictureBox foto, string judul, string ala, string jumlahfavorit)
@@ -350,7 +377,8 @@ namespace MangCook
                   "4. Aidi Rahman\t\t(155150201111160)\n" +
                   "5. Moh. Zulfiqar Naufal M\t(155150201111353)\n" +
                   "6. Riza Anisul Fu'ad\t\t(155150201111355)\n\n" +
-                  "Dosen Pengampu :\nNurizal Dwi Priandani, S.Kom.", "Tentang Kami", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  "Dosen Pengampu :\nNurizal Dwi Priandani, S.Kom.\n\n" +
+                  "Kelas :\nPPK-O", "Tentang Kami", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2017 at 07:03 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: 24 Okt 2017 pada 09.31
+-- Versi Server: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `akun`
+-- Struktur dari tabel `akun`
 --
 
 CREATE TABLE `akun` (
@@ -33,32 +33,34 @@ CREATE TABLE `akun` (
   `jenisKelamin` text NOT NULL,
   `tanggalLahir` date NOT NULL,
   `email` text NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `bio` varchar(255) NOT NULL DEFAULT 'Hey there! I am using Mang-Cook.',
+  `fotoProfil` mediumblob
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `akun`
+-- Dumping data untuk tabel `akun`
 --
 
-INSERT INTO `akun` (`idAkun`, `namaDepan`, `namaBelakang`, `jenisKelamin`, `tanggalLahir`, `email`, `password`) VALUES
-('A0001', 'Akhmad Muzanni', 'Safi\'i', 'Laki-Laki', '1998-06-15', 'aan@gmail.com', 'aan15'),
-('A0002', 'Ahmad', 'Faizal', 'Laki-laki', '1997-06-22', 'af@gmail.com', 'af22'),
-('A0003', 'Gusna Ikhsan', '', 'Laki-Laki', '1996-02-29', 'gusnaikhsan@gmail.com', 'gusna55'),
-('A0004', 'Riza Anizul', 'Fu\'ad', 'Laki-Laki', '1996-12-04', 'javajazz0412@gmail.com', 'prabudulgemah'),
-('A0005', 'Moh Zulfiqar', 'Naufal Maulana', 'Laki-Laki', '1997-05-17', 'mznaufalmaulana@student.ub.ac.id', 'patihjanggawa'),
-('A0006', 'Aidi Rahmani', '', 'Perempuan', '1997-04-24', 'rahmaniaidi@gmail.com', 'aidi123ceria'),
-('A0007', 'Nurul Muhidin', 'Syaifulloh', 'perempuan', '1998-10-01', 'muhidinurulloh@rocketmail.com', 'nurul321'),
-('A0008', 'Mat Sarutobi', '', 'Laki-Laki', '1965-09-30', 'sarutobi@yahoo.co.id', 'hokage03'),
-('A0009', 'Minato Namikaze', '', 'Laki-Laki', '1945-08-16', 'minatokun@yahoo.co.id', 'hokage04'),
-('A0010', 'Mighty Guy', '', 'Laki-Laki', '1987-05-23', 'alistebal@yahoo.co.id', 'guruneli11'),
-('A0011', 'Takatsuki Uchida', '', 'Laki-Laki', '1990-09-05', 'suchidakun@gmail.com', 'kukukunai35'),
-('A0012', 'Kun Fayakun', '', 'Perempuan', '1995-06-01', 'kunanta123@yahoo.com', 'smeogajadi88'),
-('A0013', 'Dul Gemah', '', 'Laki-Laki', '1968-03-08', 'likun234@yahoo.co.id', 'dulaekucing21'),
-('A0014', 'terus prihatin', '', 'Perempuan', '1970-04-15', 'prihatin@yahoo.co.id', 'prihatinsekali33'),
-('A0015', 'Alhamdulillah Anakku', 'Lanang', 'Perempuan', '2000-12-31', 'jelaslanang@gmail.com', 'akulanangsejati123');
+INSERT INTO `akun` (`idAkun`, `namaDepan`, `namaBelakang`, `jenisKelamin`, `tanggalLahir`, `email`, `password`, `bio`, `fotoProfil`) VALUES
+('A0001', 'Akhmad Muzanni', 'Safi''i', 'Laki-Laki', '1998-06-15', 'aan@gmail.com', 'aan15', 'Hey there! I am using Mang-Cook.', NULL),
+('A0002', 'Ahmad', 'Faizal', 'Laki-laki', '1997-06-22', 'af@gmail.com', 'af22', 'Hey there! I am using Mang-Cook.', NULL),
+('A0003', 'Gusna Ikhsan', '', 'Laki-Laki', '1996-02-29', 'gusnaikhsan@gmail.com', 'gusna55', 'Hey there! I am using Mang-Cook.', NULL),
+('A0004', 'Riza Anizul', 'Fu''ad', 'Laki-Laki', '1996-12-04', 'javajazz0412@gmail.com', 'prabudulgemah', 'Hey there! I am using Mang-Cook.', NULL),
+('A0005', 'Moh Zulfiqar', 'Naufal Maulana', 'Laki-Laki', '1997-05-17', 'falnau87@gmail.com', 'patihjanggawa', 'Cinta memang kadang menyakitkan, namun percayalah dengan cinta hidup akan jauh lebih hidup', 0x313936332e6a7067),
+('A0006', 'Aidi Rahmani', '', 'Perempuan', '1997-04-24', 'rahmaniaidi@gmail.com', 'aidi123ceria', 'Hey there! I am using Mang-Cook.', NULL),
+('A0007', 'Nurul Muhidin', 'Syaifulloh', 'perempuan', '1998-10-01', 'muhidinurulloh@rocketmail.com', 'nurul321', 'Hey there! I am using Mang-Cook.', NULL),
+('A0008', 'Mat Sarutobi', '', 'Laki-Laki', '1965-09-30', 'sarutobi@yahoo.co.id', 'hokage03', 'Hey there! I am using Mang-Cook.', NULL),
+('A0009', 'Minato Namikaze', '', 'Laki-Laki', '1945-08-16', 'minatokun@yahoo.co.id', 'hokage04', 'Hey there! I am using Mang-Cook.', NULL),
+('A0010', 'Mighty Guy', '', 'Laki-Laki', '1987-05-23', 'alistebal@yahoo.co.id', 'guruneli11', 'Hey there! I am using Mang-Cook.', NULL),
+('A0011', 'Takatsuki Uchida', '', 'Laki-Laki', '1990-09-05', 'suchidakun@gmail.com', 'kukukunai35', 'Hey there! I am using Mang-Cook.', NULL),
+('A0012', 'Kun Fayakun', '', 'Perempuan', '1995-06-01', 'kunanta123@yahoo.com', 'smeogajadi88', 'Hey there! I am using Mang-Cook.', NULL),
+('A0013', 'Dul Gemah', '', 'Laki-Laki', '1968-03-08', 'likun234@yahoo.co.id', 'dulaekucing21', 'Hey there! I am using Mang-Cook.', NULL),
+('A0014', 'terus prihatin', '', 'Perempuan', '1970-04-15', 'prihatin@yahoo.co.id', 'prihatinsekali33', 'Hey there! I am using Mang-Cook.', NULL),
+('A0015', 'Alhamdulillah Anakku', 'Lanang', 'Perempuan', '2000-12-31', 'jelaslanang@gmail.com', 'akulanangsejati123', 'Hey there! I am using Mang-Cook.', NULL);
 
 --
--- Triggers `akun`
+-- Trigger `akun`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdAkun` BEFORE INSERT ON `akun` FOR EACH ROW BEGIN
@@ -81,7 +83,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bahan`
+-- Struktur dari tabel `bahan`
 --
 
 CREATE TABLE `bahan` (
@@ -93,7 +95,7 @@ CREATE TABLE `bahan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favorit`
+-- Struktur dari tabel `favorit`
 --
 
 CREATE TABLE `favorit` (
@@ -102,18 +104,20 @@ CREATE TABLE `favorit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `favorit`
+-- Dumping data untuk tabel `favorit`
 --
 
 INSERT INTO `favorit` (`idAkun`, `idResep`) VALUES
 ('A0002', 'R0001'),
 ('A0002', 'R0020'),
-('A0003', 'R0031');
+('A0003', 'R0031'),
+('A0005', 'R0005'),
+('A0005', 'R0030');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `komentar`
+-- Struktur dari tabel `komentar`
 --
 
 CREATE TABLE `komentar` (
@@ -124,14 +128,14 @@ CREATE TABLE `komentar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `komentar`
+-- Dumping data untuk tabel `komentar`
 --
 
 INSERT INTO `komentar` (`idKomentar`, `idResep`, `idAkun`, `komentar`) VALUES
 ('K0001', 'R0006', 'A0002', 'tempene kok kecing ??');
 
 --
--- Triggers `komentar`
+-- Trigger `komentar`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdKomentar` BEFORE INSERT ON `komentar` FOR EACH ROW BEGIN
@@ -154,7 +158,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `resep`
+-- Struktur dari tabel `resep`
 --
 
 CREATE TABLE `resep` (
@@ -170,7 +174,7 @@ CREATE TABLE `resep` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `resep`
+-- Dumping data untuk tabel `resep`
 --
 
 INSERT INTO `resep` (`idResep`, `idAkun`, `namaResep`, `gambar`, `tglUpload`, `favorit`, `kategori`, `bahan`, `step`) VALUES
@@ -185,7 +189,7 @@ INSERT INTO `resep` (`idResep`, `idAkun`, `namaResep`, `gambar`, `tglUpload`, `f
 ('R0009', 'A0009', 'Tahu Sosis Clepor', 'Tasis.jpg', '2017-09-01', 0, 'Makanan', '1. 4 sosis sapi\r\n2. 5 tahu\r\n3. 2 telur sedang\r\n4. 1 wortel potong dadu\r\n5. 3 daun bawang\r\n6. 1/4 sendok teh lada putih bubuk\r\n7. 3 bawang putih cincang\r\n8. 1 bungkus Royco bumbu pelezat serbaguna rasa ayam\r\n9. Garam\r\n', '1. Tumbuk tahu putih hingga lembut lalu tambahkan telur, daun bawang, wortel, bawang putih, garam, dan merica lalu aduk hingga adonan tercampur dengan baik.\r\n2. Potong sosis menjadi empat bagian lalu potongan tadi belah menjadi empat sehingga terlihat seperti gurita atau kuncup bunga.\r\n3. Lalu siapkan cetakan kue putu ayu yang bagian dalamnya diolesi dengan menggunakan minyak lalu masukan adonan tahu yang disiapkan sebelumnya ke dalam cetakan hingga penuh.\r\n4. Setelah itu letakkan sosis yang sudah dibentuk tadi ke atas cetakan yang telah diisi adonan sampai adonan habis lalu kukus dengan api sedang selama 25 menit.\r\n'),
 ('R0010', 'A0010', 'Es Gabus', 'Gabus.jpg', '2016-12-14', 0, 'Minuman', '1. 1 liter air\r\n2. 250 gram gula\r\n3. 1 bungkus tepung hunkwe\r\n4. 65 ml santan kental\r\n5. Garam secukupnya\r\n6. Pewarna makanan\r\n', '1. Masukkan semua bahan, aduk hingga merata.\r\n2. Didihkan di atas kompor. Masak hingga mengental.\r\n3. Angkat lalu bagi menjadi 3 bagian. Beri pewarna makanan dengan warna yang berbeda.\r\n4. Tuang adonan satu persatu ke dalam wadah.\r\n5. Masukkan dalam freezer, biarkan hingga membeku. Setelah beku, potong sesuai selera lalu sajikan.\r\n'),
 ('R0011', 'A0011', 'Kue Serabut', 'serabut.jpg', '2017-03-13', 0, 'Makanan', '1. 150 gram tepung ketan\r\n2. 150 gram gula pasir\r\n3. 200 gram kelapa parut sedang\r\n4. 10 gram garam\r\n5. Vanili bubuk secukupnya\r\n6. Pewarna merah atau hijau secukupnya\r\n', '1. Campur semua bahan menjadi satu, aduk rata\r\n2. Jika memakai warna, aduk kelapa parut dengan pewarna lebih dahulu, setelah rata masukkan gula pasir, tepung ketan, garam, dan vanili, aduk rata. Tuang ke dalam loyang ukuran 24 x 24 x4 cm yang telah dialasi dengan daun pisang atau plastic\r\n3. Kukus ke dalam panci pengukus selama 35 menit hingga matang. Angkat dan biarkan dingin\r\n4. Potong-potong, sajikan\r\n'),
-('R0012', 'A0012', 'Roti Sobek', 'sobek.jpg', '2017-04-24', 0, 'Makanan', '1. 450 gr tepung terigu protein tinggi (mis. Cakra)\r\n2. 50 gr tepung terigu protein rendah (Kunci Biru)\r\n3. 110 gr gula pasir\r\n4. 75 gr mentega\r\n5. 1 butir kuning telur\r\n6. 1 butir telur utuh\r\n7. 225 ml susu cair full cream dingin (\r\n8. 15 gr susu bubuk\r\n9. 7 gr ragi instan (fermipan)\r\n10. Sejumput garam\r\n', '1. Dalam mixer campur semua bahan jadi satu kecuali garam masuk terakhir setelah semua bahan tercampur rata\r\n2. Uleni sampai kalis elastis\r\n3. Bulatkan adonan, diamkan kira\" 30-45 menit (saya tutup pake cling wrap)\r\n4. Kempiskan adonan\r\n5. Bagi\"adonan @40gr (saya @50-55gr) bentuk bulat\" diamkan lagi selama 15 menit\r\n6. Setelah 15 menit beri isian dan bentuk sesuai selera\r\n7. Diamkan sampai mengembang, setelah mengembang beri olesan, saya pake kuning telur + sedikit susu cair\r\n8. Panggang hingga matang, lamanya bisa disesuaikan dengan oven masing\" yaa\r\n9. Ini ada yg saya isi pisang coklat dan sosis\r\n'),
+('R0012', 'A0012', 'Roti Sobek', 'sobek.jpg', '2017-04-24', 0, 'Makanan', '1. 450 gr tepung terigu protein tinggi (mis. Cakra)\r\n2. 50 gr tepung terigu protein rendah (Kunci Biru)\r\n3. 110 gr gula pasir\r\n4. 75 gr mentega\r\n5. 1 butir kuning telur\r\n6. 1 butir telur utuh\r\n7. 225 ml susu cair full cream dingin (\r\n8. 15 gr susu bubuk\r\n9. 7 gr ragi instan (fermipan)\r\n10. Sejumput garam\r\n', '1. Dalam mixer campur semua bahan jadi satu kecuali garam masuk terakhir setelah semua bahan tercampur rata\r\n2. Uleni sampai kalis elastis\r\n3. Bulatkan adonan, diamkan kira" 30-45 menit (saya tutup pake cling wrap)\r\n4. Kempiskan adonan\r\n5. Bagi"adonan @40gr (saya @50-55gr) bentuk bulat" diamkan lagi selama 15 menit\r\n6. Setelah 15 menit beri isian dan bentuk sesuai selera\r\n7. Diamkan sampai mengembang, setelah mengembang beri olesan, saya pake kuning telur + sedikit susu cair\r\n8. Panggang hingga matang, lamanya bisa disesuaikan dengan oven masing" yaa\r\n9. Ini ada yg saya isi pisang coklat dan sosis\r\n'),
 ('R0013', 'A0013', 'Jenang Jagung', 'Jagung.jpg', '2017-02-20', 0, 'Makanan', '1. 400 gram jagung\r\n2. 300 ml santan kental\r\n3. 100 gram gula pasir\r\n4. 3 sdm tepung hunkwe\r\n5. 2 lembar daun pandan\r\n6. ½ sdt garam\r\n7. vanili secukupnya\r\n', '1. Campur jagung parut dengan santan, gula, daun pandan, vanili, dan garam, saring\r\n2. Mask sampai matang dan kental, lalu angkat dan tuangkan pada loyang/cetakan yang sudah diolesi dengan air dingin. Biarkan sampai dingin\r\n3. Dinginkan baru potong-potong atau hiasi sesuai selera\r\n'),
 ('R0014', 'A0014', 'Kue Cubit', 'cubit.jpg', '2017-10-08', 0, 'Makanan', '1. 5 sendok terigu\r\n2. 1 sendok margarin cair\r\n3. 1/2 gelas susu dancow\r\n4. 2 sendok gula\r\n5. 1/2 sendok garam\r\n6. 1 butir telur\r\n7. secukupnya meses seres buat taburan\r\n', '1. Aduk gula dan telur hingga berbusa\r\n2. Tuang terigu dan margarin cair\r\n3. Aduk hingga kental masukan garam dan susu cair\r\n4. Panaskan teflon dgn sedikit margarin\r\n5. Tuang satu sendok makan ke teflon saat setengah matang tuang meses seres biarkan 10 detik angkat\r\n6. Kue cubit siap disajikan\r\n'),
 ('R0015', 'A0015', 'Bongko Pisang Original', 'Bongsang.jpg', '2016-12-04', 0, 'Makanan', '1. 250 gr tepung beras\r\n2. 25 gr tepung sagu\r\n3. 100 gr gula pasir\r\n4. 1500 santan\r\n5. 1/2 sdm garam\r\n6. daun pandan\r\n7. 10 bh pisang raja/kepok\r\n8. daun pisang\r\n', '1. campur jadi 1 semua bahan > santan+gula+garam+tepung beras+sagu+daun pandan. Setelah rata, masak dengan api kecil hingga agak menjadi bubur. Matikan kompor\r\n2. pisang raja/kepok dipotong2\r\n3. siap membungkus: siapkan daun ambil 2 sdm adonan bubur lembek beri potongan pisang atasnya bisa diberi potongan daun pandan , bungkus\r\n4. dikukus kurang lebih 40 menit menggunakan api sedang.\r\n5. siap disajikan.  \r\n'),
@@ -203,11 +207,12 @@ INSERT INTO `resep` (`idResep`, `idAkun`, `namaResep`, `gambar`, `tglUpload`, `f
 ('R0027', 'A0015', 'Es Patu butung', 'palu.jpg', '2017-04-12', 0, 'Minuman', '1. 6 buah pisang kepok, kukus, potong-potong\r\n2. 150 ml sirop Pisang Ambon\r\n3. 100 ml susu kental manis\r\n4. Es serut\r\n5. Bubur Sumsum: \r\n   - 100 gram tepung beras\r\n   - 75 gram gula pasir\r\n   - 1 liter santan\r\n   - 1 lembar daun pandan\r\n   - ½ sendok teh garam', '1. Bubur Sumsum: Aduk semua bahan hingga \r\n   rata.\r\n2. Masak sambil aduk-aduk hingga kental. \r\n   Angkat dan dinginkan.\r\n3. Siapkan gelas-gelas saji. Beri bubur \r\n   sumsum, potongan pisang.\r\n4. Tutup dengan es serut dan beri sirop serta \r\n   susu kental manis.\r\n5. Sajikan segera.'),
 ('R0028', 'A0003', 'Ketan Bubuk', 'kebuk.jpg', '2017-02-20', 0, 'Makanan', '1. 500 gram ketan\r\n2. 100 ml santan instant\r\n3. 1 sdm garam\r\n4. 200 ml air panas\r\n5. Bahan taburan\r\n6. 100 gram kedelai kupas\r\n7. 4 sdm gula', '1. Cara memasak ketan : Rendam ketan \r\n   semalam.\r\n2. Kukus ketan selama 20. Angkat, masukkan \r\n   kedalam wadah (panci)\r\n3. Campur ketan dengan garam dan santan \r\n   instant terlebih dahulu. Aduk rata. Lalu \r\n   tambahkan air panas. Aduk rata.\r\n4. Kukus ketan lagi selama 20 menit.\r\n5. Cara membuat bubuk taburan : cuci kedelai \r\n   hingga bersih\r\n6. Sangrai kedelai dengan api kecil hingga \r\n   kecoklatan dan kering\r\n7. Setelah dingin, blender kedelai dan gula \r\n   hingga halus. Ayak.\r\n8. Ketan siap disajikan hangat hangat'),
 ('R0029', 'A0004', 'Nasi Pecel', 'pecel.jpg', '2017-05-05', 0, 'Makanan', 'Bumbu pecel :\r\n  1. 100 gr kacang tanah\r\n  2. 2 siung bawang putih\r\n  3. secukupnya Kencur\r\n  4. 8 cabe rawit\r\n  5. 2 cabe merah besar\r\n  6. Gula jawa\r\n  7. secukupnya Asam jawa\r\n  8. Garam dapur\r\n  9. Daun jeruk\r\n 10. Bahan utk rempeyek\r\n 11. 500 Tepung beras rose brand\r\n 12. secukupnya Udang ebi\r\n 13. secukupnya Kacang tanah\r\n 14. Garam dapur\r\n 15. 1 sdm gula putih\r\n 16. 3 butir Kemiri\r\n 17. 3 cabe keriting\r\n 18. secukupnya Kunyit utk pewarna\r\n 19. secukupnya Ketumbar\r\n 20. Minyak goreng\r\nSayur hijau :\r\n  1. Kacang panjang\r\n  2. Kecambah atau toge juga bisa', '1. Goreng kacang tanah untuk bumbu \r\n   kemudian sisihkan\r\n2. Goreng bumbu utk bumbu pecel, kemudian \r\n   haluskan bersama kacang tanah. Jgn \r\n   lupa daun jeruk diiris tipis2\r\n3. Selanjutnya membuat rempeyek\r\n4. Haluskan bumbu dan camputkan dgn \r\n   tepung beras bersama udang ebi dan \r\n   kacang tanah. Pastikan tidak terlalu \r\n   encer atau tdk terlalu kental.\r\n5. Panaskan minyak dan rempeyek bisa \r\n   digoreng tipis2 aja.\r\n6. Selanjutnya rebus kacang panjang yg \r\n   sudah dipotong.\r\n7. Setelah kacang agak lunak masukkan \r\n   kecambah atau toge.\r\n8. Setelah matang ditiriskan\r\n9. Dan nasi pecel siap disantap dipagi \r\n   hari utk sarapan anda'),
-('R0030', 'A0005', 'Rawon', 'rawon.jpg', '2017-03-01', 0, 'Makanan', '1. 500 gram daging sandung lamur sapi \r\n2. 3 liter air \r\n3. 1 dengkul sapi belah dua \r\n4. 3 lembar daun jeruk purut segar \r\n5. 1 batang serai memarkan \r\n6. 5 sendok makan minyak goreng \r\n7. 3 bungkus Royco rasa sapi\r\n8. 2 daun bawang potong potong seukuran 1cm', '1. Rebus daging dan dengkul sapi hingga \r\n   setengah lunak. Potong daging sesuai \r\n   selera. Sisihkan.\r\n2. Masukkan Royco Bumbu Pelezat Serbaguna \r\n   Rasa Sapi ke dalam air rebusan daging.\r\n3. Tumis bumbu halus, lengkuas, daun \r\n   jeruk, dan serai hingga harum dan \r\n   matang.\r\n4. Masukkan potongan daging ke dalam \r\n   tumisan, masak hingga bumbu meresap.\r\n5. Masukkan tumisan daging ke dalam kuah \r\n   kaldu.\r\n6. Masak dengan api kecil hingga daging \r\n   empuk.\r\n7. Sajikan hangat beserta pelengkap.'),
-('R0031', 'A0001', 'Nasi Panggang', 'gb.jpg', '2017-08-08', 1, 'Makanan', 'Nasi', 'Panggang');
+('R0030', 'A0005', 'Rawon', 'rawon.jpg', '2017-03-01', 1, 'Makanan', '1. 500 gram daging sandung lamur sapi \r\n2. 3 liter air \r\n3. 1 dengkul sapi belah dua \r\n4. 3 lembar daun jeruk purut segar \r\n5. 1 batang serai memarkan \r\n6. 5 sendok makan minyak goreng \r\n7. 3 bungkus Royco rasa sapi\r\n8. 2 daun bawang potong potong seukuran 1cm', '1. Rebus daging dan dengkul sapi hingga \r\n   setengah lunak. Potong daging sesuai \r\n   selera. Sisihkan.\r\n2. Masukkan Royco Bumbu Pelezat Serbaguna \r\n   Rasa Sapi ke dalam air rebusan daging.\r\n3. Tumis bumbu halus, lengkuas, daun \r\n   jeruk, dan serai hingga harum dan \r\n   matang.\r\n4. Masukkan potongan daging ke dalam \r\n   tumisan, masak hingga bumbu meresap.\r\n5. Masukkan tumisan daging ke dalam kuah \r\n   kaldu.\r\n6. Masak dengan api kecil hingga daging \r\n   empuk.\r\n7. Sajikan hangat beserta pelengkap.'),
+('R0031', 'A0001', 'Nasi Panggang', 'gb.jpg', '2017-08-08', 1, 'Makanan', 'Nasi', 'Panggang'),
+('R0032', 'A0005', 'Tongkol Bawang Kecap', '5-Prinsip-yang-Harus-di-Miliki-Oleh-Seorang-Pemimpin-Training-Leadership.jpg', '2017-10-24', 0, 'Makanan', '- tongkol\n- bawang\n- kecap', '- hidupkan api secukupnya\n- masukkan tongkol kemudian bawang yang dicampur kecap\n- tunggu hingga matang\n- makanan siap disajikan');
 
 --
--- Triggers `resep`
+-- Trigger `resep`
 --
 DELIMITER $$
 CREATE TRIGGER `tr_autoIdResep` BEFORE INSERT ON `resep` FOR EACH ROW BEGIN
@@ -230,7 +235,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `step`
+-- Struktur dari tabel `step`
 --
 
 CREATE TABLE `step` (
@@ -285,36 +290,36 @@ ALTER TABLE `step`
   ADD KEY `idResep` (`idResep`);
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `bahan`
+-- Ketidakleluasaan untuk tabel `bahan`
 --
 ALTER TABLE `bahan`
   ADD CONSTRAINT `bahan_ibfk_1` FOREIGN KEY (`idResep`) REFERENCES `resep` (`idResep`);
 
 --
--- Constraints for table `favorit`
+-- Ketidakleluasaan untuk tabel `favorit`
 --
 ALTER TABLE `favorit`
   ADD CONSTRAINT `favorit_ibfk_1` FOREIGN KEY (`idAkun`) REFERENCES `akun` (`idAkun`),
   ADD CONSTRAINT `favorit_ibfk_2` FOREIGN KEY (`idResep`) REFERENCES `resep` (`idResep`);
 
 --
--- Constraints for table `komentar`
+-- Ketidakleluasaan untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
   ADD CONSTRAINT `komentar_ibfk_1` FOREIGN KEY (`idResep`) REFERENCES `resep` (`idResep`);
 
 --
--- Constraints for table `resep`
+-- Ketidakleluasaan untuk tabel `resep`
 --
 ALTER TABLE `resep`
   ADD CONSTRAINT `resep_ibfk_1` FOREIGN KEY (`idAkun`) REFERENCES `akun` (`idAkun`);
 
 --
--- Constraints for table `step`
+-- Ketidakleluasaan untuk tabel `step`
 --
 ALTER TABLE `step`
   ADD CONSTRAINT `step_ibfk_1` FOREIGN KEY (`idResep`) REFERENCES `resep` (`idResep`);

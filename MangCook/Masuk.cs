@@ -144,5 +144,10 @@ namespace MangCook
         {
             Akun.tentangPengembang();
         }
+
+        private void Masuk_FormClosing(object sender, FormClosingEventArgs e)
+        {            
+                Environment.Exit(0);            
+        }
     }
 }

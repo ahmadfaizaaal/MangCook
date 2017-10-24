@@ -87,7 +87,7 @@ namespace MangCook
         public void pencarian(FlowLayoutPanel flowle,string cari)
         {
             koneksi.Open();
-            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.namaResep = '" + cari + "' ";
+            queri = "SELECT akun.idAkun,resep.idResep,namaResep,akun.namaDepan,akun.namaBelakang,favorit FROM resep join akun on resep.idAkun = akun.idAkun where resep.namaResep like '%" + cari + "%' ";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())

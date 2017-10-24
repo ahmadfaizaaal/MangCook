@@ -90,23 +90,40 @@ namespace MangCook
             koneksi.Close();
             return hasil;
         }
+
+        public string difavoritkan()
+        {
+            string jumlahFavorit = "0";
+            koneksi.Open();
+            queri = "SELECT count(resep.idAkun) AS jumlahFavorit FROM favorit join resep on favorit.idResep = resep.idResep WHERE resep.idAkun = '" + idAkun + "'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                jumlahFavorit = reader.GetString("jumlahFavorit");
+            }
+            koneksi.Close();
+            return jumlahFavorit;
+        }
+
         int count = 0;
-        public void dataProfil(Label post, Label jumfav, PictureBox pic, Label email, Label nama, Label motiv, string x)
+        public void dataProfil(Label post, Label jumfav, PictureBox pic, Label email, Label nama, Label motiv, string idakun)
         {
             koneksi.Open();
-            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + x + "'";
+            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + idakun + "'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
                 post.Text = count.ToString();
-                jumfav.Text = reader.GetString("favorit");
+                //jumfav.Text = reader.GetString("favorit");
                 //pic.Image =
                 email.Text = reader.GetString("email");
                 nama.Text = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 motiv.Text = bio;
             }
             koneksi.Close();
+            jumfav.Text = difavoritkan();
         }
 
         public void resepProfil(FlowLayoutPanel a,string y)

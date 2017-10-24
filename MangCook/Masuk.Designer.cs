@@ -189,6 +189,7 @@
             this.Name = "Masuk";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mang-Cook ~ MASUK";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Masuk_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.panelMasuk.ResumeLayout(false);
             this.panelMasuk.PerformLayout();

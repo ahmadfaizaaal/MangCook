@@ -39,11 +39,7 @@ namespace MangCook
             btnFavorit.Image = favorit;
             btnUnggah.Image = unggah;
             this.ActiveControl = btnMakanan;
-        }
-        //public Beranda()
-        //{
-
-        //}
+        }     
         public void kategoriMouseEnter(object sender, EventArgs e)
         {
             PictureBox button = (PictureBox)sender;
@@ -179,6 +175,18 @@ namespace MangCook
             res.pencarian(flowLayoutPanel1,textBoxSearch.Text);
             btnMakanan.Image = makanan;
             btnMinuman.Image = minuman;
+        }
+
+
+        private void whenEnterPressed(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                res.resetflowpanel(flowLayoutPanel1);
+                res.pencarian(flowLayoutPanel1, textBoxSearch.Text);
+                btnMakanan.Image = makanan;
+                btnMinuman.Image = minuman;
+            }
         }
 
         private void Beranda_FormClosing(object sender, FormClosingEventArgs e)

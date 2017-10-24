@@ -204,6 +204,7 @@
             this.textBoxSearch.TabIndex = 5;
             this.textBoxSearch.Text = "Cari Resep ...";
             this.textBoxSearch.Enter += new System.EventHandler(this.placeHolderSearchEnter);
+            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.whenEnterPressed);
             this.textBoxSearch.MouseLeave += new System.EventHandler(this.placeHolderSearchLeave);
             // 
             // panel3

@@ -93,8 +93,7 @@ namespace MangCook
             while(reader.Read())
             {
                 string ala = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
-                string judulRes = reader.GetString("namaResep");
-                string favor = reader.GetString("favorit");
+                string judulRes = reader.GetString("namaResep");                string favor = reader.GetString("favorit");
                 string idResep = reader.GetString("idResep");
                 string idAkun = reader.GetString("idAkun");
                 flowle.Controls.Add(akun.contentFlow(idAkun, idResep, "a", judulRes, "Ala " + ala, favor));
@@ -103,22 +102,27 @@ namespace MangCook
         }
 
         public void klikIconFavorit(object sender, EventArgs e)
-        {
-            if (!clicked) {
+        {            
+            //if (!clicked) {
+            if (!isFavorit())
+                {
                 favoritIcon.Image = global::MangCook.Properties.Resources.stargold;
                 clicked = true;
                 tempJumlahFavorit += 1;
                 jumlahFavorit.Text = tempJumlahFavorit.ToString();
+                koneksi.Close();
+                memfavoritkan(0);
             } else {
                 favoritIcon.Image = global::MangCook.Properties.Resources.starkopong;
                 clicked = false;
                 tempJumlahFavorit -= 1;
                 jumlahFavorit.Text = tempJumlahFavorit.ToString();
-            }
-            memfavoritkan();
+                koneksi.Close();
+                memfavoritkan(1);
+            }                        
         }
 
-        public void memfavoritkan()
+        public void memfavoritkan(int control)
         {
             koneksi.Open();
             queri = "UPDATE resep SET favorit = '" + jumlahFavorit.Text + "' WHERE idResep = '" + favoritIcon.Name + "';";
@@ -129,13 +133,27 @@ namespace MangCook
 
             }
             koneksi.Close();
-            addToFavorit();
+            if (control == 0)
+            {
+                addToFavorit();
+            } else
+            {
+                deleteFromFavorit();
+            }
         }
 
         public void addToFavorit()
         {
-            koneksi.Open();
+            koneksi.Open();            
             queri = "insert into favorit (idAkun,idResep) value ('" + Akun.idAkun + "','" + favoritIcon.Name + "')";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            koneksi.Close();
+        }
+        public void deleteFromFavorit()
+        {
+            koneksi.Open();
+            queri = "delete from favorit where idAkun = '" + Akun.idAkun + "' and idResep = '" + favoritIcon.Name + "'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             koneksi.Close();
@@ -193,17 +211,24 @@ namespace MangCook
         }
 
         public PictureBox iconStar(string idResep, string idAkun)
-        {
+        {            
             favoritIcon = new PictureBox();
             favoritIcon.Image = global::MangCook.Properties.Resources.starkopong;
             favoritIcon.Location = new System.Drawing.Point(107, 51);
-            favoritIcon.Name = idResep;
+            favoritIcon.Name = idResep;            
             favoritIcon.Size = new System.Drawing.Size(16, 16);
             favoritIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             favoritIcon.TabIndex = 24;
             favoritIcon.TabStop = false;
-            favoritIcon.Click += new System.EventHandler(klikIconFavorit);
-            return favoritIcon;
+            favoritIcon.Click += new System.EventHandler(klikIconFavorit);            
+            if (isFavorit())            
+            {
+                favoritIcon.Image = global::MangCook.Properties.Resources.stargold;
+            } else
+            {
+                favoritIcon.Image = global::MangCook.Properties.Resources.starkopong;
+            }
+            return favoritIcon;            
         }
         public Label jumlahFav(string x)
         {
@@ -217,6 +242,28 @@ namespace MangCook
             jumlahFavorit.Text = x;
             tempJumlahFavorit = int.Parse(x);
             return jumlahFavorit;
+        }
+
+        public bool isFavorit()
+        {
+            string isFavorit = "0";
+            koneksi.Open();
+            string query = "SELECT COUNT(*) AS isFavorit FROM favorit WHERE idAkun = '" + Akun.idAkun + "' and idResep = '" + favoritIcon.Name + "'";
+            MySqlCommand command2 = new MySqlCommand(query, koneksi);
+            MySqlDataReader reader2 = command2.ExecuteReader();
+            while (reader2.Read())
+            {
+                isFavorit = reader2.GetString("isFavorit");
+            }
+            
+            if (isFavorit.Equals("0"))
+            {                
+                return false;
+            } else
+            {                
+                return true;
+            }
+            koneksi.Close();
         }
         //------------------------------//
               

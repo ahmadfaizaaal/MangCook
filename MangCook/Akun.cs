@@ -148,7 +148,7 @@ namespace MangCook
         public void favorit(FlowLayoutPanel b, string xx)
         {
             koneksi.Open();
-            queri = "SELECT * FROM favorit join resep on favorit.idResep = resep.idResep join akun on favorit.idAkun = akun.idAkun where favorit.idAkun = '"+xx+"'";
+            queri = "SELECT * FROM favorit join resep on favorit.idResep = resep.idResep join akun on resep.idAkun = akun.idAkun where favorit.idAkun = '"+xx+"'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while(reader.Read())

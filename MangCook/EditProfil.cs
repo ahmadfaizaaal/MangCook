@@ -31,6 +31,8 @@ namespace MangCook
             {
                 cbJenisKelamin.SelectedIndex = 1;
             }
+            tbFotoProfil.Text = Akun.fotoProfil;
+            tbBio.Text = Akun.bio;
         }
 
         private void btnCariGambar_Click(object sender, EventArgs e)
@@ -57,10 +59,10 @@ namespace MangCook
             jenisKelamin = cbJenisKelamin.Text;
             kataSandi = tbPassword.Text;
             fotoProfil = tbFotoProfil.Text;
+            bio = tbBio.Text;
             if (kataSandi == Akun.passwordMasuk)
             {
-                Akun.bio = tbBio.Text;
-                akun.updateProfil(Akun.idAkun, namaDepan, namaBelakang, jenisKelamin, tglLahir, email, Akun.passwordMasuk);
+                akun.updateProfil(Akun.idAkun, namaDepan, namaBelakang, jenisKelamin, tglLahir, email, Akun.passwordMasuk, bio, fotoProfil);
                 this.Hide();
                 formProfil.Show();
             }

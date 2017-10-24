@@ -14,7 +14,7 @@ namespace MangCook
     class Akun:Sql
     {              
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri, idResep;
-        public static string passwordMasuk, idAkun, namaDpn, namaBlk, jenisKelamin, tggalLahir, emailPengguna, bio = "";
+        public static string passwordMasuk, idAkun, namaDpn, namaBlk, jenisKelamin, tggalLahir, emailPengguna, bio, fotoProfil;
         public Panel panelFlow,clickedPanel;
         private bool clicked = false;
         public Akun(string namaDepan, string namaBelakang, string email, string katSan,string jeniskel, string tglLahir)
@@ -51,6 +51,8 @@ namespace MangCook
                 tggalLahir = reader.GetString("tanggalLahir");
                 emailPengguna = reader.GetString("email");
                 passwordMasuk = pass;
+                bio = reader.GetString("bio");
+                //fotoProfil = reader.GetString("fotoProfil");
                 hasil = "sukses";
             }
             koneksi.Close();
@@ -120,7 +122,7 @@ namespace MangCook
                 //pic.Image =
                 email.Text = reader.GetString("email");
                 nama.Text = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
-                motiv.Text = bio;
+                motiv.Text = reader.GetString("bio");
             }
             koneksi.Close();
             jumfav.Text = difavoritkan();
@@ -163,14 +165,16 @@ namespace MangCook
             koneksi.Close();
         }
 
-        public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password)
+        public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password, string bio, string fotoProfil)
         {
             koneksi.Open();
             queri = "update akun SET namaDepan = '" + namaDepan + "'" +
                 ", namaBelakang ='" + namaBelakang + "'" +
                 ", jenisKelamin ='" + jenisKelamin + "'" +
                 ", tanggalLahir ='" + tanggalLahir + "'" +
-                ", email = '" + email + "' " +
+                ", email = '" + email + "'" +
+                ", bio = '" + bio + "'" +
+                ", fotoProfil = '" + fotoProfil + "' " +
                 "where idAkun = '" + idAkun + "';";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();

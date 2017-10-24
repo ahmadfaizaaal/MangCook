@@ -1,0 +1,5 @@
+kekurangan:
+gambar
+placeholder pencarian
+event entet pencaria
+

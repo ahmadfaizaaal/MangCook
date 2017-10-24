@@ -14,8 +14,7 @@ namespace MangCook
     {
         public Profil()
         {
-            InitializeComponent();
-            panelContent.VerticalScroll.Visible = true;
+            InitializeComponent();            
         }
 
         Akun akun = new Akun();
@@ -88,6 +87,15 @@ namespace MangCook
             Masuk mas = new Masuk();
             this.Hide();
             mas.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Akun ak = new Akun();
+            ak.hapusContent(Resep.idResep);
+            this.Hide();
+            Profil pro = new Profil();
+            pro.Show();
         }
     }
 }

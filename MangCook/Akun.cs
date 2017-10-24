@@ -244,6 +244,7 @@ namespace MangCook
                 panel.BackColor = Color.SandyBrown;
                 clickedPanel = panel;
                 clicked = true;
+                Resep.idResep = panel.Name;
             } else {
                 clickedPanel.BackColor = Color.Moccasin;
                 panel.BackColor = Color.SandyBrown;
@@ -261,6 +262,27 @@ namespace MangCook
             Resep.idResep = panel.Name;
             idResep = panel.Name;
             formDetailResep.Show();
+        }
+
+        public void hapusContent(string idResep)
+        {
+            koneksi.Open();
+            queri = "delete from komentar where idResep = '"+idResep+"'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            koneksi.Close();
+
+            koneksi.Open();
+            queri = "delete from favorit where idResep = '" + idResep + "'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            koneksi.Close();
+
+            koneksi.Open();
+            queri = "delete from resep where idResep = '" + idResep + "'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            koneksi.Close();
         }
 
         public Panel contentFlow(string idAkun, string idResep, string foto, string judul, string ala, string jumlahfavorit)

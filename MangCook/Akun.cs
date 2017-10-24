@@ -14,9 +14,9 @@ namespace MangCook
 {
     class Akun : Sql
     {
-        MySqlDataAdapter dataAdapter;
+        //MySqlDataAdapter dataAdapter;
         public string namaDepan, namaBelakang, email, katSan, jeniskel, tglLahir, queri, idResep;
-        public static string passwordMasuk, idAkun, namaDpn, namaBlk, jenisKelamin, tggalLahir, emailPengguna, bio, fotoProfil;
+        public static string passwordMasuk, idAkun, namaDpn, namaBlk, jenisKelamin, tggalLahir, emailPengguna, bio;
         public Panel panelFlow,clickedPanel;
         private bool clicked = false;
         public Akun(string namaDepan, string namaBelakang, string email, string katSan, string jeniskel, string tglLahir)
@@ -181,7 +181,7 @@ namespace MangCook
         }
 
 
-        public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password, string bio, string fotoProfil)
+        public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password, string bio, byte[] fotoProfil)
         {
             koneksi.Open();
             queri = "update akun SET namaDepan = '" + namaDepan + "'" +
@@ -194,7 +194,7 @@ namespace MangCook
                 "where idAkun = '" + idAkun + "';";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
-            string hasil = "sukses";
+            //string hasil = "sukses";
             while (reader.Read())
             {
 
@@ -330,6 +330,7 @@ namespace MangCook
             reader = command.ExecuteReader();
             koneksi.Close();
         }
+
 
         public Panel contentFlow(string idAkun, string idResep, PictureBox foto, string judul, string ala, string jumlahfavorit)
         {

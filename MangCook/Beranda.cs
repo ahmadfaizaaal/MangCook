@@ -38,6 +38,7 @@ namespace MangCook
             btnProfil.Image = profil;
             btnFavorit.Image = favorit;
             btnUnggah.Image = unggah;
+            this.ActiveControl = btnMakanan;
         }
         //public Beranda()
         //{
@@ -155,10 +156,27 @@ namespace MangCook
             unggah.Show();
         }
 
+        private void placeHolderSearchEnter(object sender, EventArgs e)
+        {
+            TextBox textbox = (TextBox)sender;
+            if (!String.IsNullOrEmpty(textbox.Text)) {
+                textbox.Text = "";
+            }
+        }
+
+        private void placeHolderSearchLeave(object sender, EventArgs e)
+        {
+            this.ActiveControl = btnMakanan;
+            TextBox textbox = (TextBox)sender;
+            if (textbox.Text == "") {
+                textbox.Text = "Cari Resep ...";
+            }
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             res.resetflowpanel(flowLayoutPanel1);
-            res.pencarian(flowLayoutPanel1,textBox1.Text);
+            res.pencarian(flowLayoutPanel1,textBoxSearch.Text);
             btnMakanan.Image = makanan;
             btnMinuman.Image = minuman;
         }

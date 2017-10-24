@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.copyRight = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -192,17 +192,19 @@
             this.btnSearch.MouseLeave += new System.EventHandler(this.zoomMouseLeave);
             this.btnSearch.MouseHover += new System.EventHandler(this.zoomMouseHover);
             // 
-            // textBox1
+            // textBoxSearch
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Moccasin;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Firebrick;
-            this.textBox1.Location = new System.Drawing.Point(303, 15);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 24);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "Cari Resep ...";
+            this.textBoxSearch.BackColor = System.Drawing.Color.Moccasin;
+            this.textBoxSearch.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.ForeColor = System.Drawing.Color.Firebrick;
+            this.textBoxSearch.Location = new System.Drawing.Point(303, 15);
+            this.textBoxSearch.Multiline = true;
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(235, 24);
+            this.textBoxSearch.TabIndex = 5;
+            this.textBoxSearch.Text = "Cari Resep ...";
+            this.textBoxSearch.Enter += new System.EventHandler(this.placeHolderSearchEnter);
+            this.textBoxSearch.MouseLeave += new System.EventHandler(this.placeHolderSearchLeave);
             // 
             // panel3
             // 
@@ -271,7 +273,7 @@
             this.panel4.AutoScroll = true;
             this.panel4.BackColor = System.Drawing.Color.Cornsilk;
             this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.textBoxSearch);
             this.panel4.Controls.Add(this.btnSearch);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(170, 98);
@@ -329,7 +331,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;

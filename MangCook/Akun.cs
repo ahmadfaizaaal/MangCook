@@ -111,21 +111,46 @@ namespace MangCook
             return jumlahFavorit;
         }
 
-        int count = 0;
-        public void dataProfil(Label post, Label jumfav, PictureBox pic, Label email, Label nama, Label motiv, string idakun)
+        public void loadForEdit(string idakun)
         {
             koneksi.Open();
-            queri = "SELECT * FROM resep join akun on resep.idAkun = akun.idAkun where akun.idAkun = '" + idakun + "'";
+            queri = "SELECT * FROM akun where akun.idAkun = '" + idakun + "'";
             command = new MySqlCommand(queri, koneksi);
             reader = command.ExecuteReader();
             while (reader.Read())
             {
+                emailPengguna = reader.GetString("email");
+                namaDpn = reader.GetString("namaDepan");
+                namaBlk = reader.GetString("namaBelakang");
+                bio = reader.GetString("bio");
+                tggalLahir = reader.GetString("tanggalLahir");
+                jenisKelamin = reader.GetString("jenisKelamin");
+                EditProfil.bioHasilLoad = bio;
+            }
+            koneksi.Close();
+        }
+
+        int count = 0;
+        public void dataProfil(Label post, Label jumfav, PictureBox pic, Label email, Label nama, Label motiv, string idakun)
+        {
+            koneksi.Open();
+            queri = "SELECT * FROM akun where akun.idAkun = '" + idakun + "'";
+            command = new MySqlCommand(queri, koneksi);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                //PictureBox hasilGambar = new PictureBox();
                 post.Text = count.ToString();
                 //jumfav.Text = reader.GetString("favorit");
                 //pic.Image =
                 email.Text = reader.GetString("email");
                 nama.Text = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 motiv.Text = reader.GetString("bio");
+
+                byte[] img = (byte[])reader["fotoProfil"];
+                MemoryStream memorystream = new MemoryStream(img);
+                Image temp = Image.FromStream(memorystream);
+                pic.Image = new Bitmap(temp);
             }
             koneksi.Close();
             jumfav.Text = difavoritkan();
@@ -184,21 +209,59 @@ namespace MangCook
         public void updateProfil(string idAkun, string namaDepan, string namaBelakang, string jenisKelamin, string tanggalLahir, string email, string password, string bio, byte[] fotoProfil)
         {
             koneksi.Open();
-            queri = "update akun SET namaDepan = '" + namaDepan + "'" +
-                ", namaBelakang ='" + namaBelakang + "'" +
-                ", jenisKelamin ='" + jenisKelamin + "'" +
-                ", tanggalLahir ='" + tanggalLahir + "'" +
-                ", email = '" + email + "'" +
-                ", bio = '" + bio + "'" +
-                ", fotoProfil = '" + fotoProfil + "' " +
-                "where idAkun = '" + idAkun + "';";
-            command = new MySqlCommand(queri, koneksi);
-            reader = command.ExecuteReader();
-            //string hasil = "sukses";
-            while (reader.Read())
-            {
+            queri = "update akun SET namaDepan = @namaDepan" +
+                ", namaBelakang = @namaBelakang" +
+                ", jenisKelamin = @jenisKelamin" +
+                ", tanggalLahir = @tanggalLahir" +
+                ", email = @email" +
+                ", bio = @bio" +
+                ", fotoProfil = @fotoProfil " +
+                "where idAkun = @idAkun;";
 
+            string queriWithoutImage = "update akun SET namaDepan = @namaDepan" +
+                ", namaBelakang = @namaBelakang" +
+                ", jenisKelamin = @jenisKelamin" +
+                ", tanggalLahir = @tanggalLahir" +
+                ", email = @email" +
+                ", bio = @bio " +
+                "where idAkun = @idAkun;";
+
+            if (fotoProfil != null) {
+                command = new MySqlCommand(queri, koneksi);
+            } else {
+                command = new MySqlCommand(queriWithoutImage, koneksi);
             }
+
+            command.Parameters.Add("@idAkun", MySqlDbType.VarChar, 5);
+            command.Parameters.Add("@namaDepan", MySqlDbType.Text);
+            command.Parameters.Add("@namaBelakang", MySqlDbType.Text);
+            command.Parameters.Add("@jenisKelamin", MySqlDbType.Text);
+            command.Parameters.Add("@tanggalLahir", MySqlDbType.Date);
+            command.Parameters.Add("@email", MySqlDbType.Text);
+            command.Parameters.Add("@bio", MySqlDbType.VarChar, 255);
+            command.Parameters.Add("@fotoProfil", MySqlDbType.MediumBlob);
+
+            command.Parameters["@idAkun"].Value = idAkun;
+            command.Parameters["@namaDepan"].Value = namaDepan;
+            command.Parameters["@namaBelakang"].Value = namaBelakang;
+            command.Parameters["@jenisKelamin"].Value = jenisKelamin;
+            command.Parameters["@tanggalLahir"].Value = tanggalLahir;
+            command.Parameters["@email"].Value = email;
+            command.Parameters["@bio"].Value = bio;
+            command.Parameters["@fotoProfil"].Value = fotoProfil;
+
+            if (command.ExecuteNonQuery() == 1) {
+                MessageBox.Show("Perubahan telah disimpan!", "MangCook", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else {
+                MessageBox.Show("Perubahan gagal disimpan!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //reader = command.ExecuteReader();
+            ////string hasil = "sukses";
+            //while (reader.Read())
+            //{
+
+            //}
             koneksi.Close();
         }
 

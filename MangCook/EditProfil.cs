@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MangCook.Properties;
 
 namespace MangCook
 {
@@ -15,6 +16,7 @@ namespace MangCook
     {
         public string namaDepan, namaBelakang, tglLahir, email, kataSandi, bio, jenisKelamin;
         public PictureBox gambarProfil;
+        public static string bioHasilLoad;
         public byte[] fotoProfil;
         Akun akun = new Akun();
         Profil formProfil = new Profil();
@@ -34,10 +36,11 @@ namespace MangCook
             {
                 cbJenisKelamin.SelectedIndex = 1;
             }
+            tbBio.Text = bioHasilLoad;
             //tbFotoProfil.Text = Akun.fotoProfil;
-            //tbBio.Text = Akun.bio;
         }
 
+        bool clicked = false;
         private void btnCariGambar_Click(object sender, EventArgs e)
         {
             gambarProfil = new PictureBox();
@@ -48,11 +51,14 @@ namespace MangCook
 
             if (ambilGambar.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+                clicked = true;
                 //menampilkan pada kolom nama gambar
                 tbFotoProfil.Text = ambilGambar.SafeFileName;
                 gambarProfil.Image = Image.FromFile(ambilGambar.FileName);
             }
         }
+
+        
 
         public byte[] byteImage()
         {
@@ -71,7 +77,10 @@ namespace MangCook
             email = tbEmailBaru.Text;
             jenisKelamin = cbJenisKelamin.Text;
             kataSandi = tbPassword.Text;
-            fotoProfil = byteImage();
+            if (clicked) {
+                fotoProfil = byteImage();
+                clicked = false;
+            }
             bio = tbBio.Text;
             if (kataSandi == Akun.passwordMasuk)
             {

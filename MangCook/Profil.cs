@@ -20,6 +20,10 @@ namespace MangCook
         Akun akun = new Akun();
         private void Profil_Load(object sender, EventArgs e)
         {
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, pictureBox2.Width - 3, pictureBox2.Height - 3);
+            Region rg = new Region(gp);
+            pictureBox2.Region = rg;
             akun.resepProfil(flowLayoutPanel1, Akun.idAkun);
             akun.dataProfil(label9, label10, pictureBox2, label4, label5, label6, Akun.idAkun);
         }               
@@ -72,6 +76,8 @@ namespace MangCook
 
         private void btnEditProfil_Click(object sender, EventArgs e)
         {
+            Akun akun = new Akun();
+            akun.loadForEdit(Akun.idAkun);
             EditProfil formEditProfil = new EditProfil();
             formEditProfil.Show();
             this.Hide();

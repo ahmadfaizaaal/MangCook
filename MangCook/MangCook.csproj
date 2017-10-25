@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mang cook.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework">
       <HintPath>F:\INFORMATIKA\SEMESTER V\PEMROGRAMAN PLATFORM KHUSUS\PROJECT AKHIR\Metro DLLS\MetroFramework.dll</HintPath>
@@ -310,6 +313,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pixel-wallpapers-8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mang cook.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

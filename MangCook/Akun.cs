@@ -120,9 +120,8 @@ namespace MangCook
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                post.Text = count.ToString();
-                //jumfav.Text = reader.GetString("favorit");
-                //pic.Image =
+                post.Text = count.ToString();                
+                //pic.Image = 
                 email.Text = reader.GetString("email");
                 nama.Text = reader.GetString("namaDepan") + " " + reader.GetString("namaBelakang");
                 motiv.Text = reader.GetString("bio");

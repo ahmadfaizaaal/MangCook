@@ -54,7 +54,7 @@ namespace MangCook
                     formMasuk.emailPengguna = txtEmail.Text;
                     formMasuk.kataSandi = txtKataSandi.Text;
                     jenisKelamin = cbJK.SelectedItem.ToString();
-                    tglLahir = date.ToString("dd-MM-yyyy");
+                    tglLahir = date.ToString("yyyy-MM-dd");
 
                     
                     if (akun.cekemail(txtEmail.Text)=="belum ada")
